@@ -31,12 +31,15 @@
 			font-weight: 600;
 		}
 		.status-msg {
+			margin: 0.5rem 0;
 			font-size: 3.75rem;
+			font-size: 2.5rem;
+			line-height: 1.25;
 		}
 		a {
 			display: inline-block;
 			margin-top: 2rem;
-			padding: 1rem 2rem;
+			padding: 0.75rem 2rem;
 			background-color: var(--accent);
 			color: var(--fg);
 			font-weight: 600;
@@ -45,6 +48,15 @@
 
 			&:hover {
 				opacity: 0.8;
+			}
+		}
+	}
+
+	@media (min-width: 600px) {
+		.wrapper {
+			.status-msg {
+				margin: 0;
+				font-size: 3.75rem;
 			}
 		}
 	}

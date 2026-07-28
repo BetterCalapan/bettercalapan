@@ -6,6 +6,9 @@
 </script>
 
 <footer>
+	<div class="wrapper-top">
+		<hr class="separator" />
+	</div>
 	<div class="wrapper">
 		<div class="info">
 			<h1>BetterCalapan</h1>
@@ -72,7 +75,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="wrapper-additional">
+	<div class="wrapper-bottom">
 		<hr class="separator" />
 		<div class="info">
 			<p>
@@ -83,8 +86,8 @@
 					target="_blank"
 					rel="external noopener noreferrer"
 				>
-					GNU General Public License Version 3
-				</a>.
+					GNU GPL v3.0
+				</a>
 			</p>
 			<div class="links">
 				<a
@@ -96,7 +99,6 @@
 					GitHub
 				</a>
 				<a class="link" href={resolve('/sitemap')}> Sitemap </a>
-				<p>v0.0.0</p>
 			</div>
 		</div>
 	</div>
@@ -107,7 +109,7 @@
 		padding: 1rem;
 		display: grid;
 		place-items: center;
-		gap: 4rem;
+		gap: 3rem;
 
 		.wrapper {
 			width: 100%;
@@ -133,7 +135,7 @@
 						font-weight: 600;
 					}
 					.cost.build {
-						color: var(--accent);
+						color: var(--accent-alt);
 					}
 					.cost.people {
 						color: var(--green);
@@ -153,7 +155,7 @@
 					display: flex;
 					flex-direction: column;
 					gap: 1rem;
-					color: var(--fg-alt);
+					color: var(--fg);
 
 					h1 {
 						font-size: 1.125rem;
@@ -164,30 +166,38 @@
 						gap: 0.25rem;
 
 						li {
-							color: var(--fg-alt);
+							.link {
+								color: var(--fg-alt);
+
+								&:hover {
+									text-decoration: underline;
+								}
+							}
 						}
 					}
 				}
 			}
 		}
 
-		.wrapper-additional {
+		.wrapper-top,
+		.wrapper-bottom {
+			margin-bottom: 1rem;
 			width: 100%;
 			max-width: 80rem;
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
+			gap: 2rem 0.5rem;
 
 			.info {
 				display: flex;
 				flex-direction: column;
 				align-items: start;
-				gap: 1.25rem;
+				gap: 0.25rem;
 
 				.links {
 					display: flex;
 					align-items: center;
-					gap: 1rem;
+					gap: 2rem;
 				}
 				.link {
 					font-size: 1.125rem;
@@ -199,6 +209,21 @@
 				}
 			}
 		}
+		.wrapper-top {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: 800px) {
+		footer {
+			.wrapper-bottom {
+				.info {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: start;
+				}
+			}
+		}
 	}
 
 	@media (min-width: 1300px) {
@@ -207,14 +232,6 @@
 				display: grid;
 				grid-template-columns: 24rem 1fr;
 				gap: 6rem;
-			}
-
-			.wrapper-additional {
-				.info {
-					flex-direction: row;
-					justify-content: space-between;
-					align-items: start;
-				}
 			}
 		}
 	}

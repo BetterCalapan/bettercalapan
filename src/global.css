@@ -59,9 +59,10 @@ h6 {
 /* Variables */
 html {
 	--fg: oklch(0.24 0 0);
-	--fg-alt: oklch(0.35 0 0);
+	--fg-alt: oklch(0.3 0 0);
 	--bg: oklch(0.99 0.01 95);
 	--accent: oklch(0.68 0.22 39);
+	--accent-alt: oklch(0.55 0.22 39);
 	--green: oklch(0.5 0.22 145);
 	--neutral-1: oklch(0.91 0.02 75);
 	--neutral-2: oklch(0.87 0.01 54.5);
@@ -105,7 +106,9 @@ p,
 li {
 	font-size: 1.125rem;
 }
-*:focus {
-	outline: 2px dashed var(--accent);
-	border-radius: 2rem;
-}
+
+/* NOTE: temporarily comment out for now, since clicking causes the styles below to appear (unintended). */
+/* *:focus { */
+/* 	outline: 2px dashed var(--accent); */
+/* 	border-radius: 2rem; */
+/* } */

@@ -38,7 +38,6 @@
 		z-index: -1;
 		border-radius: 3px 5px 3px 5px;
 		background: var(--accent);
-		opacity: 0.8;
 	}
 	.marked.accent-mark:before {
 		rotate: 1.1deg;
@@ -49,7 +48,7 @@
 	}
 
 	.hero {
-		padding: 2rem 0 3rem;
+		padding: 0rem 0 3rem;
 		display: grid;
 		place-items: center;
 		background-color: var(--bg);
@@ -72,7 +71,7 @@
 				display: flex;
 				flex-direction: column;
 				gap: 0.75rem;
-				max-width: 40rem;
+				max-width: 36rem;
 
 				label {
 					color: var(--fg);

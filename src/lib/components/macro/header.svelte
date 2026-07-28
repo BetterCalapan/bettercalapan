@@ -40,7 +40,7 @@
 <header>
 	<div class="wrapper">
 		<img src={favicon} alt="BetterCalapan logo" width="32" height="32" />
-		<button class="menu-btn">
+		<button class="menu-btn" aria-label="Menu button">
 			<Menu />
 		</button>
 		<ul class="page-section-list">
