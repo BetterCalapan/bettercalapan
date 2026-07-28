@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  workerd: true
+onlyBuiltDependencies:
+  - workerd
+  - sharp
+  - esbuild

@@ -1,0 +1,111 @@
+/* CSS Reset by Josh Comeau
+   https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+*:not(dialog) {
+	margin: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* Variables */
+html {
+	--fg: oklch(0.24 0 0);
+	--fg-alt: oklch(0.35 0 0);
+	--bg: oklch(0.99 0.01 95);
+	--accent: oklch(0.68 0.22 39);
+	--green: oklch(0.5 0.22 145);
+	--neutral-1: oklch(0.91 0.02 75);
+	--neutral-2: oklch(0.87 0.01 54.5);
+	--neutral-3: oklch(0.94 0.003 48.7);
+}
+
+/* Fonts */
+@font-face {
+	font-family: 'figtree';
+	font-style: normal;
+	font-weight: 300 900;
+	font-display: block;
+	src: url('/figtree-variable.woff2') format('woff2');
+}
+
+/* General */
+html {
+	scrollbar-color: var(--neutral-2) var(--bg);
+}
+body {
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	background-color: var(--bg);
+	font-family: 'figtree', sans-serif;
+}
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+a {
+	color: var(--fg);
+	font-size: 1.125rem;
+	text-decoration: none;
+}
+button {
+	cursor: pointer;
+}
+p,
+li {
+	font-size: 1.125rem;
+}
+*:focus {
+	outline: 2px dashed var(--accent);
+	border-radius: 2rem;
+}
