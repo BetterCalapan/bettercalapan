@@ -21,8 +21,22 @@
 				<p>Cost to the people of Calapan = <span class="cost people">₱ 0</span></p>
 			</div>
 			<div class="socials">
-				<Facebook />
-				<GitHub />
+				<a
+					class="social"
+					href="https://facebook.com"
+					target="_blank"
+					rel="external noopener noreferrer"
+				>
+					<Facebook />
+				</a>
+				<a
+					class="social"
+					href="https://github.com/arvingarciabtw/bettercalapan"
+					target="_blank"
+					rel="external noopener noreferrer"
+				>
+					<GitHub />
+				</a>
 			</div>
 		</div>
 		<div class="footer-sections">
@@ -143,7 +157,12 @@
 				}
 				.socials {
 					display: flex;
+					flex: 1;
 					gap: 1rem;
+
+					.social {
+						align-self: end;
+					}
 				}
 			}
 			.footer-sections {
