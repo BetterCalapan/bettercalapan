@@ -26,6 +26,7 @@
 					href="https://facebook.com"
 					target="_blank"
 					rel="external noopener noreferrer"
+					aria-label="Go to Facebook page"
 				>
 					<Facebook />
 				</a>
@@ -34,6 +35,7 @@
 					href="https://github.com/arvingarciabtw/bettercalapan"
 					target="_blank"
 					rel="external noopener noreferrer"
+					aria-label="Go to GitHub repository"
 				>
 					<GitHub />
 				</a>
