@@ -52,7 +52,7 @@
 		padding: 1.25rem 1.5rem;
 		width: calc(100dvw - 2rem);
 		position: absolute;
-		top: calc(100% + 8px);
+		top: calc(100%);
 		left: 1rem;
 		background-color: var(--neutral-3);
 		border-radius: 2rem;
@@ -82,6 +82,16 @@
 
 	:global(.page-section-mobile-content ul li:hover) {
 		text-decoration: underline;
+	}
+
+	@media (min-width: 500px) {
+		:global(.page-section-mobile-content) {
+			width: max-content;
+			min-width: 250px;
+			position: absolute;
+			left: auto;
+			right: 1rem;
+		}
 	}
 
 	@media (min-width: 900px) {
