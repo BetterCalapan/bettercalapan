@@ -96,6 +96,18 @@ export const governments: Link[] = [
 	}
 ];
 
+const legislativePrefix = '/legislative';
+export const legislatives: Link[] = [
+	{
+		name: 'Ordinance',
+		url: `${legislativePrefix}/ordinance`
+	},
+	{
+		name: 'Resolution',
+		url: `${legislativePrefix}/resolution`
+	}
+];
+
 export const resources: ExternalLink[] = [
 	{
 		name: 'cityofcalapan.gov.ph',
