@@ -8,7 +8,7 @@
 
 <NavigationMenu.Root class="page-section-root">
 	<NavigationMenu.List class="page-section-list">
-		<NavigationMenu.Item value="getting-started" class="page-section-item">
+		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Trigger class="page-section-trigger">
 				<a href={resolve('/services')} onclick={(e) => e.stopPropagation()}>
 					Services <ChevronDown /></a

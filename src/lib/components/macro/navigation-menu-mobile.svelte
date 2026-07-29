@@ -7,7 +7,7 @@
 
 <NavigationMenu.Root class="page-section-mobile-root">
 	<NavigationMenu.List class="page-section-mobile-list">
-		<NavigationMenu.Item value="menu" class="page-section-mobile-item">
+		<NavigationMenu.Item class="page-section-mobile-item">
 			<NavigationMenu.Trigger class="page-section-mobile-trigger" aria-label="Menu button">
 				<Menu />
 			</NavigationMenu.Trigger>

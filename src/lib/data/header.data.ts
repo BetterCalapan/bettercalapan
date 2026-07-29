@@ -15,12 +15,12 @@ export const pageSections: PageSection[] = [
 		url: '/government'
 	},
 	{
-		name: 'statistics',
-		url: '/statistics'
-	},
-	{
 		name: 'legislative',
 		url: '/legislative'
+	},
+	{
+		name: 'statistics',
+		url: '/statistics'
 	},
 	{
 		name: 'transparency',

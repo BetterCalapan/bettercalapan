@@ -1,5 +1,9 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import ArrowRight from '$lib/icons/arrow-right.svelte';
 	import Search from '$lib/icons/search.svelte';
+	import { services, governments, legislatives } from '$lib/data/data';
+	import { pageSections } from '$lib/data/header.data';
 </script>
 
 <section class="hero">
@@ -18,6 +22,89 @@
 				</button>
 			</div>
 		</div>
+	</div>
+</section>
+<!-- TODO: make this dynamic -->
+<section class="popular">
+	<h1 class="heading">Most searched</h1>
+	<div class="most-searched-resources">
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/certificates/birth-certificate')}>Birth certificate</a>
+		</div>
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/business/business-permit')}>Business permit</a>
+		</div>
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/tax-payments/real-property-tax')}>Real property tax</a>
+		</div>
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/certificates/barangay-clearance')}>Barangay clearance</a>
+		</div>
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/certificates/barangay-id')}>Barangay ID</a>
+		</div>
+		<div class="resource">
+			<ArrowRight />
+			<a href={resolve('/services/certificates/drivers-license')}>Driver's license</a>
+		</div>
+	</div>
+</section>
+
+<section class="general">
+	<div class="services">
+		<h1 class="heading">Services</h1>
+		<ul class="services-list">
+			{#each services as service (service.name)}
+				<li class="service">
+					<a class="link" href={resolve(service.url)}>
+						{service.name}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
+	<div class="multi-wrapper">
+		<div class="governments">
+			<h1 class="heading">Government</h1>
+			<ul class="government-list">
+				{#each governments as government (government.name)}
+					<li class="government">
+						<a class="link" href={resolve(government.url)}>
+							{government.name}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+		<div class="legislatives">
+			<h1 class="heading">Legislatives</h1>
+			<ul class="legislative-list">
+				{#each legislatives as legislative (legislative.name)}
+					<li class="legislative">
+						<a class="link" href={resolve(legislative.url)}>
+							{legislative.name}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</div>
+	<div class="others">
+		<h1 class="heading">Others</h1>
+		<ul class="others-list">
+			{#each pageSections.slice(3) as other (other.name)}
+				<li class="other">
+					<a class="link" href={resolve(other.url)}>
+						{other.name[0].toUpperCase() + other.name.slice(1)}
+					</a>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 
@@ -103,6 +190,79 @@
 						}
 					}
 				}
+			}
+		}
+	}
+
+	.popular {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		.most-searched-resources {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			max-width: 50rem;
+
+			.resource {
+				padding: 0.75rem 1.5rem 0.75rem 1.25rem;
+				width: max-content;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				background-color: var(--neutral-3);
+				border-radius: 2rem;
+				transition: background-color 0.3s ease;
+
+				&:hover {
+					background-color: var(--neutral-1);
+				}
+			}
+		}
+	}
+
+	.general {
+		margin-top: 2.75rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 3rem;
+
+		.multi-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+		}
+
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px dotted var(--fg);
+			transition:
+				font-weight 0.3s ease,
+				border-bottom 0.3s ease;
+
+			&:hover {
+				/* background-color: var(--accent); */
+				font-weight: 600;
+				border-bottom: 1px solid;
+			}
+
+			a {
+				width: 100%;
 			}
 		}
 	}
