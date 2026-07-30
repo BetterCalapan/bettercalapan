@@ -4,6 +4,24 @@
 	import Search from '$lib/icons/search.svelte';
 	import { services, governments, legislatives } from '$lib/data/data';
 	import { pageSections } from '$lib/data/header.data';
+	import SearchResults from '$lib/components/macro/search-results.svelte';
+
+	let searchTerm = $state('');
+	let submittedSearchTerm: string | null = $state(null);
+	let timer: ReturnType<typeof setTimeout> | undefined;
+	const DURATION = 500;
+
+	function handlerSearch() {
+		if (timer) clearTimeout(timer);
+
+		timer = setTimeout(() => {
+			if (searchTerm == '') {
+				submittedSearchTerm = null;
+				return;
+			}
+			submittedSearchTerm = searchTerm.trim();
+		}, DURATION);
+	}
 </script>
 
 <section class="hero">
@@ -16,11 +34,20 @@
 		<div class="search">
 			<label for="search">Search</label>
 			<div class="search-input">
-				<input type="text" name="search" id="search" />
+				<input
+					type="text"
+					name="search"
+					id="search"
+					bind:value={searchTerm}
+					oninput={handlerSearch}
+				/>
 				<button class="search-button" aria-label="Search button">
 					<Search />
 				</button>
 			</div>
+			{#if submittedSearchTerm}
+				<SearchResults term={submittedSearchTerm} />
+			{/if}
 		</div>
 	</div>
 </section>
