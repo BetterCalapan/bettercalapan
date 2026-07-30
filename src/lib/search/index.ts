@@ -16,5 +16,10 @@ export const index = [
 			'vice mayor',
 			'city councilor'
 		]
+	},
+	{
+		title: 'Departments',
+		url: '/government/departments',
+		keywords: ['government', 'departments']
 	}
 ];

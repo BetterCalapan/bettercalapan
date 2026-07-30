@@ -38,6 +38,8 @@
 					type="text"
 					name="search"
 					id="search"
+					autocomplete="off"
+					spellcheck="false"
 					bind:value={searchTerm}
 					oninput={handlerSearch}
 				/>
@@ -283,7 +285,6 @@
 				border-bottom 0.3s ease;
 
 			&:hover {
-				/* background-color: var(--accent); */
 				font-weight: 600;
 				border-bottom: 1px solid;
 			}
