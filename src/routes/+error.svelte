@@ -9,14 +9,14 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="wrapper">
+<main class="wrapper">
 	<div class="content">
 		<p class="status-code">404</p>
 		<h1 class="status-msg">Page not found</h1>
 		<p class="description">The page doesn't exist or it might have been moved.</p>
 		<a class="go-back" href={resolve('/')}>Back to home</a>
 	</div>
-</div>
+</main>
 
 <style>
 	.wrapper {
@@ -27,7 +27,7 @@
 		text-align: center;
 
 		.status-code {
-			color: var(--accent);
+			color: var(--accent-alt);
 			font-weight: 600;
 		}
 		.status-msg {
