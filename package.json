@@ -40,6 +40,7 @@
 		"wrangler": "^4.97.0"
 	},
 	"dependencies": {
-		"bits-ui": "^2.18.1"
+		"bits-ui": "^2.18.1",
+		"fuse.js": "^7.5.0"
 	}
 }
