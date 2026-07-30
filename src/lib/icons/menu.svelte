@@ -8,6 +8,8 @@
 	stroke-width="2"
 	stroke-linecap="round"
 	stroke-linejoin="round"
-	class="menu-icon lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"
-	><circle cx="12" cy="12" r="1" /><circle cx="12" cy="5" r="1" /><circle cx="12" cy="19" r="1" />
+	class="lucide lucide-menu-icon lucide-menu"
+>
+	<path d="M4 5h16" /><path d="M4 12h16" />
+	<path d="M4 19h16" />
 </svg>
