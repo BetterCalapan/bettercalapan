@@ -1,80 +1,11 @@
 <script>
+	import { executive, legislative } from '$lib/data/government.data';
 	import User from '$lib/icons/user.svelte';
 	import Email from '$lib/icons/email.svelte';
 	import Phone from '$lib/icons/phone.svelte';
 	import Clock from '$lib/icons/clock.svelte';
 	import Shield from '$lib/icons/shield.svelte';
 	import Info from '$lib/icons/info.svelte';
-
-	const executive = [
-		{
-			title: 'Mayor',
-			name: 'Doy C. Leachon',
-			email: 'lgu.calapancity@gmail.com',
-			phoneNumber: '(043) 288-7508',
-			workingHours: 'Mon-Fri: 8:00 AM - 5:00 PM'
-		},
-		{
-			title: 'Vice Mayor',
-			name: 'Rommel "Bim" Aquino Ignacio',
-			email: 'lgu.calapancity@gmail.com',
-			phoneNumber: '(043) 288-7508',
-			workingHours: 'Mon-Fri: 8:00 AM - 5:00 PM'
-		}
-	];
-
-	const legislative = [
-		{
-			title: 'City Councilor',
-			name: 'Atty. Bel Tanyag-Panaligan',
-			description: 'Laws & Rules'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Rius Agua',
-			description: 'Education'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Mylene De Jesus',
-			description: 'Health & Sanitation'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Rap Infantado',
-			description: 'Commerce & Industry'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Joseph Umali',
-			description: 'Agriculture'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Genie Fortu',
-			description: 'Fisheries'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Jun Cabailo',
-			description: 'Tourism'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Atty. Ricka Plata Goco',
-			description: 'Human Rights'
-		},
-		{
-			title: 'City Councilor',
-			name: 'RC Concepcion',
-			description: 'Economic Enterprises'
-		},
-		{
-			title: 'City Councilor',
-			name: 'Atty. Jel Magsuci',
-			description: 'Women & Family'
-		}
-	];
 </script>
 
 <div class="wrapper">
@@ -174,7 +105,7 @@
 					flex-direction: column;
 					gap: 0.25rem;
 					background-color: var(--neutral-1);
-					border-radius: 2rem; /* NOTE: unsupported browsers may see some funky stuff */
+					border-radius: 2rem;
 
 					.title {
 						margin-bottom: 1rem;
