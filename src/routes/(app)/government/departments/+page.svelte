@@ -20,7 +20,9 @@
 		{/each}
 	</ul>
 	<div class="source">
-		<Info />
+		<div class="icon">
+			<Info />
+		</div>
 		<p>
 			Source from the official website's
 			<a
@@ -70,9 +72,14 @@
 		}
 
 		.source {
-			display: flex;
-			align-items: center;
+			display: grid;
+			grid-template-columns: 18px 1fr;
+			align-items: start;
 			gap: 0.75rem;
+
+			.icon {
+				margin-top: 0.25rem;
+			}
 
 			.source-link {
 				text-decoration: underline;

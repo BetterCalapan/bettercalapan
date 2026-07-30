@@ -27,11 +27,13 @@
 	.wrapper {
 		display: flex;
 		flex-direction: column;
-		gap: 2.5rem;
 
 		.brief-info {
+			margin-bottom: 2.5rem;
 			.heading {
+				margin-bottom: 0.5rem;
 				font-size: 3rem;
+				line-height: 1.25;
 			}
 		}
 		.government-list {

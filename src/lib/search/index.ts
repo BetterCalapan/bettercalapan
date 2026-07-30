@@ -7,6 +7,7 @@ export const index = [
 	{
 		title: 'Officials',
 		url: '/government/officials',
+		// TODO: add more keywords
 		keywords: [
 			'government',
 			'officials',
@@ -20,6 +21,13 @@ export const index = [
 	{
 		title: 'Departments',
 		url: '/government/departments',
+		// TODO: add more keywords
 		keywords: ['government', 'departments']
+	},
+	{
+		title: 'Barangays',
+		url: '/government/barangays',
+		// TODO: add more keywords
+		keywords: ['government', 'barangays', 'bayanan II']
 	}
 ];
