@@ -8,26 +8,26 @@ type PageSection = {
 export const pageSections: PageSection[] = [
 	{
 		name: 'services',
-		url: '/services'
+		url: '/(app)/services'
 	},
 	{
 		name: 'government',
-		url: '/government'
+		url: '/(app)/government'
 	},
 	{
 		name: 'legislative',
-		url: '/legislative'
+		url: '/(app)/legislative'
 	},
 	{
 		name: 'statistics',
-		url: '/statistics'
+		url: '/(app)/statistics'
 	},
 	{
 		name: 'transparency',
-		url: '/transparency'
+		url: '/(app)/transparency'
 	},
 	{
 		name: 'contact',
-		url: '/contact'
+		url: '/(app)/contact'
 	}
 ];

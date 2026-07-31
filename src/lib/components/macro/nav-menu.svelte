@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { NavigationMenu } from 'bits-ui';
 	import { resolve } from '$app/paths';
-	import { services, governments, legislatives } from '$lib/data/data';
+	import { legislatives } from '$lib/data/data';
+	import { government } from '$lib/data/government.data';
+	import { services } from '$lib/data/services.data';
 	import ChevronDown from '$lib/icons/chevron-down.svelte';
-	import { ListItem } from '$lib/snippets/navigation-menu.snippet.svelte';
+	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
 </script>
 
 <NavigationMenu.Root class="page-section-root">
@@ -16,8 +18,8 @@
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
-					{#each services as service (service.name)}
-						{@render ListItem({
+					{#each services.data as service (service.name)}
+						{@render navItem({
 							name: service.name,
 							url: service.url
 						})}
@@ -34,10 +36,10 @@
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
-					{#each governments as government (government.name)}
-						{@render ListItem({
-							name: government.name,
-							url: government.url
+					{#each government.data as gov (gov.name)}
+						{@render navItem({
+							name: gov.name,
+							url: gov.url
 						})}
 					{/each}
 				</ul>
@@ -53,7 +55,7 @@
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
 					{#each legislatives as legislative (legislative.name)}
-						{@render ListItem({
+						{@render navItem({
 							name: legislative.name,
 							url: legislative.url
 						})}

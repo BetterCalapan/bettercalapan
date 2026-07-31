@@ -1,12 +1,14 @@
-export const index = [
+import type { RouteId } from '$app/types';
+
+export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 	{
 		title: 'Government',
-		url: '/government',
+		url: '/(app)/government',
 		keywords: ['government', 'officials', 'departments', 'barangays']
 	},
 	{
 		title: 'Officials',
-		url: '/government/officials',
+		url: '/(app)/government/officials',
 		// TODO: add more keywords
 		keywords: [
 			'government',
@@ -20,19 +22,19 @@ export const index = [
 	},
 	{
 		title: 'Departments',
-		url: '/government/departments',
+		url: '/(app)/government/departments',
 		// TODO: add more keywords
 		keywords: ['government', 'departments']
 	},
 	{
 		title: 'Barangays',
-		url: '/government/barangays',
+		url: '/(app)/government/barangays',
 		// TODO: add more keywords
 		keywords: ['government', 'barangays', 'bayanan II']
 	},
 	{
 		title: 'Services',
-		url: '/services',
+		url: '/(app)/services',
 		// TODO: add more keywords
 		keywords: [
 			'services',
@@ -50,7 +52,7 @@ export const index = [
 	},
 	{
 		title: 'Certificates',
-		url: '/services/certificates',
+		url: '/(app)/services/certificates',
 		// TODO: add more keywords
 		keywords: [
 			'services',

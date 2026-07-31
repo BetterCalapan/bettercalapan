@@ -1,16 +1,14 @@
 <script>
 	import { departments } from '$lib/data/government.data';
 	import ChevronRight from '$lib/icons/chevron-right.svelte';
-	import Info from '$lib/icons/info.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { source } from '$lib/snippets/source.snippet.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="brief-info">
-		<h1 class="heading">Departments</h1>
-		<p class="description">Municipal offices providing services to citizens.</p>
-	</div>
+	{@render info(departments.heading, departments.description)}
 	<ul class="departments">
-		{#each departments as department (department)}
+		{#each departments.data as department (department)}
 			<li class="department">
 				<div class="icon">
 					<ChevronRight />
@@ -19,22 +17,11 @@
 			</li>
 		{/each}
 	</ul>
-	<div class="source">
-		<div class="icon">
-			<Info />
-		</div>
-		<p>
-			Source from the official website's
-			<a
-				class="source-link"
-				href="https://cityofcalapan.gov.ph/"
-				target="_blank"
-				rel="external noopener noreferrer"
-			>
-				directory
-			</a>.
-		</p>
-	</div>
+	{@render source(
+		departments.source.description,
+		departments.source.linkLabel,
+		departments.source.linkURL
+	)}
 </div>
 
 <style>
@@ -42,15 +29,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2.5rem;
-
-		.brief-info {
-			.heading {
-				margin-left: -2px; /* for better alignment*/
-				margin-bottom: 0.5rem;
-				font-size: 3rem;
-				line-height: 1.25;
-			}
-		}
 
 		.departments {
 			display: flex;
@@ -67,25 +45,6 @@
 				.icon {
 					margin-top: 0.25rem;
 					align-self: start;
-				}
-			}
-		}
-
-		.source {
-			display: grid;
-			grid-template-columns: 18px 1fr;
-			align-items: start;
-			gap: 0.75rem;
-
-			.icon {
-				margin-top: 0.25rem;
-			}
-
-			.source-link {
-				text-decoration: underline;
-
-				&:hover {
-					text-decoration: none;
 				}
 			}
 		}

@@ -1,57 +1,4 @@
-import type { RouteId } from '$app/types';
-
-type Link = {
-	name: string;
-	url: RouteId;
-};
-type ExternalLink = {
-	name: string;
-	url: string;
-};
-
-const servicePrefix = '/services';
-export const services: Link[] = [
-	{
-		name: 'Certificates',
-		url: `${servicePrefix}/certificates`
-	},
-	{
-		name: 'Business',
-		url: `${servicePrefix}/business`
-	},
-	{
-		name: 'Tax Payments',
-		url: `${servicePrefix}/tax-payments`
-	},
-	{
-		name: 'Social Services',
-		url: `${servicePrefix}/social-services`
-	},
-	{
-		name: 'Health',
-		url: `${servicePrefix}/health`
-	},
-	{
-		name: 'Agriculture',
-		url: `${servicePrefix}/agriculture`
-	},
-	{
-		name: 'Infrastructure',
-		url: `${servicePrefix}/infrastructure`
-	},
-	{
-		name: 'Education',
-		url: `${servicePrefix}/education`
-	},
-	{
-		name: 'Public Safety',
-		url: `${servicePrefix}/public-safety`
-	},
-	{
-		name: 'Environment',
-		url: `${servicePrefix}/environment`
-	}
-];
+import type { Link, ExternalLink } from '$lib/types/link.types';
 
 export const bettergovProjects: ExternalLink[] = [
 	{
@@ -80,31 +27,15 @@ export const bettergovProjects: ExternalLink[] = [
 	}
 ];
 
-const governmentPrefix = '/government';
-export const governments: Link[] = [
-	{
-		name: 'Officials',
-		url: `${governmentPrefix}/officials`
-	},
-	{
-		name: 'Departments',
-		url: `${governmentPrefix}/departments`
-	},
-	{
-		name: 'Barangays',
-		url: `${governmentPrefix}/barangays`
-	}
-];
-
-const legislativePrefix = '/legislative';
+const legislativePrefix = '/(app)/legislative';
 export const legislatives: Link[] = [
 	{
 		name: 'Ordinance',
-		url: `${legislativePrefix}/ordinance`
+		url: legislativePrefix
 	},
 	{
 		name: 'Resolution',
-		url: `${legislativePrefix}/resolution`
+		url: legislativePrefix
 	}
 ];
 

@@ -2,7 +2,9 @@
 	import { resolve } from '$app/paths';
 	import ArrowRight from '$lib/icons/arrow-right.svelte';
 	import Search from '$lib/icons/search.svelte';
-	import { services, governments, legislatives } from '$lib/data/data';
+	import { legislatives } from '$lib/data/data';
+	import { government } from '$lib/data/government.data';
+	import { services } from '$lib/data/services.data';
 	import { pageSections } from '$lib/data/header.data';
 	import SearchResults from '$lib/components/macro/search-results.svelte';
 
@@ -88,7 +90,7 @@
 	<div class="services">
 		<h1 class="heading">Services</h1>
 		<ul class="services-list">
-			{#each services as service (service.name)}
+			{#each services.data as service (service.name)}
 				<li class="service">
 					<a class="link" href={resolve(service.url)}>
 						{service.name}
@@ -101,10 +103,10 @@
 		<div class="governments">
 			<h1 class="heading">Government</h1>
 			<ul class="government-list">
-				{#each governments as government (government.name)}
+				{#each government.data as gov (gov.name)}
 					<li class="government">
-						<a class="link" href={resolve(government.url)}>
-							{government.name}
+						<a class="link" href={resolve(gov.url)}>
+							{gov.name}
 						</a>
 					</li>
 				{/each}

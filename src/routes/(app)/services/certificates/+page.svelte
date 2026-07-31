@@ -2,17 +2,13 @@
 	import { resolve } from '$app/paths';
 	import { certificates } from '$lib/data/services.data';
 	import ArrowRight from '$lib/icons/arrow-right.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="brief-info">
-		<h1 class="heading">Certificates</h1>
-		<p class="description">
-			Official documents for birth, death, marriage, and other vital records.
-		</p>
-	</div>
+	{@render info(certificates.heading, certificates.description)}
 	<ul class="certificates-list">
-		{#each certificates as certificate (certificate.name)}
+		{#each certificates.data as certificate (certificate.name)}
 			<li class="certificate-item">
 				<a href={resolve(certificate.url)} class="link">
 					<ArrowRight />
@@ -23,9 +19,7 @@
 	</ul>
 	<p class="office">
 		If you need any of these, head to the
-		<a class="link" href={resolve('/services/certificates/city-civil-registry')}
-			>City Civil Registry</a
-		>
+		<a class="link" href={resolve('/(app)/contact')}>City Civil Registry</a>
 		and ask for what you need.
 	</p>
 </div>
@@ -35,17 +29,8 @@
 		display: flex;
 		flex-direction: column;
 
-		.brief-info {
-			margin-bottom: 2.5rem;
-
-			.heading {
-				margin-bottom: 0.5rem;
-				font-size: 3rem;
-				line-height: 1.25;
-			}
-		}
 		.certificates-list {
-			margin-bottom: 2.5rem;
+			margin: 2rem 0;
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;

@@ -2,7 +2,7 @@
 	import { NavigationMenu } from 'bits-ui';
 	import { pageSections } from '$lib/data/header.data';
 	import Menu from '$lib/icons/menu.svelte';
-	import { ListItem } from '$lib/snippets/navigation-menu.snippet.svelte';
+	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
 </script>
 
 <NavigationMenu.Root class="page-section-mobile-root">
@@ -14,7 +14,7 @@
 			<NavigationMenu.Content class="page-section-mobile-content">
 				<ul>
 					{#each pageSections as pageSection (pageSection.name)}
-						{@render ListItem({
+						{@render navItem({
 							name: pageSection.name[0].toUpperCase() + pageSection.name.slice(1),
 							url: pageSection.url
 						})}

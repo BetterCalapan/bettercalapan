@@ -1,7 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import NavigationMenu from './navigation-menu.svelte';
-	import NavigationMenuMobile from './navigation-menu-mobile.svelte';
+	import NavigationMenu from './nav-menu.svelte';
+	import NavigationMenuMobile from './nav-menu-mobile.svelte';
 </script>
 
 <header>

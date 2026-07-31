@@ -1,20 +1,16 @@
 <script>
-	import { executive, legislative } from '$lib/data/government.data';
-	import User from '$lib/icons/user.svelte';
+	import { officials, executive, legislative } from '$lib/data/government.data';
+	import Clock from '$lib/icons/clock.svelte';
 	import Email from '$lib/icons/email.svelte';
 	import Phone from '$lib/icons/phone.svelte';
-	import Clock from '$lib/icons/clock.svelte';
 	import Shield from '$lib/icons/shield.svelte';
-	import Info from '$lib/icons/info.svelte';
+	import User from '$lib/icons/user.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { source } from '$lib/snippets/source.snippet.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="brief-info">
-		<h1 class="heading">Officials</h1>
-		<p class="description">
-			The elected officials of Calapan in the local executive branch and local legislative branch.
-		</p>
-	</div>
+	{@render info(officials.heading, officials.description)}
 	<div class="branch executive-branch">
 		<h2 class="heading">Executive Branch</h2>
 		<div class="officials">
@@ -59,42 +55,24 @@
 			{/each}
 		</div>
 	</div>
-	<div class="source">
-		<div class="icon">
-			<Info />
-		</div>
-		<p>
-			Source from
-			<a
-				class="source-link"
-				href="https://ph.rappler.com/elections/2025/local-race/oriental-mindoro/calapan-city"
-				target="_blank"
-				rel="external noopener noreferrer"
-			>
-				Rappler
-			</a>.
-		</p>
-	</div>
+	{@render source(
+		officials.source.description,
+		officials.source.linkLabel,
+		officials.source.linkURL
+	)}
 </div>
 
 <style>
 	.wrapper {
 		display: flex;
 		flex-direction: column;
-		gap: 2.5rem;
-
-		.brief-info {
-			.heading {
-				margin-bottom: 0.5rem;
-				font-size: 3rem;
-				line-height: 1.25;
-			}
-		}
+		gap: 2rem;
 
 		.branch {
+			margin-top: -0.25rem;
+
 			h2 {
 				margin-bottom: 0.75rem;
-				font-size: 2rem;
 			}
 			.officials {
 				display: grid;
@@ -110,7 +88,7 @@
 					border-radius: 2rem;
 
 					.title {
-						margin-bottom: 1rem;
+						margin-bottom: 0.5rem;
 						font-size: 1.25rem;
 						font-weight: 600;
 					}
@@ -123,30 +101,14 @@
 				}
 			}
 		}
-
-		.source {
-			display: grid;
-			grid-template-columns: 18px 1fr;
-			align-items: start;
-			gap: 0.75rem;
-
-			.icon {
-				margin-top: 0.25rem;
-			}
-
-			.source-link {
-				text-decoration: underline;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
-		}
 	}
 
 	@media (min-width: 900px) {
 		.wrapper {
 			.branch {
+				h2 {
+					font-size: 2rem;
+				}
 				.officials {
 					gap: 1.5rem;
 				}

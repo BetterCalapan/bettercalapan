@@ -1,17 +1,15 @@
 <script>
 	import { barangays } from '$lib/data/government.data';
-	import Info from '$lib/icons/info.svelte';
 	import Phone from '$lib/icons/phone.svelte';
 	import User from '$lib/icons/user.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { source } from '$lib/snippets/source.snippet.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="brief-info">
-		<h1 class="heading">Barangays</h1>
-		<p class="description">The {barangays.length} barangays serving Calapeños.</p>
-	</div>
+	{@render info(barangays.heading, barangays.description)}
 	<ul class="barangays">
-		{#each barangays as barangay (barangay.name)}
+		{#each barangays.data as barangay (barangay.name)}
 			<li class="barangay">
 				<h1 class="name">{barangay.name}</h1>
 				<p class="captain">
@@ -25,40 +23,21 @@
 			</li>
 		{/each}
 	</ul>
-	<div class="source">
-		<div class="icon">
-			<Info />
-		</div>
-		<p>
-			Source from the official website's
-			<a
-				class="source-link"
-				href="https://cityofcalapan.gov.ph/barangays/"
-				target="_blank"
-				rel="external noopener noreferrer"
-			>
-				barangays
-			</a> page.
-		</p>
-	</div>
+	{@render source(
+		barangays.source.description,
+		barangays.source.linkLabel,
+		barangays.source.linkURL
+	)}
 </div>
 
 <style>
 	.wrapper {
 		display: flex;
 		flex-direction: column;
-		gap: 2.5rem;
-
-		.brief-info {
-			.heading {
-				margin-left: -2px; /* for better alignment*/
-				margin-bottom: 0.5rem;
-				font-size: 3rem;
-				line-height: 1.25;
-			}
-		}
+		gap: 2rem;
 
 		.barangays {
+			margin-top: -0.5rem;
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
@@ -69,7 +48,7 @@
 				border-radius: 2rem;
 
 				h1 {
-					margin-bottom: 1rem;
+					margin-bottom: 0.5rem;
 					font-size: 1.25rem;
 					font-weight: 600;
 				}
@@ -78,25 +57,6 @@
 					grid-template-columns: 18px 1fr;
 					align-items: center;
 					gap: 0.75rem;
-				}
-			}
-		}
-
-		.source {
-			display: grid;
-			grid-template-columns: 18px 1fr;
-			align-items: start;
-			gap: 0.75rem;
-
-			.icon {
-				margin-top: 0.25rem;
-			}
-
-			.source-link {
-				text-decoration: underline;
-
-				&:hover {
-					text-decoration: none;
 				}
 			}
 		}

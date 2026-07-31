@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { services, bettergovProjects, governments, resources } from '$lib/data/data';
+	import { bettergovProjects, resources } from '$lib/data/data';
+	import { government } from '$lib/data/government.data';
+	import { services } from '$lib/data/services.data';
 	import Facebook from '$lib/icons/facebook.svelte';
 	import GitHub from '$lib/icons/github.svelte';
 </script>
@@ -45,7 +47,7 @@
 			<div class="footer-section">
 				<h1>Services</h1>
 				<ul class="footer-section-list">
-					{#each services as service (service.name)}
+					{#each services.data as service (service.name)}
 						<li class="service">
 							<a href={resolve(service.url)} class="link">{service.name}</a>
 						</li>
@@ -70,9 +72,9 @@
 			<div class="footer-section">
 				<h1>Government</h1>
 				<ul class="footer-section-list">
-					{#each governments as government (government.name)}
+					{#each government.data as gov (gov.name)}
 						<li class="government">
-							<a href={resolve(government.url)} class="link">{government.name}</a>
+							<a href={resolve(gov.url)} class="link">{gov.name}</a>
 						</li>
 					{/each}
 				</ul>

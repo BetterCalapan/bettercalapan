@@ -1,22 +1,18 @@
 <script>
 	import { resolve } from '$app/paths';
-	import { governments } from '$lib/data/data';
+	import { government } from '$lib/data/government.data';
 	import ArrowRight from '$lib/icons/arrow-right.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
 </script>
 
 <div class="wrapper">
-	<div class="brief-info">
-		<h1 class="heading">Government</h1>
-		<p class="description">
-			See information on elected officials, municipal departments, and the 62 barangays of Calapan.
-		</p>
-	</div>
+	{@render info(government.heading, government.description)}
 	<ul class="government-list">
-		{#each governments as government (government.name)}
+		{#each government.data as gov (gov.name)}
 			<li class="government-item">
-				<a href={resolve(government.url)} class="link">
+				<a href={resolve(gov.url)} class="link">
 					<ArrowRight />
-					{government.name}</a
+					{gov.name}</a
 				>
 			</li>
 		{/each}
@@ -28,15 +24,8 @@
 		display: flex;
 		flex-direction: column;
 
-		.brief-info {
-			margin-bottom: 2.5rem;
-			.heading {
-				margin-bottom: 0.5rem;
-				font-size: 3rem;
-				line-height: 1.25;
-			}
-		}
 		.government-list {
+			margin-top: 2rem;
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
