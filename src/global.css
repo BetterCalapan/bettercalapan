@@ -79,6 +79,9 @@ html {
 }
 
 /* General */
+::selection {
+	background-color: var(--neutral-2);
+}
 html {
 	scrollbar-color: var(--neutral-2) var(--bg);
 }
