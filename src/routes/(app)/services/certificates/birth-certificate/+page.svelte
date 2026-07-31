@@ -1,13 +1,12 @@
 <script>
 	import { resolve } from '$app/paths';
-	import { Accordion } from 'bits-ui';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
-	import ChevronDown from '$lib/icons/chevron-down.svelte';
+	import Accordion from '$lib/components/macro/accordion.svelte';
 	import Clock from '$lib/icons/clock.svelte';
 	import Landmark from '$lib/icons/landmark.svelte';
 	import MapPin from '$lib/icons/map-pin.svelte';
 	import Phone from '$lib/icons/phone.svelte';
+	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
 </script>
 
 <div class="wrapper">
@@ -91,59 +90,7 @@
 			</div>
 			<div class="faq">
 				<h2>Frequently asked questions</h2>
-				<Accordion.Root class="root" type="multiple">
-					<Accordion.Item class="item" value="item-1">
-						<Accordion.Header class="header">
-							<Accordion.Trigger class="trigger"
-								>Can I get a birth certificate registered in another municipality?
-								<ChevronDown />
-							</Accordion.Trigger>
-						</Accordion.Header>
-						<Accordion.Content class="content">
-							No. The Calapan Civil Registrar only has records for births registered in Calapan. For
-							other municipalities, request from that municipality's Civil Registrar or from PSA.
-						</Accordion.Content>
-					</Accordion.Item>
-					<Accordion.Item class="item" value="item-2">
-						<Accordion.Header class="header">
-							<Accordion.Trigger class="trigger">
-								What if I don't know the exact date of birth?
-								<ChevronDown />
-							</Accordion.Trigger>
-						</Accordion.Header>
-						<Accordion.Content class="content">
-							Provide an approximate year and month. The staff will help search the records, but
-							this may take longer.
-						</Accordion.Content>
-					</Accordion.Item>
-
-					<Accordion.Item class="item" value="item-3">
-						<Accordion.Header class="header">
-							<Accordion.Trigger class="trigger">
-								Can I request through email or online?
-								<ChevronDown />
-							</Accordion.Trigger>
-						</Accordion.Header>
-						<Accordion.Content class="content">
-							Currently, requests must be made in person. Online services are being planned for the
-							future.
-						</Accordion.Content>
-					</Accordion.Item>
-
-					<Accordion.Item class="item" value="item-4">
-						<Accordion.Header class="header">
-							<Accordion.Trigger class="trigger">
-								What's the difference between local copy and PSA copy?
-								<ChevronDown />
-							</Accordion.Trigger>
-						</Accordion.Header>
-						<Accordion.Content class="content">
-							Both are certified true copies. PSA copies are nationally-recognized and required for
-							passport/visa applications. Local copies are accepted for most local transactions and
-							school enrollment.
-						</Accordion.Content>
-					</Accordion.Item>
-				</Accordion.Root>
+				<Accordion />
 			</div>
 			<div class="office-info">
 				<h2>Office information</h2>
@@ -179,24 +126,9 @@
 			<div class="related-services">
 				<h2>Related services</h2>
 				<ul>
-					<li>
-						<a href={resolve('/(app)/services/certificates')}>
-							<ArrowRight />
-							Marriage Certificate
-						</a>
-					</li>
-					<li>
-						<a href={resolve('/(app)/services/certificates')}>
-							<ArrowRight />
-							Death Certificate
-						</a>
-					</li>
-					<li>
-						<a href={resolve('/(app)/services/certificates')}>
-							<ArrowRight />
-							Barangay Clearance
-						</a>
-					</li>
+					{@render listItem('Marriage Certificate', '/(app)/services/certificates')}
+					{@render listItem('Death Certificate', '/(app)/services/certificates')}
+					{@render listItem('Barangay Clearance', '/(app)/services/certificates')}
 				</ul>
 			</div>
 			<div class="contact">
@@ -265,34 +197,6 @@
 				display: flex;
 				flex-direction: column;
 				gap: 0.25rem;
-
-				:global(.root) {
-					margin-top: -0.25rem;
-
-					:global(.item) {
-						border-bottom: 1px solid var(--fg-alt);
-						font-size: 1.125rem;
-					}
-
-					:global(.header) {
-						padding: 1.25rem 0;
-
-						:global(.trigger) {
-							padding: 0;
-							display: grid;
-							grid-template-columns: 1fr 18px;
-							align-items: center;
-							gap: 1rem;
-							width: 100%;
-							background: none;
-							border: none;
-							text-align: left;
-						}
-					}
-					:global(.content) {
-						padding: 0.5rem 0 1.5rem;
-					}
-				}
 			}
 			.office-info {
 				display: flex;
@@ -327,22 +231,6 @@
 					display: flex;
 					flex-direction: column;
 					gap: 0.5rem;
-
-					li {
-						width: max-content;
-						border-bottom: 1px dotted var(--fg);
-
-						&:hover {
-							border-bottom-style: solid;
-						}
-
-						a {
-							display: grid;
-							grid-template-columns: 18px 1fr;
-							align-items: center;
-							gap: 0.75rem;
-						}
-					}
 				}
 			}
 			.contact {

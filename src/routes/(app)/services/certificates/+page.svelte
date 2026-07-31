@@ -1,20 +1,15 @@
 <script>
 	import { resolve } from '$app/paths';
 	import { certificates } from '$lib/data/services.data';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
 	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
 </script>
 
 <div class="wrapper">
 	{@render info(certificates.heading, certificates.description)}
 	<ul class="certificates-list">
 		{#each certificates.data as certificate (certificate.name)}
-			<li class="certificate-item">
-				<a href={resolve(certificate.url)} class="link">
-					<ArrowRight />
-					{certificate.name}</a
-				>
-			</li>
+			{@render listItem(certificate.name, certificate.url)}
 		{/each}
 	</ul>
 	<p class="office">
@@ -34,23 +29,6 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
-
-			.certificate-item {
-				width: max-content;
-				border-bottom: 1px dotted var(--fg);
-				transition: font-weight 0.3s ease;
-
-				&:hover {
-					border-bottom: 1px solid;
-					font-weight: 600;
-				}
-
-				.link {
-					display: flex;
-					align-items: center;
-					gap: 0.5rem;
-				}
-			}
 		}
 		.office {
 			.link {

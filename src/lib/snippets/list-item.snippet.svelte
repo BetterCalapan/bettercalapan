@@ -1,0 +1,35 @@
+<script module lang="ts">
+	import type { RouteId } from '$app/types';
+	import { resolve } from '$app/paths';
+	import ArrowRight from '$lib/icons/arrow-right.svelte';
+
+	export { listItem };
+</script>
+
+{#snippet listItem(name: string, url: RouteId)}
+	<li class="item">
+		<a class="link" href={resolve(url)}>
+			<ArrowRight />
+			{name}
+		</a>
+	</li>
+{/snippet}
+
+<style>
+	/* NOTE: styles of exported snippets are stripped in build, a workaround is doing :global() */
+	/* REF: https://github.com/sveltejs/svelte/issues/16404 */
+	:global(.item) {
+		width: max-content;
+		border-bottom: 1px dotted var(--fg);
+
+		:global(&:hover) {
+			border-bottom: 1px solid;
+		}
+
+		:global(.link) {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+	}
+</style>
