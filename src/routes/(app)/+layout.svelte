@@ -22,7 +22,7 @@
 
 <style>
 	main {
-		padding: 1rem 1rem 2.5rem;
+		padding: 1rem 1rem 2rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
