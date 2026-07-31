@@ -61,27 +61,27 @@
 	<div class="most-searched-resources">
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/certificates/birth-certificate')}>Birth certificate</a>
+			<a href={resolve('/(app)/services/certificates/birth-certificate')}>Birth certificate</a>
 		</div>
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/business/business-permit')}>Business permit</a>
+			<a href={resolve('/(app)/services/business')}>Business permit</a>
 		</div>
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/tax-payments/real-property-tax')}>Real property tax</a>
+			<a href={resolve('/(app)/services/tax-payments')}>Real property tax</a>
 		</div>
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/certificates/barangay-clearance')}>Barangay clearance</a>
+			<a href={resolve('/(app)/services/certificates')}>Barangay clearance</a>
 		</div>
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/certificates/barangay-id')}>Barangay ID</a>
+			<a href={resolve('/(app)/services/certificates')}>Barangay ID</a>
 		</div>
 		<div class="resource">
 			<ArrowRight />
-			<a href={resolve('/services/certificates/drivers-license')}>Driver's license</a>
+			<a href={resolve('/(app)/services/certificates')}>Driver's license</a>
 		</div>
 	</div>
 </section>
