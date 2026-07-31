@@ -1,8 +1,7 @@
-import Fuse from 'fuse.js';
+import Fuse from 'fuse.js/min-basic';
 import { index } from '$lib/search/index';
 
 const fuse = new Fuse(index, {
-	useTokenSearch: true,
 	keys: ['title', 'keywords'],
 	threshold: 0.2
 });
