@@ -1,68 +1,26 @@
 <script>
 	import { Accordion } from 'bits-ui';
 	import ChevronDown from '$lib/icons/chevron-down.svelte';
+
+	const { faq } = $props();
 </script>
 
 <Accordion.Root class="accordion-root" type="multiple">
-	<Accordion.Item class="accordion-item" value="item-1">
-		<Accordion.Header class="accordion-header">
-			<Accordion.Trigger class="accordion-trigger"
-				>Can I get a birth certificate registered in another municipality?
-				<ChevronDown />
-			</Accordion.Trigger>
-		</Accordion.Header>
-		<Accordion.Content class="accordion-content">
-			<div class="accordion-content-inner">
-				No. The Calapan Civil Registrar only has records for births registered in Calapan. For other
-				municipalities, request from that municipality's Civil Registrar or from PSA.
-			</div>
-		</Accordion.Content>
-	</Accordion.Item>
-	<Accordion.Item class="accordion-item" value="item-2">
-		<Accordion.Header class="accordion-header">
-			<Accordion.Trigger class="accordion-trigger">
-				What if I don't know the exact date of birth?
-				<ChevronDown />
-			</Accordion.Trigger>
-		</Accordion.Header>
-		<Accordion.Content class="accordion-content">
-			<div class="accordion-content-inner">
-				Provide an approximate year and month. The staff will help search the records, but this may
-				take longer.
-			</div>
-		</Accordion.Content>
-	</Accordion.Item>
-
-	<Accordion.Item class="accordion-item" value="item-3">
-		<Accordion.Header class="accordion-header">
-			<Accordion.Trigger class="accordion-trigger">
-				Can I request through email or online?
-				<ChevronDown />
-			</Accordion.Trigger>
-		</Accordion.Header>
-		<Accordion.Content class="accordion-content">
-			<div class="accordion-content-inner">
-				Currently, requests must be made in person. Online services are being planned for the
-				future.
-			</div>
-		</Accordion.Content>
-	</Accordion.Item>
-
-	<Accordion.Item class="accordion-item" value="item-4">
-		<Accordion.Header class="accordion-header">
-			<Accordion.Trigger class="accordion-trigger">
-				What's the difference between local copy and PSA copy?
-				<ChevronDown />
-			</Accordion.Trigger>
-		</Accordion.Header>
-		<Accordion.Content class="accordion-content">
-			<div class="accordion-content-inner">
-				Both are certified true copies. PSA copies are nationally-recognized and required for
-				passport/visa applications. Local copies are accepted for most local transactions and school
-				enrollment.
-			</div>
-		</Accordion.Content>
-	</Accordion.Item>
+	{#each faq as item, idx (item.question)}
+		<Accordion.Item class="accordion-item" value={`item-${idx + 1}`}>
+			<Accordion.Header class="accordion-header">
+				<Accordion.Trigger class="accordion-trigger"
+					>{item.question}
+					<ChevronDown />
+				</Accordion.Trigger>
+			</Accordion.Header>
+			<Accordion.Content class="accordion-content">
+				<div class="accordion-content-inner">
+					{item.answer}
+				</div>
+			</Accordion.Content>
+		</Accordion.Item>
+	{/each}
 </Accordion.Root>
 
 <style>
