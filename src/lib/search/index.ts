@@ -66,5 +66,26 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 			`driver's license`,
 			'city civil registry'
 		]
+	},
+	{
+		title: 'Birth certificate',
+		url: '/(app)/services/certificates/birth-certificate',
+		// TODO: add more keywords
+		keywords: [
+			'birth certificate',
+			'services',
+			'certificates',
+			'owner',
+			'representative',
+			'valid id',
+			'original',
+			'photocopy',
+			'150',
+			'authorization letter',
+			'eligibility',
+			'civil registrar',
+			'civil registry',
+			'request form'
+		]
 	}
 ];
