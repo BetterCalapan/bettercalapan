@@ -127,6 +127,7 @@
 			animation-timing-function: ease-out;
 			animation-fill-mode: both;
 			box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+			z-index: 2; /* NOTE: to stack above the highlighted city in the hero section */
 		}
 
 		:global(.page-section-content[data-state='open']) {
