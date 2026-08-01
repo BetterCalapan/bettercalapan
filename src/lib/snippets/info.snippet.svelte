@@ -18,6 +18,9 @@
 		font-size: 2rem;
 		line-height: 1.25;
 	}
+	:global(.brief-info .description) {
+		max-width: 40rem;
+	}
 
 	@media (min-width: 900px) {
 		:global(.brief-info .heading) {

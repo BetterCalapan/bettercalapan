@@ -16,38 +16,6 @@ export const services: {
 		{
 			name: 'Business',
 			url: `${servicePrefix}/business`
-		},
-		{
-			name: 'Tax Payments',
-			url: `${servicePrefix}/tax-payments`
-		},
-		{
-			name: 'Social Services',
-			url: `${servicePrefix}/social-services`
-		},
-		{
-			name: 'Health',
-			url: `${servicePrefix}/health`
-		},
-		{
-			name: 'Agriculture',
-			url: `${servicePrefix}/agriculture`
-		},
-		{
-			name: 'Infrastructure',
-			url: `${servicePrefix}/infrastructure`
-		},
-		{
-			name: 'Education',
-			url: `${servicePrefix}/education`
-		},
-		{
-			name: 'Public Safety',
-			url: `${servicePrefix}/public-safety`
-		},
-		{
-			name: 'Environment',
-			url: `${servicePrefix}/environment`
 		}
 	]
 };
@@ -118,8 +86,8 @@ export const business: {
 			url: `${businessPrefix}/ctc-business-license`
 		},
 		{
-			name: "Occupational Mayor's Permit",
-			url: `${businessPrefix}/occupational-mayors-permit`
+			name: 'Occupational Permit',
+			url: `${businessPrefix}/occupational-permit`
 		},
 		{
 			name: 'Safety Seal Certificate',

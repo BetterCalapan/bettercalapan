@@ -51,6 +51,94 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 		]
 	},
 	{
+		title: 'Business Permit',
+		url: '/(app)/services/business/business-permit',
+		keywords: [
+			'business permit',
+			'business license',
+			"mayor's permit",
+			'permit application',
+			'permit renewal',
+			'bplo',
+			'business permit and licensing office',
+			'services',
+			'business'
+		]
+	},
+	{
+		title: 'Business Status Certificate',
+		url: '/(app)/services/business/business-status-certificate',
+		keywords: [
+			'business status certificate',
+			'business certification',
+			'business status verification',
+			'business records',
+			'bplo',
+			'business permit and licensing office',
+			'services',
+			'business'
+		]
+	},
+	{
+		title: "Certified True Copy of Business License and Mayor's Permit",
+		url: '/(app)/services/business/ctc-business-license',
+		keywords: [
+			'certified true copy',
+			'ctc business license',
+			'business license',
+			"mayor's permit",
+			'bplo',
+			'business permit and licensing office',
+			'services',
+			'business'
+		]
+	},
+	{
+		title: 'Occupational Permit',
+		url: '/(app)/services/business/occupational-permit',
+		keywords: [
+			'occupational permit',
+			"occupational mayor's permit",
+			'worker permit',
+			'employee permit',
+			'first-time job seeker',
+			'food handler',
+			'bplo',
+			'services',
+			'business'
+		]
+	},
+	{
+		title: 'Safety Seal Certificate',
+		url: '/(app)/services/business/safety-seal-certificate',
+		keywords: [
+			'safety seal certificate',
+			'safety seal certification',
+			'minimum public health standards',
+			'mphs',
+			'health and safety protocols',
+			'business inspection',
+			'bplo',
+			'services',
+			'business'
+		]
+	},
+	{
+		title: 'Special Permit',
+		url: '/(app)/services/business/special-permit',
+		keywords: [
+			'special permit',
+			'business establishment permit',
+			'unified application form',
+			'business name registration',
+			'zoning fees',
+			'bplo',
+			'business permit and licensing office',
+			'services',
+			'business'
+		]
+	},
+	{
 		title: 'Certificates',
 		url: '/(app)/services/certificates',
 		// TODO: add more keywords

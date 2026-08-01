@@ -21,8 +21,7 @@
 	/* NOTE: styles of exported snippets are stripped in build, a workaround is doing :global() */
 	/* REF: https://github.com/sveltejs/svelte/issues/16404 */
 	:global(.item) {
-		width: max-content;
-		max-width: 100%;
+		width: 100%;
 		border-bottom: 1px dotted var(--fg);
 
 		:global(&:hover) {
@@ -37,6 +36,12 @@
 			:global(.icon) {
 				margin-top: 0.25rem;
 			}
+		}
+	}
+
+	@media (min-width: 600px) {
+		:global(.item) {
+			width: max-content;
 		}
 	}
 </style>

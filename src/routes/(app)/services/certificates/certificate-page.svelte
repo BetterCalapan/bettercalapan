@@ -94,7 +94,6 @@
 					flex-direction: column;
 					gap: 1.5rem;
 
-					:global(div),
 					:global(div) {
 						display: flex;
 						flex-direction: column;
@@ -105,6 +104,9 @@
 				.requirements {
 					:global(ul) {
 						padding-left: 2rem;
+						display: flex;
+						flex-direction: column;
+						gap: 0.25rem;
 						list-style-type: disc;
 					}
 				}
@@ -179,6 +181,10 @@
 				display: grid;
 				grid-template-columns: 1fr max-content;
 				gap: 10rem;
+
+				:global(h2) {
+					font-size: 1.75rem;
+				}
 			}
 		}
 	}

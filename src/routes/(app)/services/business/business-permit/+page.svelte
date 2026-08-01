@@ -195,7 +195,7 @@
 				<div class="icon">
 					<Phone />
 				</div>
-				(043) 288-2412
+				+63432882496
 			</li>
 			<li>
 				<div class="icon">

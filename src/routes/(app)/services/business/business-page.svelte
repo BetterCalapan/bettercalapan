@@ -108,6 +108,9 @@
 				.requirements {
 					:global(ul) {
 						padding-left: 2rem;
+						display: flex;
+						flex-direction: column;
+						gap: 0.25rem;
 						list-style-type: disc;
 					}
 				}
@@ -152,6 +155,7 @@
 
 			.right {
 				.related-services {
+					max-width: 20rem;
 					display: flex;
 					flex-direction: column;
 					gap: 0.75rem;
@@ -161,6 +165,10 @@
 						display: flex;
 						flex-direction: column;
 						gap: 0.5rem;
+
+						:global(li) {
+							width: 100%;
+						}
 					}
 				}
 				.contact {
@@ -182,6 +190,10 @@
 				display: grid;
 				grid-template-columns: 1fr max-content;
 				gap: 10rem;
+
+				:global(h2) {
+					font-size: 1.75rem;
+				}
 			}
 		}
 	}
