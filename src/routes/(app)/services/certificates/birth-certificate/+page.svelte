@@ -1,9 +1,9 @@
 <script>
-	import Clock from '$lib/icons/clock.svelte';
-	import Landmark from '$lib/icons/landmark.svelte';
-	import MapPin from '$lib/icons/map-pin.svelte';
-	import Phone from '$lib/icons/phone.svelte';
 	import CertificatePage from '../certificate-page.svelte';
+	import Clock from '@lucide/svelte/icons/clock';
+	import Landmark from '@lucide/svelte/icons/landmark';
+	import MapPin from '@lucide/svelte/icons/map-pin';
+	import Phone from '@lucide/svelte/icons/phone';
 
 	const faq = [
 		{

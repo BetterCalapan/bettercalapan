@@ -144,7 +144,9 @@
 						gap: 0.75rem;
 					}
 					:global(.icon) {
-						margin-top: 0.25rem;
+						margin-top: 1px;
+						aspect-ratio: 1 / 1;
+						width: 18px;
 					}
 				}
 			}

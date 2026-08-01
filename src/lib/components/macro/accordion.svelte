@@ -1,6 +1,6 @@
 <script>
 	import { Accordion } from 'bits-ui';
-	import ChevronDown from '$lib/icons/chevron-down.svelte';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 
 	const { faq } = $props();
 </script>

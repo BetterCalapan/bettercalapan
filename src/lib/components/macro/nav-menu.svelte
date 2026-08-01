@@ -4,8 +4,8 @@
 	import { legislatives } from '$lib/data/data';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
-	import ChevronDown from '$lib/icons/chevron-down.svelte';
 	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 </script>
 
 <NavigationMenu.Root class="page-section-root">

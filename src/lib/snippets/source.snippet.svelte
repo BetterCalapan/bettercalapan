@@ -1,5 +1,5 @@
 <script module lang="ts">
-	import Info from '$lib/icons/info.svelte';
+	import Info from '@lucide/svelte/icons/info';
 
 	export { source };
 </script>

@@ -1,8 +1,8 @@
 <script>
 	import { departments } from '$lib/data/government.data';
-	import ChevronRight from '$lib/icons/chevron-right.svelte';
 	import { info } from '$lib/snippets/info.snippet.svelte';
 	import { source } from '$lib/snippets/source.snippet.svelte';
+	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 </script>
 
 <div class="wrapper">

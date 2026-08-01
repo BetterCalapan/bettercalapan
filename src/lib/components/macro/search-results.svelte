@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { getResults } from '$lib/search/search';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	type Props = {
 		term: string;

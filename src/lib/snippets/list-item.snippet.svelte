@@ -1,7 +1,7 @@
 <script module lang="ts">
 	import type { RouteId } from '$app/types';
 	import { resolve } from '$app/paths';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	export { listItem };
 </script>
@@ -31,10 +31,12 @@
 		:global(.link) {
 			display: grid;
 			grid-template-columns: 18px 1fr;
+			align-items: start;
 			gap: 0.5rem;
 
 			:global(.icon) {
-				margin-top: 0.25rem;
+				margin-top: 0.125rem;
+				width: 20px;
 			}
 		}
 	}

@@ -1,9 +1,9 @@
 <script>
 	import { barangays } from '$lib/data/government.data';
-	import Phone from '$lib/icons/phone.svelte';
-	import User from '$lib/icons/user.svelte';
 	import { info } from '$lib/snippets/info.snippet.svelte';
 	import { source } from '$lib/snippets/source.snippet.svelte';
+	import Phone from '@lucide/svelte/icons/phone';
+	import User from '@lucide/svelte/icons/user';
 </script>
 
 <div class="wrapper">

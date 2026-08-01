@@ -1,12 +1,12 @@
 <script>
 	import { officials, executive, legislative } from '$lib/data/government.data';
-	import Clock from '$lib/icons/clock.svelte';
-	import Email from '$lib/icons/email.svelte';
-	import Phone from '$lib/icons/phone.svelte';
-	import Shield from '$lib/icons/shield.svelte';
-	import User from '$lib/icons/user.svelte';
 	import { info } from '$lib/snippets/info.snippet.svelte';
 	import { source } from '$lib/snippets/source.snippet.svelte';
+	import Clock from '@lucide/svelte/icons/clock';
+	import Email from '@lucide/svelte/icons/mail';
+	import Phone from '@lucide/svelte/icons/phone';
+	import Shield from '@lucide/svelte/icons/shield';
+	import User from '@lucide/svelte/icons/user';
 </script>
 
 <div class="wrapper">

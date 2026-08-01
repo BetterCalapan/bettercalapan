@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
-	import Search from '$lib/icons/search.svelte';
 	import { legislatives } from '$lib/data/data';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import { pageSections } from '$lib/data/header.data';
 	import SearchResults from '$lib/components/macro/search-results.svelte';
+	import Search from '@lucide/svelte/icons/search';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	let searchTerm = $state('');
 	let submittedSearchTerm: string | null = $state(null);
@@ -46,7 +46,9 @@
 					oninput={handlerSearch}
 				/>
 				<button class="search-button" aria-label="Search button">
-					<Search />
+					<div class="icon">
+						<Search />
+					</div>
 				</button>
 			</div>
 			{#if submittedSearchTerm}
@@ -60,27 +62,39 @@
 	<h1 class="heading">Most searched</h1>
 	<div class="most-searched-resources">
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/certificates/birth-certificate')}>Birth certificate</a>
 		</div>
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/business')}>Business permit</a>
 		</div>
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/tax-payments')}>Real property tax</a>
 		</div>
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/certificates')}>Barangay clearance</a>
 		</div>
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/certificates')}>Barangay ID</a>
 		</div>
 		<div class="resource">
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			<a href={resolve('/(app)/services/certificates')}>Driver's license</a>
 		</div>
 	</div>
@@ -219,6 +233,11 @@
 						&:hover {
 							background-color: var(--neutral-2);
 						}
+
+						.icon {
+							aspect-ratio: 1 / 1;
+							width: 18px;
+						}
 					}
 				}
 			}
@@ -248,6 +267,11 @@
 
 				&:hover {
 					background-color: var(--neutral-1);
+				}
+
+				.icon {
+					aspect-ratio: 1 / 1;
+					width: 20px;
 				}
 			}
 		}

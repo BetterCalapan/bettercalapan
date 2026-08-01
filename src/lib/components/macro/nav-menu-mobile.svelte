@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { NavigationMenu } from 'bits-ui';
 	import { pageSections } from '$lib/data/header.data';
-	import Menu from '$lib/icons/menu.svelte';
 	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
+	import Menu from '@lucide/svelte/icons/menu';
 </script>
 
 <NavigationMenu.Root class="page-section-mobile-root">
