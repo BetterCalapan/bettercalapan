@@ -282,12 +282,8 @@
 			align-items: center;
 			justify-content: space-between;
 			border-bottom: 1px dotted var(--fg);
-			transition:
-				font-weight 0.3s ease,
-				border-bottom 0.3s ease;
 
 			&:hover {
-				font-weight: 600;
 				border-bottom: 1px solid;
 			}
 

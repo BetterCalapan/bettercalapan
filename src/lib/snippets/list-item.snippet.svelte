@@ -9,7 +9,9 @@
 {#snippet listItem(name: string, url: RouteId)}
 	<li class="item">
 		<a class="link" href={resolve(url)}>
-			<ArrowRight />
+			<div class="icon">
+				<ArrowRight />
+			</div>
 			{name}
 		</a>
 	</li>
@@ -20,6 +22,7 @@
 	/* REF: https://github.com/sveltejs/svelte/issues/16404 */
 	:global(.item) {
 		width: max-content;
+		max-width: 100%;
 		border-bottom: 1px dotted var(--fg);
 
 		:global(&:hover) {
@@ -27,9 +30,13 @@
 		}
 
 		:global(.link) {
-			display: flex;
-			align-items: center;
+			display: grid;
+			grid-template-columns: 18px 1fr;
 			gap: 0.5rem;
+
+			:global(.icon) {
+				margin-top: 0.25rem;
+			}
 		}
 	}
 </style>

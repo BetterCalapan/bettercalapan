@@ -52,6 +52,7 @@ export const services: {
 	]
 };
 
+const certificatePrefix = `${servicePrefix}/certificates`;
 export const certificates: {
 	heading: string;
 	description: string;
@@ -62,31 +63,67 @@ export const certificates: {
 	data: [
 		{
 			name: 'Birth Certificate',
-			url: `${servicePrefix}/certificates/birth-certificate`
+			url: `${certificatePrefix}/birth-certificate`
 		},
 		{
 			name: 'Marriage Certificate',
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/marriage-certificate`
 		},
 		{
 			name: 'Death Certificate',
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/death-certificate`
 		},
 		{
 			name: 'Barangay Clearance',
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/barangay-clearance`
 		},
 		{
 			name: 'Barangay ID',
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/barangay-id`
 		},
 		{
 			name: 'Police Clearance',
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/police-clearance`
 		},
 		{
 			name: `Driver's License`,
-			url: `${servicePrefix}/certificates`
+			url: `${certificatePrefix}/drivers-license`
+		}
+	]
+};
+
+const businessPrefix = `${servicePrefix}/business`;
+export const business: {
+	heading: string;
+	description: string;
+	data: Link[];
+} = {
+	heading: 'Business',
+	description: 'Business permits, licenses, and trade registration services.',
+	data: [
+		{
+			name: 'Business Permit',
+			url: `${businessPrefix}/business-permit`
+		},
+		{
+			name: 'Special Permit',
+			url: `${businessPrefix}/special-permit`
+		},
+		{
+			name: 'Business Status Certificate',
+			url: `${businessPrefix}/business-status-certificate`
+		},
+		{
+			name: "Certified True Copy of Business License & Mayor's Permit",
+			url: `${businessPrefix}/ctc-business-license`
+		},
+		{
+			name: "Occupational Mayor's Permit",
+			url: `${businessPrefix}/occupational-mayors-permit`
+		},
+		{
+			name: 'Safety Seal Certificate',
+			url: `${businessPrefix}/safety-seal-certificate`
 		}
 	]
 };

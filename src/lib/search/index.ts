@@ -68,7 +68,7 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 		]
 	},
 	{
-		title: 'Birth certificate',
+		title: 'Birth Certificate',
 		url: '/(app)/services/certificates/birth-certificate',
 		// TODO: add more keywords
 		keywords: [
@@ -86,6 +86,100 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 			'civil registrar',
 			'civil registry',
 			'request form'
+		]
+	},
+	{
+		title: 'Marriage Certificate',
+		url: '/(app)/services/certificates/marriage-certificate',
+		keywords: [
+			'marriage certificate',
+			'certificate of marriage',
+			'marriage registration',
+			'civil registry',
+			'civil registrar',
+			'marriage license',
+			'late registration',
+			'authorized representative',
+			'services',
+			'certificates'
+		]
+	},
+	{
+		title: 'Death Certificate',
+		url: '/(app)/services/certificates/death-certificate',
+		keywords: [
+			'death certificate',
+			'certificate of death',
+			'death registration',
+			'burial permit',
+			'transfer permit',
+			'late registration',
+			'civil registry',
+			'philippine statistics authority',
+			'psa',
+			'services',
+			'certificates'
+		]
+	},
+	{
+		title: 'Barangay Clearance',
+		url: '/(app)/services/certificates/barangay-clearance',
+		keywords: [
+			'barangay clearance',
+			'clearance',
+			'barangay hall',
+			'proof of residency',
+			'good standing',
+			'authorized representative',
+			'services',
+			'certificates'
+		]
+	},
+	{
+		title: 'Barangay ID',
+		url: '/(app)/services/certificates/barangay-id',
+		keywords: [
+			'barangay id',
+			'barangay identification card',
+			'local id',
+			'barangay hall',
+			'proof of residency',
+			'id application',
+			'id replacement',
+			'services',
+			'certificates'
+		]
+	},
+	{
+		title: 'Police Clearance',
+		url: '/(app)/services/certificates/police-clearance',
+		keywords: [
+			'police clearance',
+			'pnp clearance',
+			'philippine national police',
+			'police station',
+			'online appointment',
+			'biometrics',
+			'background check',
+			'services',
+			'certificates'
+		]
+	},
+	{
+		title: "Driver's License",
+		url: '/(app)/services/certificates/drivers-license',
+		keywords: [
+			"driver's license",
+			'drivers license',
+			'driving license',
+			'lto',
+			'land transportation office',
+			'license renewal',
+			'student permit',
+			'medical certificate',
+			'driving test',
+			'services',
+			'certificates'
 		]
 	}
 ];
