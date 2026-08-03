@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../../global.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/logo.png';
 	import Header from '$lib/components/macro/header.svelte';
 	import Footer from '$lib/components/macro/footer.svelte';
 

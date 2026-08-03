@@ -1,6 +1,6 @@
 <script>
 	import '../global.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/logo.png';
 	import { resolve } from '$app/paths';
 </script>
 
