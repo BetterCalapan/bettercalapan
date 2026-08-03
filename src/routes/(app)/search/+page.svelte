@@ -1,1 +1,63 @@
-in search page
+<script lang="ts">
+	import { page } from '$app/state';
+	import SearchInput from '$lib/components/macro/search-input.svelte';
+	import { getResults } from '$lib/search/search';
+	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+
+	const term = $derived(page.url.searchParams.get('term')!.split('+').join(' '));
+	let results = $derived(getResults(term));
+</script>
+
+<div class="primary-wrapper">
+	<div class="search">
+		<label for="search">Search BetterCalapan.org</label>
+		<SearchInput {term} showResults={false} />
+		<p class="result-count">{results.length} results</p>
+	</div>
+	<ul class="results">
+		{#if results.length == 0}
+			<li>No result found. Check spelling or try different keywords.</li>
+		{:else}
+			{#each results as result (result.item.url)}
+				{@render listItem(result.item.title, result.item.url)}
+			{/each}
+		{/if}
+	</ul>
+</div>
+
+<style>
+	.primary-wrapper {
+		.search {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			max-width: 40rem;
+
+			label {
+				font-weight: 700;
+				font-size: 2rem;
+				line-height: 1.25;
+			}
+			.result-count {
+				margin-left: 0.25rem;
+			}
+		}
+
+		.results {
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+
+	@media (min-width: 900px) {
+		.primary-wrapper {
+			.search {
+				label {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+</style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import logo from '$lib/assets/logo.svg';
 	import NavigationMenu from './nav-menu.svelte';
 	import NavigationMenuMobile from './nav-menu-mobile.svelte';
@@ -16,16 +17,18 @@
 	function handlerSearchInput(e: SubmitEvent) {
 		e.preventDefault();
 		showSearchInput = !showSearchInput;
+		goto(`/search?term=${inputValue.split(' ').join('+')}`);
 		inputValue = '';
-		goto('/search');
 	}
 </script>
 
 <header>
 	<div class="wrapper">
 		<div class="left">
-			<img src={logo} alt="BetterCalapan logo" width="32" height="32" />
-			<h1>BetterCalapan</h1>
+			<a href={resolve('/')} class="back-home">
+				<img src={logo} alt="BetterCalapan logo" width="32" height="32" />
+				<h1>BetterCalapan</h1>
+			</a>
 		</div>
 		<div class="right">
 			<NavigationMenuMobile />
@@ -64,18 +67,20 @@
 			justify-content: space-between;
 
 			.left {
-				display: grid;
-				grid-template-columns: 40px 1fr;
-				align-items: center;
-				gap: 0.5rem;
+				a {
+					display: grid;
+					grid-template-columns: 40px 1fr;
+					align-items: center;
+					gap: 0.5rem;
 
-				img {
-					width: 36px;
-					height: 36px;
-					border-radius: 0.75rem;
-				}
-				h1 {
-					font-size: 1.25rem;
+					img {
+						width: 36px;
+						height: 36px;
+						border-radius: 0.75rem;
+					}
+					h1 {
+						font-size: 1.25rem;
+					}
 				}
 			}
 

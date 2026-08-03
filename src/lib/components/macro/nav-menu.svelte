@@ -100,7 +100,7 @@
 			padding: 1.25rem 1.5rem;
 			width: max-content;
 			position: absolute;
-			top: calc(100%);
+			top: calc(100% + 8px);
 			left: 0;
 			background-color: var(--neutral-3);
 			border-radius: 2rem;

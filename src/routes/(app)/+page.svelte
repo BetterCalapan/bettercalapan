@@ -1,28 +1,10 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import SearchInput from '$lib/components/macro/search-input.svelte';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import { pageSections } from '$lib/data/header.data';
-	import SearchResults from '$lib/components/macro/search-results.svelte';
-	import Search from '@lucide/svelte/icons/search';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-
-	let searchTerm = $state('');
-	let submittedSearchTerm: string | null = $state(null);
-	let timer: ReturnType<typeof setTimeout> | undefined;
-	const DURATION = 500;
-
-	function handlerSearch() {
-		if (timer) clearTimeout(timer);
-
-		timer = setTimeout(() => {
-			if (searchTerm == '') {
-				submittedSearchTerm = null;
-				return;
-			}
-			submittedSearchTerm = searchTerm.trim();
-		}, DURATION);
-	}
 </script>
 
 <div class="primary-wrapper">
@@ -36,25 +18,7 @@
 				</h1>
 				<div class="search">
 					<label for="search">Search</label>
-					<div class="search-input">
-						<input
-							type="text"
-							name="search"
-							id="search"
-							autocomplete="off"
-							spellcheck="false"
-							bind:value={searchTerm}
-							oninput={handlerSearch}
-						/>
-						<button class="search-button" aria-label="Search button">
-							<div class="icon">
-								<Search />
-							</div>
-						</button>
-					</div>
-					{#if submittedSearchTerm}
-						<SearchResults term={submittedSearchTerm} />
-					{/if}
+					<SearchInput term={''} showResults={false} />
 				</div>
 			</div>
 		</section>
@@ -202,36 +166,6 @@
 					font-size: 1.125rem;
 					font-weight: 600;
 				}
-				.search-input {
-					display: grid;
-					grid-template-columns: 1fr 3.25rem;
-
-					input {
-						padding: 0 1.25rem;
-						background-color: var(--neutral-3);
-						border: none;
-						border-radius: 2rem 0 0 2rem;
-						font-size: 1.125rem;
-					}
-					.search-button {
-						display: grid;
-						place-items: center;
-						aspect-ratio: 1 / 1;
-						background-color: var(--neutral-1);
-						border: none;
-						border-radius: 0 2rem 2rem 0;
-						transition: background-color 0.3s ease;
-
-						&:hover {
-							background-color: var(--neutral-2);
-						}
-
-						.icon {
-							aspect-ratio: 1 / 1;
-							width: 18px;
-						}
-					}
-				}
 			}
 		}
 	}
@@ -270,7 +204,6 @@
 	}
 
 	.general {
-		margin-top: 2.75rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 3rem;
