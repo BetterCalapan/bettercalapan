@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { legislatives } from '$lib/data/data';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import { pageSections } from '$lib/data/header.data';
@@ -26,132 +25,125 @@
 	}
 </script>
 
-<section class="hero">
-	<div class="wrapper">
-		<h1 class="heading">
-			The better portal to find
-			<span class="city marked accent-mark">Calapan</span>
-			services and information
-		</h1>
-		<div class="search">
-			<label for="search">Search</label>
-			<div class="search-input">
-				<input
-					type="text"
-					name="search"
-					id="search"
-					autocomplete="off"
-					spellcheck="false"
-					bind:value={searchTerm}
-					oninput={handlerSearch}
-				/>
-				<button class="search-button" aria-label="Search button">
-					<div class="icon">
-						<Search />
+<div class="primary-wrapper">
+	<div class="left">
+		<section class="hero">
+			<div class="wrapper">
+				<h1 class="heading">
+					The better portal to find
+					<span class="city marked accent-mark">Calapan</span>
+					services and information
+				</h1>
+				<div class="search">
+					<label for="search">Search</label>
+					<div class="search-input">
+						<input
+							type="text"
+							name="search"
+							id="search"
+							autocomplete="off"
+							spellcheck="false"
+							bind:value={searchTerm}
+							oninput={handlerSearch}
+						/>
+						<button class="search-button" aria-label="Search button">
+							<div class="icon">
+								<Search />
+							</div>
+						</button>
 					</div>
-				</button>
+					{#if submittedSearchTerm}
+						<SearchResults term={submittedSearchTerm} />
+					{/if}
+				</div>
 			</div>
-			{#if submittedSearchTerm}
-				<SearchResults term={submittedSearchTerm} />
-			{/if}
-		</div>
+		</section>
+		<!-- TODO: make this dynamic -->
+		<section class="popular">
+			<h1 class="heading">Most searched</h1>
+			<div class="most-searched-resources">
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/certificates/birth-certificate')}>Birth certificate</a>
+				</div>
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/business')}>Business permit</a>
+				</div>
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/tax-payments')}>Real property tax</a>
+				</div>
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/certificates')}>Barangay clearance</a>
+				</div>
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/certificates')}>Barangay ID</a>
+				</div>
+				<div class="resource">
+					<div class="icon">
+						<ArrowRight />
+					</div>
+					<a href={resolve('/(app)/services/certificates')}>Driver's license</a>
+				</div>
+			</div>
+		</section>
 	</div>
-</section>
-<!-- TODO: make this dynamic -->
-<section class="popular">
-	<h1 class="heading">Most searched</h1>
-	<div class="most-searched-resources">
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
+	<div class="right">
+		<section class="general">
+			<div class="services">
+				<h1 class="heading">Services</h1>
+				<ul class="services-list">
+					{#each services.data as service (service.name)}
+						<li class="service">
+							<a class="link" href={resolve(service.url)}>
+								{service.name}
+							</a>
+						</li>
+					{/each}
+				</ul>
 			</div>
-			<a href={resolve('/(app)/services/certificates/birth-certificate')}>Birth certificate</a>
-		</div>
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
+			<div class="multi-wrapper">
+				<div class="governments">
+					<h1 class="heading">Government</h1>
+					<ul class="government-list">
+						{#each government.data as gov (gov.name)}
+							<li class="government">
+								<a class="link" href={resolve(gov.url)}>
+									{gov.name}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</div>
 			</div>
-			<a href={resolve('/(app)/services/business')}>Business permit</a>
-		</div>
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
+			<div class="others">
+				<h1 class="heading">Others</h1>
+				<ul class="others-list">
+					{#each pageSections.slice(3) as other (other.name)}
+						<li class="other">
+							<a class="link" href={resolve(other.url)}>
+								{other.name[0].toUpperCase() + other.name.slice(1)}
+							</a>
+						</li>
+					{/each}
+				</ul>
 			</div>
-			<a href={resolve('/(app)/services/tax-payments')}>Real property tax</a>
-		</div>
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
-			</div>
-			<a href={resolve('/(app)/services/certificates')}>Barangay clearance</a>
-		</div>
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
-			</div>
-			<a href={resolve('/(app)/services/certificates')}>Barangay ID</a>
-		</div>
-		<div class="resource">
-			<div class="icon">
-				<ArrowRight />
-			</div>
-			<a href={resolve('/(app)/services/certificates')}>Driver's license</a>
-		</div>
+		</section>
 	</div>
-</section>
-
-<section class="general">
-	<div class="services">
-		<h1 class="heading">Services</h1>
-		<ul class="services-list">
-			{#each services.data as service (service.name)}
-				<li class="service">
-					<a class="link" href={resolve(service.url)}>
-						{service.name}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</div>
-	<div class="multi-wrapper">
-		<div class="governments">
-			<h1 class="heading">Government</h1>
-			<ul class="government-list">
-				{#each government.data as gov (gov.name)}
-					<li class="government">
-						<a class="link" href={resolve(gov.url)}>
-							{gov.name}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
-		<div class="legislatives">
-			<h1 class="heading">Legislatives</h1>
-			<ul class="legislative-list">
-				{#each legislatives as legislative (legislative.name)}
-					<li class="legislative">
-						<a class="link" href={resolve(legislative.url)}>
-							{legislative.name}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
-	</div>
-	<div class="others">
-		<h1 class="heading">Others</h1>
-		<ul class="others-list">
-			{#each pageSections.slice(3) as other (other.name)}
-				<li class="other">
-					<a class="link" href={resolve(other.url)}>
-						{other.name[0].toUpperCase() + other.name.slice(1)}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</div>
-</section>
+</div>
 
 <style>
 	.marked {
@@ -203,7 +195,7 @@
 				display: flex;
 				flex-direction: column;
 				gap: 0.75rem;
-				max-width: 36rem;
+				max-width: 40rem;
 
 				label {
 					color: var(--fg);
@@ -324,6 +316,14 @@
 					font-size: 3.5rem;
 				}
 			}
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.primary-wrapper {
+			display: grid;
+			grid-template-columns: 1fr 20rem;
+			gap: 10rem;
 		}
 	}
 </style>

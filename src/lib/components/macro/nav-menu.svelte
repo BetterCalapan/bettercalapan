@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { NavigationMenu } from 'bits-ui';
-	import { resolve } from '$app/paths';
-	import { legislatives } from '$lib/data/data';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
@@ -12,9 +10,7 @@
 	<NavigationMenu.List class="page-section-list">
 		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Trigger class="page-section-trigger">
-				<a href={resolve('/services')} onclick={(e) => e.stopPropagation()}>
-					Services <ChevronDown /></a
-				>
+				Services <ChevronDown />
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
@@ -30,9 +26,7 @@
 
 		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Trigger class="page-section-trigger">
-				<a href={resolve('/government')} onclick={(e) => e.stopPropagation()}>
-					Government <ChevronDown /></a
-				>
+				Government <ChevronDown />
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
@@ -47,36 +41,18 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Trigger class="page-section-trigger">
-				<a href={resolve('/legislative')} onclick={(e) => e.stopPropagation()}>
-					Legislative <ChevronDown /></a
-				>
-			</NavigationMenu.Trigger>
-			<NavigationMenu.Content class="page-section-content">
-				<ul>
-					{#each legislatives as legislative (legislative.name)}
-						{@render navItem({
-							name: legislative.name,
-							url: legislative.url
-						})}
-					{/each}
-				</ul>
-			</NavigationMenu.Content>
-		</NavigationMenu.Item>
-
-		<NavigationMenu.Item>
 			<NavigationMenu.Link class="page-section-link" href="/statistics"
 				>Statistics</NavigationMenu.Link
 			>
 		</NavigationMenu.Item>
 
-		<NavigationMenu.Item>
+		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Link class="page-section-link" href="/transparency"
 				>Transparency</NavigationMenu.Link
 			>
 		</NavigationMenu.Item>
 
-		<NavigationMenu.Item>
+		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Link class="page-section-link" href="/contact">Contact</NavigationMenu.Link>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>
@@ -98,19 +74,25 @@
 		}
 		:global(.page-section-item) {
 			position: relative;
+			display: grid;
+			place-items: center;
 		}
 		:global(.page-section-trigger),
 		:global(.page-section-link) {
+			min-height: 40px;
 			background: none;
 			border: none;
-			font-weight: 600;
-		}
-		:global(.page-section-trigger a) {
 			display: inline-flex;
 			align-items: center;
+			font-weight: 600;
+		}
+		:global(.page-section-trigger) {
+			padding: 0;
+			min-width: 48px;
+			justify-content: center;
 			gap: 0.75rem;
 		}
-		:global(.page-section-trigger a:hover),
+		:global(.page-section-trigger:hover),
 		:global(.page-section-link:hover) {
 			text-decoration: underline;
 		}
@@ -118,7 +100,7 @@
 			padding: 1.25rem 1.5rem;
 			width: max-content;
 			position: absolute;
-			top: calc(100% + 8px);
+			top: calc(100%);
 			left: 0;
 			background-color: var(--neutral-3);
 			border-radius: 2rem;

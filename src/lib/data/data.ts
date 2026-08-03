@@ -1,4 +1,4 @@
-import type { Link, ExternalLink } from '$lib/types/link.types';
+import type { ExternalLink } from '$lib/types/link.types';
 
 export const bettergovProjects: ExternalLink[] = [
 	{
@@ -24,18 +24,6 @@ export const bettergovProjects: ExternalLink[] = [
 	{
 		name: 'Philgeps Tracker',
 		url: 'https://philgeps.bettergov.ph/'
-	}
-];
-
-const legislativePrefix = '/(app)/legislative';
-export const legislatives: Link[] = [
-	{
-		name: 'Ordinance',
-		url: legislativePrefix
-	},
-	{
-		name: 'Resolution',
-		url: legislativePrefix
 	}
 ];
 

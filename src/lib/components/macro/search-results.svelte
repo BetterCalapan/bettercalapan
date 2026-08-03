@@ -16,7 +16,7 @@
 		{#if results.length == 0}
 			<p>No result found. Check spelling or try different keywords.</p>
 		{:else}
-			{#each results as result (result.item.url)}
+			{#each results.slice(0, 5) as result (result.item.url)}
 				<a class="result" href={resolve(result.item.url)}>
 					<ArrowRight />
 					{result.item.title}</a

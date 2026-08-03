@@ -15,10 +15,6 @@ export const pageSections: PageSection[] = [
 		url: '/(app)/government'
 	},
 	{
-		name: 'legislative',
-		url: '/(app)/legislative'
-	},
-	{
 		name: 'statistics',
 		url: '/(app)/statistics'
 	},

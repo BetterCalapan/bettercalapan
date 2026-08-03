@@ -2,6 +2,23 @@
 	import logo from '$lib/assets/logo.svg';
 	import NavigationMenu from './nav-menu.svelte';
 	import NavigationMenuMobile from './nav-menu-mobile.svelte';
+	import Search from '@lucide/svelte/icons/search';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import { goto } from '$app/navigation';
+
+	let showSearchInput = $state(false);
+
+	function handlerSearchButton() {
+		showSearchInput = !showSearchInput;
+	}
+
+	let inputValue = $state('');
+	function handlerSearchInput(e: SubmitEvent) {
+		e.preventDefault();
+		showSearchInput = !showSearchInput;
+		inputValue = '';
+		goto('/search');
+	}
 </script>
 
 <header>
@@ -10,8 +27,24 @@
 			<img src={logo} alt="BetterCalapan logo" width="32" height="32" />
 			<h1>BetterCalapan</h1>
 		</div>
-		<NavigationMenuMobile />
-		<NavigationMenu />
+		<div class="right">
+			<NavigationMenuMobile />
+			<NavigationMenu />
+			<button class="search-button" aria-label="Toggle search input" onclick={handlerSearchButton}>
+				<Search />
+			</button>
+			<form
+				class="search-input-wrapper"
+				class:open={showSearchInput}
+				inert={!showSearchInput}
+				onsubmit={handlerSearchInput}
+			>
+				<input class="search-input" type="text" bind:value={inputValue} />
+				<button type="submit" class="search-input-button" aria-label="Search button">
+					<ArrowRight />
+				</button>
+			</form>
+		</div>
 	</div>
 </header>
 
@@ -29,6 +62,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+
 			.left {
 				display: grid;
 				grid-template-columns: 40px 1fr;
@@ -45,6 +79,110 @@
 				}
 			}
 
+			.right {
+				position: relative;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+
+				.search-button {
+					padding: 0.25rem;
+					width: 32px;
+					aspect-ratio: 1 / 1;
+					background: none;
+					border-radius: 50%;
+					border: none;
+					display: grid;
+					place-items: center;
+					transition: background-color 0.3s ease;
+
+					&:hover {
+						background-color: var(--neutral-3);
+					}
+
+					:global(svg) {
+						aspect-ratio: 1 / 1;
+						width: 18px;
+					}
+				}
+
+				.search-input-wrapper {
+					padding: 0 1.25rem;
+					height: 52px;
+					position: absolute;
+					top: 2.5rem;
+					right: 0;
+					display: grid;
+					grid-template-columns: 1fr 20px;
+					gap: 0.25rem;
+					align-items: center;
+					background-color: var(--neutral-3);
+					border: none;
+					border-radius: 2rem;
+					font-size: 1.125rem;
+					transform-origin: top left;
+					opacity: 0;
+					visibility: hidden;
+					pointer-events: none;
+					transform: translateY(-4px) scale(0.98);
+					transition:
+						opacity 120ms ease-in,
+						transform 120ms ease-in,
+						visibility 0s linear 120ms;
+
+					&.open {
+						opacity: 1;
+						visibility: visible;
+						pointer-events: auto;
+						transform: translateY(0) scale(1);
+						transition:
+							opacity 160ms ease-out,
+							transform 160ms ease-out,
+							visibility 0s;
+					}
+
+					.search-input {
+						background: none;
+						border: none;
+						display: flex;
+					}
+
+					.search-input-button {
+						padding: 0;
+						display: grid;
+						place-items: center;
+						width: 20px;
+						border: none;
+
+						:global(svg) {
+							width: 20px;
+							height: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		header .wrapper .right .search-input-wrapper,
+		header .wrapper .right .search-input-wrapper.open {
+			transition: none;
+		}
+	}
+
+	@media (min-width: 900px) {
+		header {
+			.wrapper {
+				.right {
+					gap: 1.5rem;
+
+					.search-input-wrapper {
+						position: absolute;
+						top: 3rem;
+					}
+				}
+			}
 		}
 	}
 </style>

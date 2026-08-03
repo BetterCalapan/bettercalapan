@@ -33,6 +33,10 @@
 		display: flex;
 		gap: 2rem;
 	}
+	:global(.page-section-mobile-trigger) {
+		display: grid;
+		place-items: center;
+	}
 	:global(.page-section-mobile-trigger),
 	:global(.page-section-mobile-link) {
 		background: none;
@@ -52,8 +56,9 @@
 		padding: 1.25rem 1.5rem;
 		width: calc(100dvw - 2rem);
 		position: absolute;
-		top: calc(100%);
-		left: 1rem;
+		top: calc(100% + 0.5rem);
+		left: auto;
+		right: 0;
 		background-color: var(--neutral-3);
 		border-radius: 2rem;
 		box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
