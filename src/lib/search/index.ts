@@ -278,5 +278,15 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 			'services',
 			'business'
 		]
+	},
+	{
+		title: 'Statistics',
+		url: '/(app)/statistics',
+		keywords: ['statistics']
+	},
+	{
+		title: 'Contact',
+		url: '/(app)/contact',
+		keywords: ['contact']
 	}
 ];
