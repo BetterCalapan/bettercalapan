@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { AreaChart, defaultChartPadding, type ChartResizeDetail } from 'layerchart';
 
+	let { interactive = true }: { interactive?: boolean } = $props();
+
 	const populationGrowth = [
 		{ year: 2020, population: 146_000 },
 		{ year: 2021, population: 147_100 },
@@ -59,18 +61,21 @@
 			y: gridLineStyle,
 			yTicks: populationTicks.slice(1)
 		}}
-		highlight={{
-			axis: 'x',
-			lines: {
-				stroke: 'var(--accent)',
-				strokeWidth: 1.5,
-				dashArray: [2, 6]
-			},
-			points: {
-				stroke: 'var(--accent)',
-				strokeWidth: 7
-			}
-		}}
+		highlight={interactive
+			? {
+					axis: 'x',
+					lines: {
+						stroke: 'var(--accent)',
+						strokeWidth: 1.5,
+						dashArray: [2, 6]
+					},
+					points: {
+						stroke: 'var(--accent)',
+						strokeWidth: 7
+					}
+				}
+			: false}
+		tooltipContext={interactive}
 		points={{
 			data: compactChart ? compactPopulationGrowth : populationGrowth,
 			r: compactChart ? 4 : 6,

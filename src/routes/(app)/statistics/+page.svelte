@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { info } from '$lib/snippets/info.snippet.svelte';
 	import { source } from '$lib/snippets/source.snippet.svelte';
-	import PopulationGrowthChart from './population-growth-chart.svelte';
+	import DeferredChart from './deferred-chart.svelte';
+
+	const loadPopulationGrowthChart = () => import('./population-growth-chart.svelte');
+	const loadPopulationDistributionChart = () => import('./population-distribution-chart.svelte');
+	const loadCompetitivenessChart = () => import('./competitiveness-chart.svelte');
 </script>
 
 <div class="primary-wrapper">
@@ -51,15 +55,28 @@
 	</div>
 	<div class="section growth">
 		<h2>Growth</h2>
-		<PopulationGrowthChart />
+		<DeferredChart
+			load={loadPopulationGrowthChart}
+			mobileHeight={368}
+			label="Loading population growth chart"
+		/>
 	</div>
 	<div class="section distribution">
 		<h2>Distribution</h2>
-		<p>Show a really cool graph of population distribution by barangay here.</p>
+		<DeferredChart
+			load={loadPopulationDistributionChart}
+			mobileHeight={408}
+			label="Loading population distribution chart"
+		/>
 	</div>
 	<div class="section competitiveness">
 		<h2>Competitiveness</h2>
-		<p>Show a really cool graph of city competitiveness here.</p>
+		<DeferredChart
+			load={loadCompetitivenessChart}
+			mobileHeight={470}
+			desktopHeight={494}
+			label="Loading competitiveness chart"
+		/>
 	</div>
 </div>
 

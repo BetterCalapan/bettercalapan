@@ -63,7 +63,13 @@ html {
 	--bg: oklch(0.99 0.01 95);
 	--accent: oklch(0.68 0.22 39);
 	--accent-alt: oklch(0.55 0.22 39);
+	--accent-light: oklch(0.8 0.22 39);
 	--green: oklch(0.5 0.22 145);
+	--chart-blue: #72a5f2;
+	--chart-purple: #c19bff;
+	--chart-yellow: #ffd96e;
+	--chart-green: #79ae6f;
+	--gray: oklch(0.83 0.01 54.5);
 	--neutral-1: oklch(0.91 0.02 75);
 	--neutral-2: oklch(0.87 0.01 54.5);
 	--neutral-3: oklch(0.94 0.003 48.7);
