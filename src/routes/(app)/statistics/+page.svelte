@@ -1,1 +1,102 @@
-Statistics page.
+<script lang="ts">
+	import { info } from '$lib/snippets/info.snippet.svelte';
+	import { source } from '$lib/snippets/source.snippet.svelte';
+	import PopulationGrowthChart from './population-growth-chart.svelte';
+</script>
+
+<div class="primary-wrapper">
+	{@render info('Statistics', 'Data and statistics about Calapan City.')}
+	<div class="section general">
+		<h2>General</h2>
+		<div class="content">
+			<div class="population">
+				<p class="count">145,786</p>
+				<p class="label">Population</p>
+			</div>
+			<div class="barangays">
+				<p class="count">62</p>
+				<p class="label">Barangays</p>
+			</div>
+			<div class="land-area">
+				<p class="count">32.69</p>
+				<p class="label">Land Area (km<sup>2</sup>)</p>
+			</div>
+			<div class="income-class">
+				<p class="count">2nd class</p>
+				<p class="label">Income Class</p>
+			</div>
+		</div>
+	</div>
+	<div class="section city-income">
+		<h2>City Income</h2>
+		<div class="content">
+			<div class="annual-income">
+				<p class="count">₱1.47B</p>
+				<p class="label">Annual Income</p>
+			</div>
+			<div class="nta-share">
+				<p class="count">₱1.17B</p>
+				<p class="label">National Tax Allotment</p>
+			</div>
+			<div class="nta-dependency">
+				<p class="count">79.4%</p>
+				<p class="label">NTA Dependency</p>
+			</div>
+		</div>
+		{@render source(
+			'Source from',
+			'Bureau of Local Government Finance',
+			'https://blgf.gov.ph/lgu-fiscal-data/'
+		)}
+	</div>
+	<div class="section growth">
+		<h2>Growth</h2>
+		<PopulationGrowthChart />
+	</div>
+	<div class="section distribution">
+		<h2>Distribution</h2>
+		<p>Show a really cool graph of population distribution by barangay here.</p>
+	</div>
+	<div class="section competitiveness">
+		<h2>Competitiveness</h2>
+		<p>Show a really cool graph of city competitiveness here.</p>
+	</div>
+</div>
+
+<style>
+	.primary-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		.section {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+
+			.content {
+				margin-bottom: 1rem;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+				gap: 1rem;
+
+				div {
+					background-color: var(--neutral-1);
+					padding: 1.5rem;
+					border-radius: 2rem;
+
+					.count {
+						font-size: 2rem;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 900px) {
+		h2 {
+			font-size: 2rem;
+		}
+	}
+</style>

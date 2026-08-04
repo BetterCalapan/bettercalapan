@@ -3,14 +3,18 @@
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
+	import { resolve } from '$app/paths';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 </script>
 
 <NavigationMenu.Root class="page-section-root">
 	<NavigationMenu.List class="page-section-list">
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Trigger class="page-section-trigger">
-				Services <ChevronDown />
+			<NavigationMenu.Link class="page-section-link" href={resolve('/(app)/services')}>
+				Services
+			</NavigationMenu.Link>
+			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Services menu">
+				<ChevronDown />
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
@@ -25,8 +29,11 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Trigger class="page-section-trigger">
-				Government <ChevronDown />
+			<NavigationMenu.Link class="page-section-link" href={resolve('/(app)/government')}>
+				Government
+			</NavigationMenu.Link>
+			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Government menu">
+				<ChevronDown />
 			</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="page-section-content">
 				<ul>
@@ -74,8 +81,8 @@
 		}
 		:global(.page-section-item) {
 			position: relative;
-			display: grid;
-			place-items: center;
+			display: flex;
+			align-items: center;
 		}
 		:global(.page-section-trigger),
 		:global(.page-section-link) {
@@ -88,9 +95,8 @@
 		}
 		:global(.page-section-trigger) {
 			padding: 0;
-			min-width: 48px;
+			min-width: 40px;
 			justify-content: center;
-			gap: 0.75rem;
 		}
 		:global(.page-section-trigger:hover),
 		:global(.page-section-link:hover) {

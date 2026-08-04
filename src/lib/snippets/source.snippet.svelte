@@ -28,7 +28,7 @@
 		gap: 0.75rem;
 
 		:global(.icon) {
-			margin-top: 0.25rem;
+			margin-top: 0.125rem;
 		}
 
 		:global(.source-link) {
