@@ -7,6 +7,10 @@
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 </script>
 
+<svelte:head>
+	<link rel="canonical" href="https://bettercalapan.org/" />
+</svelte:head>
+
 <div class="primary-wrapper">
 	<div class="left">
 		<section class="hero">
@@ -18,7 +22,7 @@
 				</h1>
 				<div class="search">
 					<label for="search">Search</label>
-					<SearchInput term={''} showResults={false} />
+					<SearchInput term="" showResults={false} />
 				</div>
 			</div>
 		</section>
