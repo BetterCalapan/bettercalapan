@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { resolveRoute } from '$lib/utils/paths';
 	import { getResults } from '$lib/search/search';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
@@ -17,7 +17,7 @@
 			<p>No result found. Check spelling or try different keywords.</p>
 		{:else}
 			{#each results.slice(0, 5) as result (result.item.url)}
-				<a class="result" href={resolve(result.item.url)}>
+				<a class="result" href={resolveRoute(result.item.url)}>
 					<ArrowRight />
 					{result.item.title}</a
 				>

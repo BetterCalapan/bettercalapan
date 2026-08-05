@@ -1,6 +1,6 @@
 <script module lang="ts">
 	import type { RouteId } from '$app/types';
-	import { resolve } from '$app/paths';
+	import { resolveRoute } from '$lib/utils/paths';
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	export { listItem };
@@ -12,7 +12,7 @@
 	<li class="item">
 		<a
 			class="link"
-			href={external ? url : resolve(url as RouteId)}
+			href={external ? url : resolveRoute(url)}
 			target={external ? '_blank' : undefined}
 			rel={external ? 'noopener noreferrer' : undefined}
 		>
@@ -25,14 +25,12 @@
 {/snippet}
 
 <style>
-	/* NOTE: styles of exported snippets are stripped in build, a workaround is doing :global() */
-	/* REF: https://github.com/sveltejs/svelte/issues/16404 */
 	:global(.item) {
 		width: 100%;
-		border-bottom: 1px dotted var(--fg);
+		border-bottom: 1px solid var(--bg);
 
 		:global(&:hover) {
-			border-bottom: 1px solid;
+			border-color: var(--fg);
 		}
 
 		:global(.link) {

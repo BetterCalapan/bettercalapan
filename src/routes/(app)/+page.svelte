@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { resolveRoute } from '$lib/utils/paths';
 	import SearchInput from '$lib/components/macro/search-input.svelte';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
@@ -46,7 +47,7 @@
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/tax-payments')}>Real property tax</a>
+					<a href={resolve('/(app)/services')}>Real property tax</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
@@ -76,7 +77,7 @@
 				<ul class="services-list">
 					{#each services.data as service (service.name)}
 						<li class="service">
-							<a class="link" href={resolve(service.url)}>
+							<a class="link" href={resolveRoute(service.url)}>
 								{service.name}
 							</a>
 						</li>
@@ -89,7 +90,7 @@
 					<ul class="government-list">
 						{#each government.data as gov (gov.name)}
 							<li class="government">
-								<a class="link" href={resolve(gov.url)}>
+								<a class="link" href={resolveRoute(gov.url)}>
 									{gov.name}
 								</a>
 							</li>
@@ -102,7 +103,7 @@
 				<ul class="others-list">
 					{#each pageSections.slice(2) as other (other.name)}
 						<li class="other">
-							<a class="link" href={resolve(other.url)}>
+							<a class="link" href={resolveRoute(other.url)}>
 								{other.name[0].toUpperCase() + other.name.slice(1)}
 							</a>
 						</li>
@@ -114,6 +115,9 @@
 </div>
 
 <style>
+	.right {
+		margin-top: 3rem;
+	}
 	.marked {
 		width: fit-content;
 		padding: 0px 12px;
