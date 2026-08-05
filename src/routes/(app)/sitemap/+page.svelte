@@ -84,10 +84,6 @@
 		{
 			name: 'Accessibility',
 			url: `${prefix}/accessibility`
-		},
-		{
-			name: 'FAQ',
-			url: `${prefix}/faq`
 		}
 	];
 </script>

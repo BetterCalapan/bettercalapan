@@ -1,10 +1,26 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { bettergovProjects, resources } from '$lib/data/data';
+	import { resources } from '$lib/data/data';
 	import { government } from '$lib/data/government.data';
 	import { services } from '$lib/data/services.data';
 	import Facebook from '$lib/icons/facebook.svelte';
 	import GitHub from '$lib/icons/github.svelte';
+
+	const prefix = '/(app)';
+	const others = [
+		{
+			name: 'Terms of Use',
+			url: `${prefix}/terms-of-use`
+		},
+		{
+			name: 'Privacy Policy',
+			url: `${prefix}/privacy-policy`
+		},
+		{
+			name: 'Accessibility',
+			url: `${prefix}/accessibility`
+		}
+	];
 </script>
 
 <footer>
@@ -77,16 +93,11 @@
 				</ul>
 			</div>
 			<div class="footer-section">
-				<h1>BetterGov</h1>
+				<h1>Others</h1>
 				<ul class="footer-section-list">
-					{#each bettergovProjects as bettergovProject (bettergovProject.name)}
-						<li class="bettergov">
-							<a
-								class="link"
-								href={bettergovProject.url}
-								target="_blank"
-								rel="external noopener noreferrer">{bettergovProject.name}</a
-							>
+					{#each others as other (other.name)}
+						<li class="other">
+							<a class="link" href={resolve(other.url)}>{other.name}</a>
 						</li>
 					{/each}
 				</ul>
