@@ -290,6 +290,21 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 		keywords: ['contact']
 	},
 	{
+		title: 'Terms of Use',
+		url: '/(app)/terms-of-use',
+		keywords: ['terms of use, conditions']
+	},
+	{
+		title: 'Privacy Policy',
+		url: '/(app)/privacy-policy',
+		keywords: ['privacy policy']
+	},
+	{
+		title: 'Accessibility',
+		url: '/(app)/accessibility',
+		keywords: ['accessibility']
+	},
+	{
 		title: 'Sitemap',
 		url: '/(app)/sitemap',
 		keywords: ['sitemap']

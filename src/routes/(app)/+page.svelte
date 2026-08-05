@@ -100,7 +100,7 @@
 			<div class="others">
 				<h1 class="heading">Others</h1>
 				<ul class="others-list">
-					{#each pageSections.slice(3) as other (other.name)}
+					{#each pageSections.slice(2) as other (other.name)}
 						<li class="other">
 							<a class="link" href={resolve(other.url)}>
 								{other.name[0].toUpperCase() + other.name.slice(1)}
