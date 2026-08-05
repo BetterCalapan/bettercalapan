@@ -288,5 +288,10 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 		title: 'Contact',
 		url: '/(app)/contact',
 		keywords: ['contact']
+	},
+	{
+		title: 'Sitemap',
+		url: '/(app)/sitemap',
+		keywords: ['sitemap']
 	}
 ];

@@ -6,9 +6,16 @@
 	export { listItem };
 </script>
 
-{#snippet listItem(name: string, url: RouteId)}
+{#snippet listItem(name: string, url: RouteId | string)}
+	{@const external = url.startsWith('http')}
+
 	<li class="item">
-		<a class="link" href={resolve(url)}>
+		<a
+			class="link"
+			href={external ? url : resolve(url as RouteId)}
+			target={external ? '_blank' : undefined}
+			rel={external ? 'noopener noreferrer' : undefined}
+		>
 			<div class="icon">
 				<ArrowRight />
 			</div>

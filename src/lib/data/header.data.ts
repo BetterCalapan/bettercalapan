@@ -5,25 +5,22 @@ type PageSection = {
 	url: RouteId;
 };
 
+const prefix = '/(app)';
 export const pageSections: PageSection[] = [
 	{
 		name: 'services',
-		url: '/(app)/services'
+		url: `${prefix}/services`
 	},
 	{
 		name: 'government',
-		url: '/(app)/government'
+		url: `${prefix}/government`
 	},
 	{
 		name: 'statistics',
-		url: '/(app)/statistics'
-	},
-	{
-		name: 'transparency',
-		url: '/(app)/transparency'
+		url: `${prefix}/statistics`
 	},
 	{
 		name: 'contact',
-		url: '/(app)/contact'
+		url: `${prefix}/contact`
 	}
 ];

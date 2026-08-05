@@ -25,7 +25,7 @@
 			<div class="socials">
 				<a
 					class="social"
-					href="https://facebook.com"
+					href="https://facebook.com/bettercalapan.org"
 					target="_blank"
 					rel="external noopener noreferrer"
 					aria-label="Go to Facebook page"
@@ -34,7 +34,7 @@
 				</a>
 				<a
 					class="social"
-					href="https://github.com/arvingarciabtw/bettercalapan"
+					href="https://github.com/BetterCalapan/bettercalapan"
 					target="_blank"
 					rel="external noopener noreferrer"
 					aria-label="Go to GitHub repository"
@@ -50,21 +50,6 @@
 					{#each services.data as service (service.name)}
 						<li class="service">
 							<a href={resolve(service.url)} class="link">{service.name}</a>
-						</li>
-					{/each}
-				</ul>
-			</div>
-			<div class="footer-section">
-				<h1>BetterGov</h1>
-				<ul class="footer-section-list">
-					{#each bettergovProjects as bettergovProject (bettergovProject.name)}
-						<li class="bettergov">
-							<a
-								class="link"
-								href={bettergovProject.url}
-								target="_blank"
-								rel="external noopener noreferrer">{bettergovProject.name}</a
-							>
 						</li>
 					{/each}
 				</ul>
@@ -91,6 +76,21 @@
 					{/each}
 				</ul>
 			</div>
+			<div class="footer-section">
+				<h1>BetterGov</h1>
+				<ul class="footer-section-list">
+					{#each bettergovProjects as bettergovProject (bettergovProject.name)}
+						<li class="bettergov">
+							<a
+								class="link"
+								href={bettergovProject.url}
+								target="_blank"
+								rel="external noopener noreferrer">{bettergovProject.name}</a
+							>
+						</li>
+					{/each}
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="wrapper-bottom">
@@ -110,7 +110,7 @@
 			<div class="links">
 				<a
 					class="link"
-					href="https://github.com/arvingarciabtw/bettercalapan"
+					href="https://github.com/BetterCalapan/bettercalapan"
 					target="_blank"
 					rel="external noopener noreferrer"
 				>

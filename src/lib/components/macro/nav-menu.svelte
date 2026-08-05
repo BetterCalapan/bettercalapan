@@ -54,12 +54,6 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href="/transparency"
-				>Transparency</NavigationMenu.Link
-			>
-		</NavigationMenu.Item>
-
-		<NavigationMenu.Item class="page-section-item">
 			<NavigationMenu.Link class="page-section-link" href="/contact">Contact</NavigationMenu.Link>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>

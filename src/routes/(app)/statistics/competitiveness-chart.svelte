@@ -307,8 +307,9 @@
 	}
 
 	figcaption {
+		padding-bottom: 0.75rem;
 		margin-top: 0.5rem;
-		color: var(--fg-alt);
+		color: var(--fg);
 		font-size: 0.75rem;
 		text-align: center;
 	}
