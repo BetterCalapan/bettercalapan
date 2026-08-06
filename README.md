@@ -1,42 +1,83 @@
-# sv
+![Banner](./static/og-image.png)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# Overview
 
-## Creating a project
+BetterCalapan is an open-source community-driven platform that makes Calapan's government information and public services more accessible, transparent, and easy to navigate. This platform is focused on providing great UX, accessibility, and performance. It is a localized subset of one of BetterGov's projects, [BetterLGU](https://lgu.bettergov.ph/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+Check the portal out at [bettercalapan.org](https://bettercalapan.org/)! 🧡
 
-```sh
-# create a new project
-npx sv create my-app
+> [!NOTE]  
+> The platform is currently in beta. Versions >= 0.1.x are usable for the public, but 1.0.0 won't come until the codebase lives up to the platform's philosophy of great UX, accessibility, and performance. We want to make this as best as it can be!
+
+## Tech Stack
+
+| Tool               | Purpose         |
+| ------------------ | --------------- |
+| SvelteKit          | Framework       |
+| TypeScript         | Type Safety     |
+| Vite               | Build Tool      |
+| Vanilla CSS        | Styling         |
+| ESLint             | Linting         |
+| Prettier           | Formatting      |
+| PNPM               | Package Manager |
+| Cloudflare Workers | Hosting         |
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/bettercalapan/portal.git
+cd portal
+
+# Install dependencies (requires pnpm)
+pnpm install
+
+# Start dev server
+pnpm dev
+
+# Build for production
+pnpm gen
+pnpm build
+
+# Preview the build
+pnpm preview
+
+# Lint & format
+pnpm lint
+pnpm check
+
+# Run tests
+pnpm test
 ```
 
-To recreate this project with the same configuration:
+**Don't have pnpm?** See the [installation](https://pnpm.io/installation).
 
-```sh
-# recreate this project
-pnpm dlx sv@0.16.6 create --template minimal --types ts --add prettier eslint vitest="usages:component,unit" sveltekit-adapter="adapter:cloudflare+cfTarget:workers" --install pnpm .
-```
+<!-- TODO: add automated Lighthouse checks here once implemented. -->
 
-## Developing
+<!-- TODO: add automated accessibility checks here once implemented. -->
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Contributing
 
-```sh
-npm run dev
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+**Quick ways to help:**
 
-## Building
+- Report bugs via [GitHub Issues](https://github.com/bettercalapan/portal/issues)
+- Update outdated info (officials, fees, contacts)
+- Add translations (Filipino, Mangyan languages)
+- Submit new features via PR
 
-To create a production version of your app:
+## Data Sources
 
-```sh
-npm run build
-```
+| Source                                                                     | Data                                     |
+| -------------------------------------------------------------------------- | ---------------------------------------- |
+| [cityofcalapan.gov.ph](https://cityofcalapan.gov.ph)                       | Departments, barangays, and contact info |
+| [PSA](https://psa.gov.ph)                                                  | Population and census data               |
+| [Bureau of Local Government Finance](https://blgf.gov.ph/lgu-fiscal-data/) | City income and fiscal data              |
+| [Cities and Municipalities Competitiveness Index](https://cmci.dti.gov.ph) | Competitiveness indicators               |
 
-You can preview the production build with `npm run preview`.
+Data comes from public government records and is reviewed for accuracy. Spotted something outdated or wrong? Report it via [GitHub Issues](https://github.com/bettercalapan/portal/issues).
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## License
+
+GNU GPL v3.0 License. See [LICENSE](LICENSE) for more details.
