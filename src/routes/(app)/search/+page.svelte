@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import SearchInput from '$lib/components/macro/search-input.svelte';
-	import { getResults } from '$lib/search/search';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+	import { page } from "$app/state";
+	import SearchInput from "$lib/components/macro/search-input.svelte";
+	import { getResults } from "$lib/search/search";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 
-	const term = $derived(page.url.searchParams.get('term')!.split('+').join(' '));
+	const term = $derived(page.url.searchParams.get("term")!.split("+").join(" "));
 	let results = $derived(getResults(term));
 </script>
 

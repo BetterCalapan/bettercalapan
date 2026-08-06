@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { source } from '$lib/snippets/source.snippet.svelte';
-	import DeferredChart from './deferred-chart.svelte';
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { source } from "$lib/snippets/source.snippet.svelte";
+	import DeferredChart from "./deferred-chart.svelte";
 
-	const loadPopulationGrowthChart = () => import('./population-growth-chart.svelte');
-	const loadPopulationDistributionChart = () => import('./population-distribution-chart.svelte');
-	const loadCompetitivenessChart = () => import('./competitiveness-chart.svelte');
+	const loadPopulationGrowthChart = () => import("./population-growth-chart.svelte");
+	const loadPopulationDistributionChart = () => import("./population-distribution-chart.svelte");
+	const loadCompetitivenessChart = () => import("./competitiveness-chart.svelte");
 </script>
 
 <div class="primary-wrapper">
-	{@render info('Statistics', 'Data and statistics about Calapan City.')}
+	{@render info("Statistics", "Data and statistics about Calapan City.")}
 	<div class="section general">
 		<h2>General</h2>
 		<div class="content">
@@ -48,9 +48,9 @@
 			</div>
 		</div>
 		{@render source(
-			'Source from',
-			'Bureau of Local Government Finance',
-			'https://blgf.gov.ph/lgu-fiscal-data/'
+			"Source from",
+			"Bureau of Local Government Finance",
+			"https://blgf.gov.ph/lgu-fiscal-data/"
 		)}
 	</div>
 	<div class="section growth">

@@ -1,19 +1,19 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'Is there a fee for the Safety Seal?',
+			question: "Is there a fee for the Safety Seal?",
 			answer:
 				"No, the issuance of the Safety Seal Certificate is free of charge as part of the city's effort to support safe business operations."
 		},
 		{
-			question: 'How long is the processing time?',
-			answer: 'The total processing time from submission to issuance via email is 7 working days.'
+			question: "How long is the processing time?",
+			answer: "The total processing time from submission to issuance via email is 7 working days."
 		}
 	];
 </script>
@@ -24,13 +24,13 @@
 	{faq}
 	relatedServices={[
 		{
-			name: 'Business Permit',
-			url: '/(app)/services/business/business-permit'
+			name: "Business Permit",
+			url: "/(app)/services/business/business-permit"
 		},
-		{ name: 'Special Permit', url: '/(app)/services/business/special-permit' },
+		{ name: "Special Permit", url: "/(app)/services/business/special-permit" },
 		{
-			name: 'Business Status Certificate',
-			url: '/(app)/services/business/business-status-certificate'
+			name: "Business Status Certificate",
+			url: "/(app)/services/business/business-status-certificate"
 		}
 	]}
 >

@@ -1,20 +1,20 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'What is the purpose of this certification?',
+			question: "What is the purpose of this certification?",
 			answer:
-				'This certification is used to verify the legal status of a business entity registered in Calapan. It is accepted for legal, government, and private transactions.'
+				"This certification is used to verify the legal status of a business entity registered in Calapan. It is accepted for legal, government, and private transactions."
 		},
 		{
-			question: 'Why is access to business records limited?',
+			question: "Why is access to business records limited?",
 			answer:
-				'Pursuant to the Data Privacy Act of 2012 (RA 10173), the BPLO limits the data that can be accessed to protect the integrity and privacy of the information in its records.'
+				"Pursuant to the Data Privacy Act of 2012 (RA 10173), the BPLO limits the data that can be accessed to protect the integrity and privacy of the information in its records."
 		}
 	];
 </script>
@@ -25,13 +25,13 @@
 	{faq}
 	relatedServices={[
 		{
-			name: 'Business Permit',
-			url: '/(app)/services/business/business-permit'
+			name: "Business Permit",
+			url: "/(app)/services/business/business-permit"
 		},
-		{ name: 'Special Permit', url: '/(app)/services/business/special-permit' },
+		{ name: "Special Permit", url: "/(app)/services/business/special-permit" },
 		{
 			name: "Certified True Copy of Business License & Mayor's Permit",
-			url: '/(app)/services/business/ctc-business-license'
+			url: "/(app)/services/business/ctc-business-license"
 		}
 	]}
 >

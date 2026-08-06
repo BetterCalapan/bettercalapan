@@ -1,95 +1,95 @@
 <script lang="ts">
-	import type { Link, ExternalLink } from '$lib/types/link.types';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+	import type { Link, ExternalLink } from "$lib/types/link.types";
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 
-	const prefix = '/(app)';
+	const prefix = "/(app)";
 	const mainNavigation: Link[] = [
 		{
-			name: 'Home',
-			url: '/'
+			name: "Home",
+			url: "/"
 		},
 		{
-			name: 'Services',
+			name: "Services",
 			url: `${prefix}/services`
 		},
 		{
-			name: 'Government',
+			name: "Government",
 			url: `${prefix}/government`
 		},
 		{
-			name: 'Statistics',
+			name: "Statistics",
 			url: `${prefix}/statistics`
 		},
 		{
-			name: 'Contact',
+			name: "Contact",
 			url: `${prefix}/contact`
 		}
 	];
 
 	const services: Link[] = [
 		{
-			name: 'Certificates',
+			name: "Certificates",
 			url: `${prefix}/services/certificates`
 		},
 		{
-			name: 'Business',
+			name: "Business",
 			url: `${prefix}/services/business`
 		}
 	];
 
 	const government: Link[] = [
 		{
-			name: 'Officials',
+			name: "Officials",
 			url: `${prefix}/government/officials`
 		},
 		{
-			name: 'Departments',
+			name: "Departments",
 			url: `${prefix}/government/departments`
 		},
 		{
-			name: 'Barangays',
+			name: "Barangays",
 			url: `${prefix}/government/barangays`
 		}
 	];
 
 	const externalResources: ExternalLink[] = [
 		{
-			name: 'Official Calapan Website',
-			url: 'https://cityofcalapan.gov.ph'
+			name: "Official Calapan Website",
+			url: "https://cityofcalapan.gov.ph"
 		},
 		{
-			name: 'Official Oriental Mindoro Website',
-			url: 'https://ormindoro.gov.ph'
+			name: "Official Oriental Mindoro Website",
+			url: "https://ormindoro.gov.ph"
 		},
 		{
-			name: 'Philippine Statistics Authority',
-			url: 'https://psa.gov.ph'
+			name: "Philippine Statistics Authority",
+			url: "https://psa.gov.ph"
 		},
 		{
-			name: 'Freedom of Information',
-			url: 'https://foi.gov.ph'
+			name: "Freedom of Information",
+			url: "https://foi.gov.ph"
 		}
 	];
 
 	const others: Link[] = [
 		{
-			name: 'Terms of Use',
+			name: "Terms of Use",
 			url: `${prefix}/terms-of-use`
 		},
 		{
-			name: 'Privacy Policy',
+			name: "Privacy Policy",
 			url: `${prefix}/privacy-policy`
 		},
 		{
-			name: 'Accessibility',
+			name: "Accessibility",
 			url: `${prefix}/accessibility`
 		}
 	];
 </script>
 
 <div class="page-wrapper">
-	{@render info('Sitemap', 'Navigate all pages and services of BetterCalapan.')}
+	{@render info("Sitemap", "Navigate all pages and services of BetterCalapan.")}
 	<div class="content">
 		<section class="main-navigation">
 			<h2>Main Navigation</h2>

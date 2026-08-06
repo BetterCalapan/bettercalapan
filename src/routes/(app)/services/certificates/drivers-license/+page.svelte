@@ -1,24 +1,24 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
+	import CertificatePage from "../certificate-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
 
 	const faq = [
 		{
-			question: 'Can I renew my license online?',
+			question: "Can I renew my license online?",
 			answer:
-				'Eligibility for online renewal depends on your license record. Check the Land Transportation Office online portal for current options.'
+				"Eligibility for online renewal depends on your license record. Check the Land Transportation Office online portal for current options."
 		},
 		{
-			question: 'Do I need a medical certificate?',
+			question: "Do I need a medical certificate?",
 			answer:
-				'A medical certificate from an LTO-accredited medical clinic may be required. Confirm current LTO requirements before your appointment.'
+				"A medical certificate from an LTO-accredited medical clinic may be required. Confirm current LTO requirements before your appointment."
 		},
 		{
-			question: 'Can I apply for a new license at the same office?',
+			question: "Can I apply for a new license at the same office?",
 			answer:
-				'New applications, renewals, and upgrades have different requirements. Confirm that your chosen LTO office handles your transaction.'
+				"New applications, renewals, and upgrades have different requirements. Confirm that your chosen LTO office handles your transaction."
 		}
 	];
 </script>
@@ -28,9 +28,9 @@
 	description="Apply for, renew, or update a driver's license through the Land Transportation Office."
 	{faq}
 	relatedServices={[
-		{ name: 'Police Clearance', url: '/(app)/services/certificates/police-clearance' },
-		{ name: 'Barangay ID', url: '/(app)/services/certificates/barangay-id' },
-		{ name: 'Barangay Clearance', url: '/(app)/services/certificates/barangay-clearance' }
+		{ name: "Police Clearance", url: "/(app)/services/certificates/police-clearance" },
+		{ name: "Barangay ID", url: "/(app)/services/certificates/barangay-id" },
+		{ name: "Barangay Clearance", url: "/(app)/services/certificates/barangay-clearance" }
 	]}
 >
 	{#snippet requirements()}

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import type { RouteId } from '$app/types';
-	import { resolve } from '$app/paths';
-	import Accordion from '$lib/components/macro/accordion.svelte';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+	import type { Snippet } from "svelte";
+	import type { RouteId } from "$app/types";
+	import { resolve } from "$app/paths";
+	import Accordion from "$lib/components/macro/accordion.svelte";
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 
 	type QnA = {
 		question: string;
@@ -59,7 +59,7 @@
 				</ul>
 			</div>
 			<div class="contact">
-				<p>Need help? <a href={resolve('/(app)/contact')}>Contact us</a>.</p>
+				<p>Need help? <a href={resolve("/(app)/contact")}>Contact us</a>.</p>
 			</div>
 		</div>
 	</div>

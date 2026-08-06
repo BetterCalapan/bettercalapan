@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { resolveRoute } from '$lib/utils/paths';
-	import SearchInput from '$lib/components/macro/search-input.svelte';
-	import { government } from '$lib/data/government.data';
-	import { services } from '$lib/data/services.data';
-	import { pageSections } from '$lib/data/header.data';
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import { resolve } from "$app/paths";
+	import { resolveRoute } from "$lib/utils/paths";
+	import SearchInput from "$lib/components/macro/search-input.svelte";
+	import { government } from "$lib/data/government.data";
+	import { services } from "$lib/data/services.data";
+	import { pageSections } from "$lib/data/header.data";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 </script>
 
 <svelte:head>
@@ -35,37 +35,37 @@
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/certificates/birth-certificate')}>Birth certificate</a>
+					<a href={resolve("/(app)/services/certificates/birth-certificate")}>Birth certificate</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/business')}>Business permit</a>
+					<a href={resolve("/(app)/services/business")}>Business permit</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services')}>Real property tax</a>
+					<a href={resolve("/(app)/services")}>Real property tax</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/certificates')}>Barangay clearance</a>
+					<a href={resolve("/(app)/services/certificates")}>Barangay clearance</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/certificates')}>Barangay ID</a>
+					<a href={resolve("/(app)/services/certificates")}>Barangay ID</a>
 				</div>
 				<div class="resource">
 					<div class="icon">
 						<ArrowRight />
 					</div>
-					<a href={resolve('/(app)/services/certificates')}>Driver's license</a>
+					<a href={resolve("/(app)/services/certificates")}>Driver's license</a>
 				</div>
 			</div>
 		</section>
@@ -128,7 +128,7 @@
 		white-space: nowrap;
 	}
 	.marked:before {
-		content: '';
+		content: "";
 		position: absolute;
 		inset: 0;
 		z-index: -1;

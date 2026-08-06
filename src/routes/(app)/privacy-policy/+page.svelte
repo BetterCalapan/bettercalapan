@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
-	import Info from '@lucide/svelte/icons/info';
+	import { resolve } from "$app/paths";
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
+	import Info from "@lucide/svelte/icons/info";
 
 	const relatedContent = [
 		{
-			name: 'Terms of Use',
-			url: '/(app)/terms-of-use'
+			name: "Terms of Use",
+			url: "/(app)/terms-of-use"
 		},
 		{
-			name: 'Accessibility',
-			url: '/(app)/accessibility'
+			name: "Accessibility",
+			url: "/(app)/accessibility"
 		}
 	];
 </script>
 
 <div class="page-wrapper">
 	{@render info(
-		'Privacy Policy',
-		'This policy explains how BetterCalapan handles information when you use bettercalapan.org.'
+		"Privacy Policy",
+		"This policy explains how BetterCalapan handles information when you use bettercalapan.org."
 	)}
 
 	<div class="content">
@@ -261,7 +261,7 @@
 					described here before or when the new processing begins.
 				</p>
 				<p>
-					Read our <a href={resolve('/(app)/terms-of-use')}>Terms of Use</a> for the rules that apply
+					Read our <a href={resolve("/(app)/terms-of-use")}>Terms of Use</a> for the rules that apply
 					when using BetterCalapan.
 				</p>
 			</section>

@@ -1,20 +1,20 @@
-import type { Link } from '$lib/types/link.types';
+import type { Link } from "$lib/types/link.types";
 
-const servicePrefix = '/(app)/services';
+const servicePrefix = "/(app)/services";
 export const services: {
 	heading: string;
 	description: string;
 	data: Link[];
 } = {
-	heading: 'Services',
-	description: 'See all the services offered in Calapan, divided into categories.',
+	heading: "Services",
+	description: "See all the services offered in Calapan, divided into categories.",
 	data: [
 		{
-			name: 'Certificates',
+			name: "Certificates",
 			url: `${servicePrefix}/certificates`
 		},
 		{
-			name: 'Business',
+			name: "Business",
 			url: `${servicePrefix}/business`
 		}
 	]
@@ -26,31 +26,31 @@ export const certificates: {
 	description: string;
 	data: Link[];
 } = {
-	heading: 'Certificates',
-	description: 'Official documents for birth, marriage, death, and other vital records.',
+	heading: "Certificates",
+	description: "Official documents for birth, marriage, death, and other vital records.",
 	data: [
 		{
-			name: 'Birth Certificate',
+			name: "Birth Certificate",
 			url: `${certificatePrefix}/birth-certificate`
 		},
 		{
-			name: 'Marriage Certificate',
+			name: "Marriage Certificate",
 			url: `${certificatePrefix}/marriage-certificate`
 		},
 		{
-			name: 'Death Certificate',
+			name: "Death Certificate",
 			url: `${certificatePrefix}/death-certificate`
 		},
 		{
-			name: 'Barangay Clearance',
+			name: "Barangay Clearance",
 			url: `${certificatePrefix}/barangay-clearance`
 		},
 		{
-			name: 'Barangay ID',
+			name: "Barangay ID",
 			url: `${certificatePrefix}/barangay-id`
 		},
 		{
-			name: 'Police Clearance',
+			name: "Police Clearance",
 			url: `${certificatePrefix}/police-clearance`
 		},
 		{
@@ -66,19 +66,19 @@ export const business: {
 	description: string;
 	data: Link[];
 } = {
-	heading: 'Business',
-	description: 'Business permits, licenses, and trade registration services.',
+	heading: "Business",
+	description: "Business permits, licenses, and trade registration services.",
 	data: [
 		{
-			name: 'Business Permit',
+			name: "Business Permit",
 			url: `${businessPrefix}/business-permit`
 		},
 		{
-			name: 'Special Permit',
+			name: "Special Permit",
 			url: `${businessPrefix}/special-permit`
 		},
 		{
-			name: 'Business Status Certificate',
+			name: "Business Status Certificate",
 			url: `${businessPrefix}/business-status-certificate`
 		},
 		{
@@ -86,11 +86,11 @@ export const business: {
 			url: `${businessPrefix}/ctc-business-license`
 		},
 		{
-			name: 'Occupational Permit',
+			name: "Occupational Permit",
 			url: `${businessPrefix}/occupational-permit`
 		},
 		{
-			name: 'Safety Seal Certificate',
+			name: "Safety Seal Certificate",
 			url: `${businessPrefix}/safety-seal-certificate`
 		}
 	]

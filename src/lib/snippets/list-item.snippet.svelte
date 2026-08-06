@@ -1,20 +1,20 @@
 <script module lang="ts">
-	import type { RouteId } from '$app/types';
-	import { resolveRoute } from '$lib/utils/paths';
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import type { RouteId } from "$app/types";
+	import { resolveRoute } from "$lib/utils/paths";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 
 	export { listItem };
 </script>
 
 {#snippet listItem(name: string, url: RouteId | string)}
-	{@const external = url.startsWith('http')}
+	{@const external = url.startsWith("http")}
 
 	<li class="item">
 		<a
 			class="link"
 			href={external ? url : resolveRoute(url)}
-			target={external ? '_blank' : undefined}
-			rel={external ? 'noopener noreferrer' : undefined}
+			target={external ? "_blank" : undefined}
+			rel={external ? "noopener noreferrer" : undefined}
 		>
 			<div class="icon">
 				<ArrowRight />

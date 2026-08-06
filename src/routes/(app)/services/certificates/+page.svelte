@@ -1,8 +1,8 @@
 <script>
-	import { resolve } from '$app/paths';
-	import { certificates } from '$lib/data/services.data';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+	import { resolve } from "$app/paths";
+	import { certificates } from "$lib/data/services.data";
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 </script>
 
 <div class="wrapper">
@@ -14,7 +14,7 @@
 	</ul>
 	<p class="office">
 		If you need any of these, head to the
-		<a class="link" href={resolve('/(app)/contact')}>City Civil Registry</a>
+		<a class="link" href={resolve("/(app)/contact")}>City Civil Registry</a>
 		and ask for what you need.
 	</p>
 </div>

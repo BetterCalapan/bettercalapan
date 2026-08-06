@@ -77,11 +77,11 @@ html {
 
 /* Fonts */
 @font-face {
-	font-family: 'figtree';
+	font-family: "figtree";
 	font-style: normal;
 	font-weight: 300 900;
 	font-display: block;
-	src: url('/figtree-variable.woff2') format('woff2');
+	src: url("/figtree-variable.woff2") format("woff2");
 }
 
 /* General */
@@ -97,7 +97,7 @@ body {
 	flex-direction: column;
 	align-content: center;
 	background-color: var(--bg);
-	font-family: 'figtree', sans-serif;
+	font-family: "figtree", sans-serif;
 }
 ul {
 	padding: 0;

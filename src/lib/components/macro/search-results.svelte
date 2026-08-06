@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { resolveRoute } from '$lib/utils/paths';
-	import { getResults } from '$lib/search/search';
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
+	import { resolveRoute } from "$lib/utils/paths";
+	import { getResults } from "$lib/search/search";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 
 	type Props = {
 		term: string;
@@ -18,7 +18,9 @@
 		{:else}
 			{#each results.slice(0, 5) as result (result.item.url)}
 				<a class="result" href={resolveRoute(result.item.url)}>
-					<ArrowRight />
+					<div class="icon">
+						<ArrowRight />
+					</div>
 					{result.item.title}</a
 				>
 			{/each}
@@ -39,13 +41,18 @@
 
 			.result {
 				width: max-content;
-				display: flex;
-				align-items: center;
+				max-width: 18rem;
+				display: grid;
+				grid-template-columns: 20px 1fr;
 				gap: 0.5rem;
 				border-bottom: 1px solid var(--neutral-3);
 
 				&:hover {
 					border-bottom: 1px solid var(--fg);
+				}
+
+				.icon {
+					margin-top: 0.125rem;
 				}
 			}
 		}

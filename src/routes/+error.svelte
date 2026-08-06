@@ -1,7 +1,7 @@
 <script>
-	import '../global.css';
-	import favicon from '$lib/assets/logo.png';
-	import { resolve } from '$app/paths';
+	import "../global.css";
+	import favicon from "$lib/assets/logo.png";
+	import { resolve } from "$app/paths";
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 		<p class="status-code">404</p>
 		<h1 class="status-msg">Page not found</h1>
 		<p class="description">The page doesn't exist or it might have been moved.</p>
-		<a class="go-back" href={resolve('/')}>Back to home</a>
+		<a class="go-back" href={resolve("/")}>Back to home</a>
 	</div>
 </main>
 

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { curveMonotoneX } from 'd3-shape';
+	import { curveMonotoneX } from "d3-shape";
 	import {
 		LineChart,
 		defaultChartPadding,
 		type ChartResizeDetail,
 		type ChartState
-	} from 'layerchart';
+	} from "layerchart";
 
 	let { interactive = true }: { interactive?: boolean } = $props();
 
@@ -18,8 +18,8 @@
 		lguInvestment: number;
 	};
 
-	const STORAGE_KEY = 'bettercalapan:competitiveness:selected-series';
-	const seriesKeys = ['peaceAndOrder', 'socialProtection', 'education', 'health', 'lguInvestment'];
+	const STORAGE_KEY = "bettercalapan:competitiveness:selected-series";
+	const seriesKeys = ["peaceAndOrder", "socialProtection", "education", "health", "lguInvestment"];
 	const competitiveness: CompetitivenessDatum[] = [
 		{
 			year: 2014,
@@ -116,13 +116,13 @@
 	const yearTicks = competitiveness.map(({ year }) => year);
 	const scoreTicks = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5];
 	const gridLineStyle = {
-		stroke: 'var(--fg-alt)',
+		stroke: "var(--fg-alt)",
 		strokeWidth: 1.5,
 		dashArray: [2, 6],
 		opacity: 0.35
 	};
 	const axisRuleStyle = {
-		stroke: 'var(--fg-alt)',
+		stroke: "var(--fg-alt)",
 		strokeWidth: 2,
 		opacity: 0.65
 	};
@@ -133,7 +133,7 @@
 
 	const formatYear = (value: number) => String(value);
 	const formatScore = (value: number | null) =>
-		value === null ? 'Not available' : value.toFixed(4);
+		value === null ? "Not available" : value.toFixed(4);
 	const formatScoreTick = (value: number) => value.toFixed(value % 1 === 0 ? 0 : 1);
 
 	function handleChartResize({ containerWidth }: ChartResizeDetail) {
@@ -149,7 +149,7 @@
 				const selectedKeys: unknown = JSON.parse(savedSelection);
 				if (Array.isArray(selectedKeys)) {
 					context.series.selectedKeys.current = selectedKeys.filter(
-						(key): key is string => typeof key === 'string' && seriesKeys.includes(key)
+						(key): key is string => typeof key === "string" && seriesKeys.includes(key)
 					);
 				}
 			} catch {
@@ -177,34 +177,34 @@
 		yDomain={[0, 3.5]}
 		series={[
 			{
-				key: 'peaceAndOrder',
-				label: 'Peace and Order',
-				value: 'peaceAndOrder',
-				color: 'var(--chart-blue)'
+				key: "peaceAndOrder",
+				label: "Peace and Order",
+				value: "peaceAndOrder",
+				color: "var(--chart-blue)"
 			},
 			{
-				key: 'socialProtection',
-				label: 'Social Protection',
-				value: 'socialProtection',
-				color: 'var(--chart-purple)'
+				key: "socialProtection",
+				label: "Social Protection",
+				value: "socialProtection",
+				color: "var(--chart-purple)"
 			},
 			{
-				key: 'education',
-				label: 'Education',
-				value: 'education',
-				color: 'var(--chart-yellow)'
+				key: "education",
+				label: "Education",
+				value: "education",
+				color: "var(--chart-yellow)"
 			},
 			{
-				key: 'health',
-				label: 'Health',
-				value: 'health',
-				color: 'var(--chart-green)'
+				key: "health",
+				label: "Health",
+				value: "health",
+				color: "var(--chart-green)"
 			},
 			{
-				key: 'lguInvestment',
-				label: 'LGU Investment',
-				value: 'lguInvestment',
-				color: 'var(--accent)'
+				key: "lguInvestment",
+				label: "LGU Investment",
+				value: "lguInvestment",
+				color: "var(--accent)"
 			}
 		]}
 		grid={{
@@ -213,15 +213,15 @@
 		}}
 		highlight={interactive
 			? {
-					axis: 'x',
+					axis: "x",
 					lines: {
-						stroke: 'var(--fg-alt)',
+						stroke: "var(--fg-alt)",
 						strokeWidth: 1.5,
 						dashArray: [2, 6]
 					},
 					points: {
-						class: 'competitiveness-highlight-point',
-						stroke: 'var(--neutral-1)',
+						class: "competitiveness-highlight-point",
+						stroke: "var(--neutral-1)",
 						strokeWidth: compactChart ? 3 : 4
 					}
 				}
@@ -242,9 +242,9 @@
 		props={{
 			legend: {
 				classes: {
-					root: 'competitiveness-legend',
-					items: 'competitiveness-legend-items',
-					item: 'competitiveness-legend-item'
+					root: "competitiveness-legend",
+					items: "competitiveness-legend-items",
+					item: "competitiveness-legend-item"
 				}
 			},
 			spline: {
@@ -256,31 +256,31 @@
 				ticks: compactChart ? compactYearTicks : yearTicks,
 				rule: axisRuleStyle,
 				tickLabelProps: { dy: 10 },
-				classes: { tickLabel: 'competitiveness-axis-label' }
+				classes: { tickLabel: "competitiveness-axis-label" }
 			},
 			yAxis: {
 				format: formatScoreTick,
 				ticks: scoreTicks,
 				rule: axisRuleStyle,
 				tickLabelProps: { dx: -10 },
-				classes: { tickLabel: 'competitiveness-axis-label' }
+				classes: { tickLabel: "competitiveness-axis-label" }
 			},
 			tooltip: {
 				root: {
-					variant: 'none',
-					class: 'competitiveness-tooltip'
+					variant: "none",
+					class: "competitiveness-tooltip"
 				},
 				header: {
 					format: formatYear,
-					class: 'competitiveness-tooltip-header'
+					class: "competitiveness-tooltip-header"
 				},
-				list: { class: 'competitiveness-tooltip-list' },
+				list: { class: "competitiveness-tooltip-list" },
 				item: {
 					format: formatScore,
 					classes: {
-						label: 'competitiveness-tooltip-label',
-						value: 'competitiveness-tooltip-value',
-						color: 'competitiveness-tooltip-dot'
+						label: "competitiveness-tooltip-label",
+						value: "competitiveness-tooltip-value",
+						color: "competitiveness-tooltip-dot"
 					}
 				}
 			}

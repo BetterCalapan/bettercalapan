@@ -1,24 +1,24 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
+	import CertificatePage from "../certificate-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
 
 	const faq = [
 		{
-			question: 'Do I need an online appointment?',
+			question: "Do I need an online appointment?",
 			answer:
-				'Check the Philippine National Police Clearance System before visiting. Appointment and payment instructions may change.'
+				"Check the Philippine National Police Clearance System before visiting. Appointment and payment instructions may change."
 		},
 		{
-			question: 'What happens if my clearance has a hit?',
+			question: "What happens if my clearance has a hit?",
 			answer:
-				'A name match may require additional verification by the PNP. The releasing officer will advise you of the next steps and release date.'
+				"A name match may require additional verification by the PNP. The releasing officer will advise you of the next steps and release date."
 		},
 		{
-			question: 'Can I use a police clearance for any purpose?',
+			question: "Can I use a police clearance for any purpose?",
 			answer:
-				'Confirm the clearance requirements with the agency requesting it, including its required validity period.'
+				"Confirm the clearance requirements with the agency requesting it, including its required validity period."
 		}
 	];
 </script>
@@ -28,9 +28,9 @@
 	description="National police clearance issued through the Philippine National Police Clearance System."
 	{faq}
 	relatedServices={[
-		{ name: 'Barangay Clearance', url: '/(app)/services/certificates/barangay-clearance' },
-		{ name: 'Barangay ID', url: '/(app)/services/certificates/barangay-id' },
-		{ name: "Driver's License", url: '/(app)/services/certificates/drivers-license' }
+		{ name: "Barangay Clearance", url: "/(app)/services/certificates/barangay-clearance" },
+		{ name: "Barangay ID", url: "/(app)/services/certificates/barangay-id" },
+		{ name: "Driver's License", url: "/(app)/services/certificates/drivers-license" }
 	]}
 >
 	{#snippet requirements()}

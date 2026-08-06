@@ -1,26 +1,26 @@
-import type { RouteId } from '$app/types';
+import type { RouteId } from "$app/types";
 
 type PageSection = {
 	name: string;
 	url: RouteId;
 };
 
-const prefix = '/(app)';
+const prefix = "/(app)";
 export const pageSections: PageSection[] = [
 	{
-		name: 'services',
+		name: "services",
 		url: `${prefix}/services`
 	},
 	{
-		name: 'government',
+		name: "government",
 		url: `${prefix}/government`
 	},
 	{
-		name: 'statistics',
+		name: "statistics",
 		url: `${prefix}/statistics`
 	},
 	{
-		name: 'contact',
+		name: "contact",
 		url: `${prefix}/contact`
 	}
 ];

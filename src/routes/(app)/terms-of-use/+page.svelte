@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
-	import Info from '@lucide/svelte/icons/info';
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
+	import Info from "@lucide/svelte/icons/info";
 
 	const relatedContent = [
 		{
-			name: 'Privacy Policy',
-			url: '/(app)/privacy-policy'
+			name: "Privacy Policy",
+			url: "/(app)/privacy-policy"
 		},
 		{
-			name: 'Accessibility',
-			url: '/(app)/accessibility'
+			name: "Accessibility",
+			url: "/(app)/accessibility"
 		}
 	];
 </script>
 
 <div class="page-wrapper">
 	{@render info(
-		'Terms of Use',
-		'These terms explain the rules for using BetterCalapan. By using bettercalapan.org, you agree to follow them.'
+		"Terms of Use",
+		"These terms explain the rules for using BetterCalapan. By using bettercalapan.org, you agree to follow them."
 	)}
 
 	<div class="content">

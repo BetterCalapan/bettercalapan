@@ -1,108 +1,108 @@
 <script lang="ts">
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import Email from '@lucide/svelte/icons/mail';
-	import Phone from '@lucide/svelte/icons/phone';
-	import Smartphone from '@lucide/svelte/icons/smartphone';
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import Email from "@lucide/svelte/icons/mail";
+	import Phone from "@lucide/svelte/icons/phone";
+	import Smartphone from "@lucide/svelte/icons/smartphone";
 
 	const general = [
 		{
-			name: 'mbscalapanofficial@gmail.com',
-			type: 'email'
+			name: "mbscalapanofficial@gmail.com",
+			type: "email"
 		},
 		{
-			name: '043-288-7508',
-			type: 'landline'
+			name: "043-288-7508",
+			type: "landline"
 		}
 	];
 
 	const emergencyHotlines = [
 		{
-			name: 'City Health and Sanitation Department',
+			name: "City Health and Sanitation Department",
 			contact: [
 				{
-					name: '(043) 288-7408',
-					type: 'landline'
+					name: "(043) 288-7408",
+					type: "landline"
 				},
 				{
-					name: '0908-366-1556',
-					type: 'mobile'
+					name: "0908-366-1556",
+					type: "mobile"
 				}
 			]
 		},
 		{
-			name: 'CDRRMD (Rescue/Fire)',
+			name: "CDRRMD (Rescue/Fire)",
 			contact: [
 				{
-					name: '0999-735-6447',
-					type: 'mobile'
+					name: "0999-735-6447",
+					type: "mobile"
 				},
 				{
-					name: '0915-744-9698',
-					type: 'mobile'
+					name: "0915-744-9698",
+					type: "mobile"
 				},
 				{
-					name: '0966-029-9777',
-					type: 'mobile'
+					name: "0966-029-9777",
+					type: "mobile"
 				},
 				{
-					name: '(043) 288-6111',
-					type: 'landline'
+					name: "(043) 288-6111",
+					type: "landline"
 				},
 				{
-					name: '(043) 288-7521',
-					type: 'landline'
+					name: "(043) 288-7521",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Calapan City Police Station (PNP)',
+			name: "Calapan City Police Station (PNP)",
 			contact: [
 				{
-					name: '0998-598-5813',
-					type: 'mobile'
+					name: "0998-598-5813",
+					type: "mobile"
 				},
 				{
-					name: '0906-179-1105',
-					type: 'mobile'
+					name: "0906-179-1105",
+					type: "mobile"
 				}
 			]
 		},
 		{
-			name: 'Calapan City Fire Station (BFP)',
+			name: "Calapan City Fire Station (BFP)",
 			contact: [
 				{
-					name: '0915-603-1561',
-					type: 'mobile'
+					name: "0915-603-1561",
+					type: "mobile"
 				},
 				{
-					name: '(043) 288-7777',
-					type: 'landline'
+					name: "(043) 288-7777",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Tamaraw Fire Volunteer',
+			name: "Tamaraw Fire Volunteer",
 			contact: [
 				{
-					name: '0917-534-2419',
-					type: 'mobile'
+					name: "0917-534-2419",
+					type: "mobile"
 				},
 				{
-					name: '0917-136-4603',
-					type: 'mobile'
+					name: "0917-136-4603",
+					type: "mobile"
 				},
 				{
-					name: '0925-812-9639',
-					type: 'mobile'
+					name: "0925-812-9639",
+					type: "mobile"
 				}
 			]
 		},
 		{
-			name: 'PNP EOD K9 Unit (Explosives Related Incident)',
+			name: "PNP EOD K9 Unit (Explosives Related Incident)",
 			contact: [
 				{
-					name: '0916-695-0155',
-					type: 'mobile'
+					name: "0916-695-0155",
+					type: "mobile"
 				}
 			]
 		}
@@ -110,89 +110,89 @@
 
 	const medicalEmergencyHotlines = [
 		{
-			name: 'Oriental Mindoro Provincial Hospital',
+			name: "Oriental Mindoro Provincial Hospital",
 			contact: [
 				{
-					name: '0963-783-2169',
-					type: 'mobile'
+					name: "0963-783-2169",
+					type: "mobile"
 				},
 				{
-					name: '(043) 288-3077',
-					type: 'landline'
+					name: "(043) 288-3077",
+					type: "landline"
 				},
 				{
-					name: '(043) 288-7193',
-					type: 'landline'
+					name: "(043) 288-7193",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'MMG Hospital',
+			name: "MMG Hospital",
 			contact: [
 				{
-					name: '0923-709-5439',
-					type: 'mobile'
+					name: "0923-709-5439",
+					type: "mobile"
 				},
 				{
-					name: '(043) 288-2275',
-					type: 'landline'
+					name: "(043) 288-2275",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Maria Estrella General Hospital',
+			name: "Maria Estrella General Hospital",
 			contact: [
 				{
-					name: '0917-702-5210',
-					type: 'mobile'
+					name: "0917-702-5210",
+					type: "mobile"
 				},
 				{
-					name: '(043) 286-7386 / 88',
-					type: 'landline'
+					name: "(043) 286-7386 / 88",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Luna Goco Medical Center',
+			name: "Luna Goco Medical Center",
 			contact: [
 				{
-					name: '0919-097-9155',
-					type: 'mobile'
+					name: "0919-097-9155",
+					type: "mobile"
 				},
 				{
-					name: '0947-897-0588',
-					type: 'mobile'
+					name: "0947-897-0588",
+					type: "mobile"
 				},
 				{
-					name: '(043) 286-7208',
-					type: 'landline'
+					name: "(043) 286-7208",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Mindoro Medical Center',
+			name: "Mindoro Medical Center",
 			contact: [
 				{
-					name: '0917-567-8102',
-					type: 'mobile'
+					name: "0917-567-8102",
+					type: "mobile"
 				}
 			]
 		},
 		{
-			name: 'Hospital of the Holy Cross',
+			name: "Hospital of the Holy Cross",
 			contact: [
 				{
-					name: '(043) 288-4470',
-					type: 'landline'
+					name: "(043) 288-4470",
+					type: "landline"
 				}
 			]
 		},
 		{
-			name: 'Sta. Maria Village Hospital',
+			name: "Sta. Maria Village Hospital",
 			contact: [
 				{
-					name: '0908-374-9505',
-					type: 'mobile'
+					name: "0908-374-9505",
+					type: "mobile"
 				}
 			]
 		}
@@ -200,13 +200,13 @@
 </script>
 
 <div class="page-wrapper">
-	{@render info('Contact', "We're here to help. Reach out to us through any of these channels.")}
+	{@render info("Contact", "We're here to help. Reach out to us through any of these channels.")}
 	<ul class="general">
 		{#each general as contact (contact.name)}
 			<li>
-				{#if contact.type == 'email'}
+				{#if contact.type == "email"}
 					<Email />
-				{:else if contact.type == 'landline'}
+				{:else if contact.type == "landline"}
 					<Phone />
 				{/if}
 				<p>{contact.name}</p>
@@ -245,9 +245,9 @@
 							<ul class="contacts">
 								{#each emergencyHotlines[i].contact as contact (contact.name)}
 									<li>
-										{#if contact.type == 'landline'}
+										{#if contact.type == "landline"}
 											<Phone />
-										{:else if contact.type == 'mobile'}
+										{:else if contact.type == "mobile"}
 											<Smartphone />
 										{/if}
 										{contact.name}
@@ -269,9 +269,9 @@
 							<ul class="contacts">
 								{#each medicalEmergencyHotlines[i].contact as contact (contact.name)}
 									<li>
-										{#if contact.type == 'landline'}
+										{#if contact.type == "landline"}
 											<Phone />
-										{:else if contact.type == 'mobile'}
+										{:else if contact.type == "mobile"}
 											<Smartphone />
 										{/if}
 										{contact.name}

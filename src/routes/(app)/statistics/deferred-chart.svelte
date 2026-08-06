@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, type Component } from 'svelte';
+	import { onMount, type Component } from "svelte";
 
 	type ChartComponent = Component<{ interactive?: boolean }>;
 
@@ -21,7 +21,7 @@
 	let loadFailed = $state(false);
 
 	onMount(() => {
-		const mobileViewport = window.matchMedia('(max-width: 519px)');
+		const mobileViewport = window.matchMedia("(max-width: 519px)");
 		let observer: IntersectionObserver | undefined;
 		let pendingLoad: Promise<void> | undefined;
 
@@ -42,7 +42,7 @@
 		function observeChart() {
 			if (Chart || pendingLoad || !container) return;
 
-			if (!('IntersectionObserver' in window)) {
+			if (!("IntersectionObserver" in window)) {
 				void loadChart();
 				return;
 			}
@@ -55,7 +55,7 @@
 					observer = undefined;
 					void loadChart();
 				},
-				{ rootMargin: '400px 0px' }
+				{ rootMargin: "400px 0px" }
 			);
 			observer.observe(container);
 		}
@@ -73,11 +73,11 @@
 		}
 
 		updateViewportMode();
-		mobileViewport.addEventListener('change', updateViewportMode);
+		mobileViewport.addEventListener("change", updateViewportMode);
 
 		return () => {
 			observer?.disconnect();
-			mobileViewport.removeEventListener('change', updateViewportMode);
+			mobileViewport.removeEventListener("change", updateViewportMode);
 		};
 	});
 </script>

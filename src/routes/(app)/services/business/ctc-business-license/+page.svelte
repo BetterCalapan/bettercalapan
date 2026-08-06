@@ -1,15 +1,15 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'What is the purpose of this certified true copy?',
+			question: "What is the purpose of this certified true copy?",
 			answer:
-				'It is issued by the City Government to Business Owners who request it for whatever legal purposes it may serve.'
+				"It is issued by the City Government to Business Owners who request it for whatever legal purposes it may serve."
 		}
 	];
 </script>
@@ -20,14 +20,14 @@
 	{faq}
 	relatedServices={[
 		{
-			name: 'Business Permit',
-			url: '/(app)/services/business/business-permit'
+			name: "Business Permit",
+			url: "/(app)/services/business/business-permit"
 		},
 		{
-			name: 'Occupational Permit',
-			url: '/(app)/services/business/occupational-permit'
+			name: "Occupational Permit",
+			url: "/(app)/services/business/occupational-permit"
 		},
-		{ name: 'Special Permit', url: '/(app)/services/business/special-permit' }
+		{ name: "Special Permit", url: "/(app)/services/business/special-permit" }
 	]}
 >
 	{#snippet requirements()}

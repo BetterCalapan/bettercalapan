@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import { resources } from '$lib/data/data';
-	import { government } from '$lib/data/government.data';
-	import { services } from '$lib/data/services.data';
-	import Facebook from '$lib/icons/facebook.svelte';
-	import GitHub from '$lib/icons/github.svelte';
+	import { resolve } from "$app/paths";
+	import { resources } from "$lib/data/data";
+	import { government } from "$lib/data/government.data";
+	import { services } from "$lib/data/services.data";
+	import Facebook from "$lib/icons/facebook.svelte";
+	import GitHub from "$lib/icons/github.svelte";
 
-	const prefix = '/(app)';
+	const prefix = "/(app)";
 	const others = [
 		{
-			name: 'Terms of Use',
+			name: "Terms of Use",
 			url: `${prefix}/terms-of-use`
 		},
 		{
-			name: 'Privacy Policy',
+			name: "Privacy Policy",
 			url: `${prefix}/privacy-policy`
 		},
 		{
-			name: 'Accessibility',
+			name: "Accessibility",
 			url: `${prefix}/accessibility`
 		}
 	];
@@ -127,7 +127,7 @@
 				>
 					GitHub
 				</a>
-				<a class="link" href={resolve('/sitemap')}> Sitemap </a>
+				<a class="link" href={resolve("/sitemap")}> Sitemap </a>
 			</div>
 		</div>
 	</div>

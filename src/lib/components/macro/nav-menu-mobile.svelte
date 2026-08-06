@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { NavigationMenu } from 'bits-ui';
-	import { pageSections } from '$lib/data/header.data';
-	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
-	import Menu from '@lucide/svelte/icons/menu';
+	import { NavigationMenu } from "bits-ui";
+	import { pageSections } from "$lib/data/header.data";
+	import { navItem } from "$lib/snippets/nav-item.snippet.svelte";
+	import Menu from "@lucide/svelte/icons/menu";
 </script>
 
 <NavigationMenu.Root class="page-section-mobile-root">
@@ -69,11 +69,11 @@
 		z-index: 2; /* NOTE: to stack above the highlighted city in the hero section */
 	}
 
-	:global(.page-section-mobile-content[data-state='open']) {
+	:global(.page-section-mobile-content[data-state="open"]) {
 		animation-name: content-in;
 	}
 
-	:global(.page-section-mobile-content[data-state='closed']) {
+	:global(.page-section-mobile-content[data-state="closed"]) {
 		animation-name: content-out;
 		animation-duration: 120ms;
 		animation-timing-function: ease-in;

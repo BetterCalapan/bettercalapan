@@ -1,18 +1,18 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'How long does the processing take?',
+			question: "How long does the processing take?",
 			answer:
-				'As prescribed by R.A. 11032 (Ease of Doing Business Law), government transactions follow a 3-7-20 day rule. While typical applications are processed within 1 Day, official timelines are: Up to 3 days for Simple, 7 days for Complex, and 20 days for Highly Technical transactions. If City Council approval is required, it may take 45 working days (extendable by 20 days).'
+				"As prescribed by R.A. 11032 (Ease of Doing Business Law), government transactions follow a 3-7-20 day rule. While typical applications are processed within 1 Day, official timelines are: Up to 3 days for Simple, 7 days for Complex, and 20 days for Highly Technical transactions. If City Council approval is required, it may take 45 working days (extendable by 20 days)."
 		},
 		{
-			question: 'What if that location had a previous tenant?',
+			question: "What if that location had a previous tenant?",
 			answer:
 				"The previous tenant must have filed a formal Closure/Retirement of business to the City Treasurer's Office. Otherwise, the building owner must submit a Termination of Lease Contract and an Affidavit of No Relation so the new applicant can secure an account number."
 		}
@@ -25,14 +25,14 @@
 	{faq}
 	relatedServices={[
 		{
-			name: 'Business Status Certificate',
-			url: '/(app)/services/business/business-status-certificate'
+			name: "Business Status Certificate",
+			url: "/(app)/services/business/business-status-certificate"
 		},
 		{
 			name: "Certified True Copy of Business License & Mayor's Permit",
-			url: '/(app)/services/business/ctc-business-license'
+			url: "/(app)/services/business/ctc-business-license"
 		},
-		{ name: 'Special Permit', url: '/(app)/services/business/special-permit' }
+		{ name: "Special Permit", url: "/(app)/services/business/special-permit" }
 	]}
 >
 	{#snippet requirements()}

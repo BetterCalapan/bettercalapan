@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import SearchResults from '$lib/components/macro/search-results.svelte';
-	import Search from '@lucide/svelte/icons/search';
+	import { goto } from "$app/navigation";
+	import SearchResults from "$lib/components/macro/search-results.svelte";
+	import Search from "@lucide/svelte/icons/search";
 
 	let { term, showResults } = $props();
 
@@ -14,7 +14,7 @@
 		if (timer) clearTimeout(timer);
 
 		timer = setTimeout(() => {
-			if (searchTerm == '') {
+			if (searchTerm == "") {
 				submittedSearchTerm = null;
 				return;
 			}
@@ -25,7 +25,7 @@
 	function handlerSubmit(e: SubmitEvent) {
 		e.preventDefault();
 		// showSearchInput = !showSearchInput;
-		goto(`/search?term=${searchTerm.split(' ').join('+')}`);
+		goto(`/search?term=${searchTerm.split(" ").join("+")}`);
 		showResults = false;
 		// inputValue = '';
 	}

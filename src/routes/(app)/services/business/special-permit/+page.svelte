@@ -1,18 +1,18 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'How long does the processing take?',
+			question: "How long does the processing take?",
 			answer:
 				"According to the Citizen's Charter, the total processing time for a Special Permit is approximately 2 hours and 10 minutes."
 		},
 		{
-			question: 'What if that location had a previous tenant?',
+			question: "What if that location had a previous tenant?",
 			answer:
 				"The previous tenant must have filed a formal Closure/Retirement of business to the City Treasurer's Office. Otherwise, the building owner must submit a Termination of Lease Contract and an Affidavit of No Relation so the new applicant can secure an account number."
 		}
@@ -24,14 +24,14 @@
 	description="Issued by the City Government to all business establishments that operate within its territorial jurisdiction."
 	{faq}
 	relatedServices={[
-		{ name: 'Business Permit', url: '/(app)/services/business/business-permit' },
+		{ name: "Business Permit", url: "/(app)/services/business/business-permit" },
 		{
-			name: 'Business Status Certificate',
-			url: '/(app)/services/business/business-status-certificate'
+			name: "Business Status Certificate",
+			url: "/(app)/services/business/business-status-certificate"
 		},
 		{
 			name: "Certified True Copy of Business License & Mayor's Permit",
-			url: '/(app)/services/business/ctc-business-license'
+			url: "/(app)/services/business/ctc-business-license"
 		}
 	]}
 >

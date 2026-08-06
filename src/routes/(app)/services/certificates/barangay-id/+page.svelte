@@ -1,21 +1,21 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
+	import CertificatePage from "../certificate-page.svelte";
 
 	const faq = [
 		{
-			question: 'Who can apply for a barangay ID?',
+			question: "Who can apply for a barangay ID?",
 			answer:
 				"Residents of the issuing barangay may apply, subject to the barangay's residency and age requirements."
 		},
 		{
-			question: 'Is a barangay ID a government-issued ID?',
+			question: "Is a barangay ID a government-issued ID?",
 			answer:
-				'It is an identification document issued by your barangay. Check whether the agency receiving it accepts barangay IDs for your transaction.'
+				"It is an identification document issued by your barangay. Check whether the agency receiving it accepts barangay IDs for your transaction."
 		},
 		{
-			question: 'What should I do if my ID is lost?',
+			question: "What should I do if my ID is lost?",
 			answer:
-				'Report the loss to your barangay hall and ask about its replacement requirements and applicable fee.'
+				"Report the loss to your barangay hall and ask about its replacement requirements and applicable fee."
 		}
 	];
 </script>
@@ -25,9 +25,9 @@
 	description="Local identification card issued to verified residents of a barangay."
 	{faq}
 	relatedServices={[
-		{ name: 'Barangay Clearance', url: '/(app)/services/certificates/barangay-clearance' },
-		{ name: 'Police Clearance', url: '/(app)/services/certificates/police-clearance' },
-		{ name: "Driver's License", url: '/(app)/services/certificates/drivers-license' }
+		{ name: "Barangay Clearance", url: "/(app)/services/certificates/barangay-clearance" },
+		{ name: "Police Clearance", url: "/(app)/services/certificates/police-clearance" },
+		{ name: "Driver's License", url: "/(app)/services/certificates/drivers-license" }
 	]}
 >
 	{#snippet requirements()}

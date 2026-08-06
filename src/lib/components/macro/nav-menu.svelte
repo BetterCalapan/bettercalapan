@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { NavigationMenu } from 'bits-ui';
-	import { government } from '$lib/data/government.data';
-	import { services } from '$lib/data/services.data';
-	import { navItem } from '$lib/snippets/nav-item.snippet.svelte';
-	import { resolve } from '$app/paths';
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import { NavigationMenu } from "bits-ui";
+	import { government } from "$lib/data/government.data";
+	import { services } from "$lib/data/services.data";
+	import { navItem } from "$lib/snippets/nav-item.snippet.svelte";
+	import { resolve } from "$app/paths";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 </script>
 
 <NavigationMenu.Root class="page-section-root">
 	<NavigationMenu.List class="page-section-list">
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href={resolve('/(app)/services')}>
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/services")}>
 				Services
 			</NavigationMenu.Link>
 			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Services menu">
@@ -29,7 +29,7 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href={resolve('/(app)/government')}>
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/government")}>
 				Government
 			</NavigationMenu.Link>
 			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Government menu">
@@ -112,11 +112,11 @@
 			z-index: 2; /* NOTE: to stack above the highlighted city in the hero section */
 		}
 
-		:global(.page-section-content[data-state='open']) {
+		:global(.page-section-content[data-state="open"]) {
 			animation-name: content-in;
 		}
 
-		:global(.page-section-content[data-state='closed']) {
+		:global(.page-section-content[data-state="closed"]) {
 			animation-name: content-out;
 			animation-duration: 120ms;
 			animation-timing-function: ease-in;

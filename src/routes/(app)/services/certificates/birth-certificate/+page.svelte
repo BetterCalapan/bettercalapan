@@ -1,9 +1,9 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import CertificatePage from "../certificate-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
@@ -35,9 +35,9 @@
 	description="Official certified copy of birth certificate registered in Calapan."
 	{faq}
 	relatedServices={[
-		{ name: 'Marriage Certificate', url: '/(app)/services/certificates/marriage-certificate' },
-		{ name: 'Death Certificate', url: '/(app)/services/certificates/death-certificate' },
-		{ name: 'Barangay Clearance', url: '/(app)/services/certificates/barangay-clearance' }
+		{ name: "Marriage Certificate", url: "/(app)/services/certificates/marriage-certificate" },
+		{ name: "Death Certificate", url: "/(app)/services/certificates/death-certificate" },
+		{ name: "Barangay Clearance", url: "/(app)/services/certificates/barangay-clearance" }
 	]}
 >
 	{#snippet requirements()}

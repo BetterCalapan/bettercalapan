@@ -1,6 +1,6 @@
 <script>
-	import { Accordion } from 'bits-ui';
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import { Accordion } from "bits-ui";
+	import ChevronDown from "@lucide/svelte/icons/chevron-down";
 
 	const { faq } = $props();
 </script>
@@ -55,11 +55,11 @@
 			padding: 0.5rem 0 1.5rem;
 		}
 
-		:global(.accordion-content[data-state='open']) {
+		:global(.accordion-content[data-state="open"]) {
 			animation: accordion-content-open 200ms ease-out;
 		}
 
-		:global(.accordion-content[data-state='closed']) {
+		:global(.accordion-content[data-state="closed"]) {
 			animation: accordion-content-close 200ms ease-out;
 		}
 	}

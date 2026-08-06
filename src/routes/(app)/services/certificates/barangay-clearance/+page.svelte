@@ -1,21 +1,21 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
+	import CertificatePage from "../certificate-page.svelte";
 
 	const faq = [
 		{
-			question: 'Which barangay should issue my clearance?',
+			question: "Which barangay should issue my clearance?",
 			answer:
-				'Apply at the barangay where you currently reside. Bring proof of residency if the barangay requests it.'
+				"Apply at the barangay where you currently reside. Bring proof of residency if the barangay requests it."
 		},
 		{
-			question: 'Can someone else apply for me?',
+			question: "Can someone else apply for me?",
 			answer:
-				'Ask your barangay first. Some barangays may accept an authorized representative with a signed authorization letter and valid IDs.'
+				"Ask your barangay first. Some barangays may accept an authorized representative with a signed authorization letter and valid IDs."
 		},
 		{
-			question: 'How long is a barangay clearance valid?',
+			question: "How long is a barangay clearance valid?",
 			answer:
-				'Validity depends on the receiving agency and the purpose stated on the clearance. Confirm its required validity before applying.'
+				"Validity depends on the receiving agency and the purpose stated on the clearance. Confirm its required validity before applying."
 		}
 	];
 </script>
@@ -25,9 +25,9 @@
 	description="Proof of good standing and residency issued by your barangay."
 	{faq}
 	relatedServices={[
-		{ name: 'Barangay ID', url: '/(app)/services/certificates/barangay-id' },
-		{ name: 'Police Clearance', url: '/(app)/services/certificates/police-clearance' },
-		{ name: 'Birth Certificate', url: '/(app)/services/certificates/birth-certificate' }
+		{ name: "Barangay ID", url: "/(app)/services/certificates/barangay-id" },
+		{ name: "Police Clearance", url: "/(app)/services/certificates/police-clearance" },
+		{ name: "Birth Certificate", url: "/(app)/services/certificates/birth-certificate" }
 	]}
 >
 	{#snippet requirements()}

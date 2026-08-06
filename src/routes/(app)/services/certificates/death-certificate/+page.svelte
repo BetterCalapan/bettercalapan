@@ -1,9 +1,9 @@
 <script>
-	import CertificatePage from '../certificate-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import CertificatePage from "../certificate-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
@@ -26,9 +26,9 @@
 	description="Register death certificate and obtain burial/transfer permit."
 	{faq}
 	relatedServices={[
-		{ name: 'Birth Certificate', url: '/(app)/services/certificates/birth-certificate' },
-		{ name: 'Marriage Certificate', url: '/(app)/services/certificates/marriage-certificate' },
-		{ name: 'Barangay Clearance', url: '/(app)/services/certificates/barangay-clearance' }
+		{ name: "Birth Certificate", url: "/(app)/services/certificates/birth-certificate" },
+		{ name: "Marriage Certificate", url: "/(app)/services/certificates/marriage-certificate" },
+		{ name: "Barangay Clearance", url: "/(app)/services/certificates/barangay-clearance" }
 	]}
 >
 	{#snippet requirements()}

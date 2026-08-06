@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import logo from '$lib/assets/logo.svg';
-	import NavigationMenu from './nav-menu.svelte';
-	import NavigationMenuMobile from './nav-menu-mobile.svelte';
-	import Search from '@lucide/svelte/icons/search';
-	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import { goto } from '$app/navigation';
+	import { resolve } from "$app/paths";
+	import logo from "$lib/assets/logo.svg";
+	import NavigationMenu from "./nav-menu.svelte";
+	import NavigationMenuMobile from "./nav-menu-mobile.svelte";
+	import Search from "@lucide/svelte/icons/search";
+	import ArrowRight from "@lucide/svelte/icons/arrow-right";
+	import { goto } from "$app/navigation";
 
 	let showSearchInput = $state(false);
 
@@ -13,19 +13,19 @@
 		showSearchInput = !showSearchInput;
 	}
 
-	let inputValue = $state('');
+	let inputValue = $state("");
 	function handlerSearchInput(e: SubmitEvent) {
 		e.preventDefault();
 		showSearchInput = !showSearchInput;
-		goto(`/search?term=${inputValue.split(' ').join('+')}`);
-		inputValue = '';
+		goto(`/search?term=${inputValue.split(" ").join("+")}`);
+		inputValue = "";
 	}
 </script>
 
 <header>
 	<div class="wrapper">
 		<div class="left">
-			<a href={resolve('/')} class="back-home">
+			<a href={resolve("/")} class="back-home">
 				<img src={logo} alt="BetterCalapan logo" width="32" height="32" />
 				<h1>BetterCalapan</h1>
 			</a>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AreaChart, defaultChartPadding, type ChartResizeDetail } from 'layerchart';
+	import { AreaChart, defaultChartPadding, type ChartResizeDetail } from "layerchart";
 
 	let { interactive = true }: { interactive?: boolean } = $props();
 
@@ -21,17 +21,17 @@
 	let compactChart = $state(false);
 
 	const formatYear = (value: number) => String(value);
-	const formatPopulation = (value: number) => value.toLocaleString('en-US');
+	const formatPopulation = (value: number) => value.toLocaleString("en-US");
 	const formatPopulationTick = (value: number) => `${value / 1_000}k`;
 	const populationTicks = [140_000, 145_000, 150_000, 155_000, 160_000];
 	const gridLineStyle = {
-		stroke: 'var(--fg-alt)',
+		stroke: "var(--fg-alt)",
 		strokeWidth: 1.5,
 		dashArray: [2, 6],
 		opacity: 0.9
 	};
 	const axisRuleStyle = {
-		stroke: 'var(--fg-alt)',
+		stroke: "var(--fg-alt)",
 		strokeWidth: 2,
 		opacity: 0.65
 	};
@@ -51,10 +51,10 @@
 		yBaseline={140_000}
 		series={[
 			{
-				key: 'population',
-				label: 'Population',
-				value: 'population',
-				color: 'var(--accent)'
+				key: "population",
+				label: "Population",
+				value: "population",
+				color: "var(--accent)"
 			}
 		]}
 		grid={{
@@ -63,14 +63,14 @@
 		}}
 		highlight={interactive
 			? {
-					axis: 'x',
+					axis: "x",
 					lines: {
-						stroke: 'var(--accent)',
+						stroke: "var(--accent)",
 						strokeWidth: 1.5,
 						dashArray: [2, 6]
 					},
 					points: {
-						stroke: 'var(--accent)',
+						stroke: "var(--accent)",
 						strokeWidth: 7
 					}
 				}
@@ -80,7 +80,7 @@
 			data: compactChart ? compactPopulationGrowth : populationGrowth,
 			r: compactChart ? 4 : 6,
 			strokeWidth: compactChart ? 2 : 3,
-			stroke: 'var(--neutral-1)'
+			stroke: "var(--neutral-1)"
 		}}
 		padding={defaultChartPadding({ top: 16, right: 16, bottom: 36, left: 40 })}
 		height={320}
@@ -95,31 +95,31 @@
 				ticks: (compactChart ? compactPopulationGrowth : populationGrowth).map(({ year }) => year),
 				rule: axisRuleStyle,
 				tickLabelProps: { dy: 10 },
-				classes: { tickLabel: 'growth-axis-label' }
+				classes: { tickLabel: "growth-axis-label" }
 			},
 			yAxis: {
 				format: formatPopulationTick,
 				ticks: populationTicks,
 				rule: axisRuleStyle,
 				tickLabelProps: { dx: -10 },
-				classes: { tickLabel: 'growth-axis-label' }
+				classes: { tickLabel: "growth-axis-label" }
 			},
 			tooltip: {
 				root: {
-					variant: 'none',
-					class: 'growth-tooltip'
+					variant: "none",
+					class: "growth-tooltip"
 				},
 				header: {
 					format: formatYear,
-					class: 'growth-tooltip-header'
+					class: "growth-tooltip-header"
 				},
-				list: { class: 'growth-tooltip-list' },
+				list: { class: "growth-tooltip-list" },
 				item: {
 					format: formatPopulation,
 					classes: {
-						label: 'growth-tooltip-label',
-						value: 'growth-tooltip-value',
-						color: 'growth-tooltip-dot'
+						label: "growth-tooltip-label",
+						value: "growth-tooltip-value",
+						color: "growth-tooltip-dot"
 					}
 				}
 			}

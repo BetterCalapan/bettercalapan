@@ -1,7 +1,7 @@
 <script>
-	import { government } from '$lib/data/government.data';
-	import { info } from '$lib/snippets/info.snippet.svelte';
-	import { listItem } from '$lib/snippets/list-item.snippet.svelte';
+	import { government } from "$lib/data/government.data";
+	import { info } from "$lib/snippets/info.snippet.svelte";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 </script>
 
 <div class="wrapper">

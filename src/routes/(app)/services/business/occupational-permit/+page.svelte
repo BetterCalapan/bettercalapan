@@ -1,35 +1,35 @@
 <script>
-	import BusinessPage from '../business-page.svelte';
-	import Clock from '@lucide/svelte/icons/clock';
-	import Landmark from '@lucide/svelte/icons/landmark';
-	import MapPin from '@lucide/svelte/icons/map-pin';
-	import Phone from '@lucide/svelte/icons/phone';
+	import BusinessPage from "../business-page.svelte";
+	import Clock from "@lucide/svelte/icons/clock";
+	import Landmark from "@lucide/svelte/icons/landmark";
+	import MapPin from "@lucide/svelte/icons/map-pin";
+	import Phone from "@lucide/svelte/icons/phone";
 
 	const faq = [
 		{
-			question: 'What is the processing time for the permit?',
+			question: "What is the processing time for the permit?",
 			answer:
 				"The BPLO classifies the issuance of the Occupational Mayor's Permit as a simple transaction, typically taking around 3 hours depending on the volume of applicants."
 		},
 		{
-			question: 'Do I need to apply in person?',
+			question: "Do I need to apply in person?",
 			answer:
-				'While in-person application is standard, the city has been integrating services online. Please check the official Calapan City website for recent updates.'
+				"While in-person application is standard, the city has been integrating services online. Please check the official Calapan City website for recent updates."
 		},
 		{
-			question: 'Who is considered a first-time job seeker?',
+			question: "Who is considered a first-time job seeker?",
 			answer:
-				'A first-time job seeker is defined as a Filipino citizen looking for work for the first time, who is between 15 to 30 years old, and not currently receiving benefits from other government job programs.'
+				"A first-time job seeker is defined as a Filipino citizen looking for work for the first time, who is between 15 to 30 years old, and not currently receiving benefits from other government job programs."
 		},
 		{
-			question: 'Are all fees waived under RA 11261?',
+			question: "Are all fees waived under RA 11261?",
 			answer:
-				'Yes, government regulatory fees for standard documents such as the Occupational Permit, Barangay Clearance, and NBI Clearance are free of charge for valid first-time job seekers.'
+				"Yes, government regulatory fees for standard documents such as the Occupational Permit, Barangay Clearance, and NBI Clearance are free of charge for valid first-time job seekers."
 		},
 		{
-			question: 'What if I am a food handler?',
+			question: "What if I am a food handler?",
 			answer:
-				'If you are applying as a food handler, you will be required to submit specific test results (Urine and Stool) and also undergo a seminar at the Sanitation Office.'
+				"If you are applying as a food handler, you will be required to submit specific test results (Urine and Stool) and also undergo a seminar at the Sanitation Office."
 		}
 	];
 </script>
@@ -40,13 +40,13 @@
 	{faq}
 	relatedServices={[
 		{
-			name: 'Business Permit',
-			url: '/(app)/services/business/business-permit'
+			name: "Business Permit",
+			url: "/(app)/services/business/business-permit"
 		},
-		{ name: 'Special Permit', url: '/(app)/services/business/special-permit' },
+		{ name: "Special Permit", url: "/(app)/services/business/special-permit" },
 		{
-			name: 'Business Status Certificate',
-			url: '/(app)/services/business/business-status-certificate'
+			name: "Business Status Certificate",
+			url: "/(app)/services/business/business-status-certificate"
 		}
 	]}
 >
