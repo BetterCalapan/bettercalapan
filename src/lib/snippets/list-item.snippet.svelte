@@ -9,18 +9,23 @@
 {#snippet listItem(name: string, url: RouteId | string)}
 	{@const external = url.startsWith("http")}
 
+	{#snippet linkContent()}
+		<div class="icon">
+			<ArrowRight />
+		</div>
+		{name}
+	{/snippet}
+
 	<li class="item">
-		<a
-			class="link"
-			href={external ? url : resolveRoute(url)}
-			target={external ? "_blank" : undefined}
-			rel={external ? "noopener noreferrer" : undefined}
-		>
-			<div class="icon">
-				<ArrowRight />
-			</div>
-			{name}
-		</a>
+		{#if external}
+			<a class="link" href={url} target="_blank" rel="external noopener noreferrer">
+				{@render linkContent()}
+			</a>
+		{:else}
+			<a class="link" href={resolveRoute(url)}>
+				{@render linkContent()}
+			</a>
+		{/if}
 	</li>
 {/snippet}
 

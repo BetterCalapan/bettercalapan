@@ -17,7 +17,7 @@
 	function handlerSearchInput(e: SubmitEvent) {
 		e.preventDefault();
 		showSearchInput = !showSearchInput;
-		goto(`/search?term=${inputValue.split(" ").join("+")}`);
+		goto(resolve(`/search?term=${inputValue.split(" ").join("+")}`));
 		inputValue = "";
 	}
 </script>

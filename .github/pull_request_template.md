@@ -1,10 +1,9 @@
 ---
 name: General template
 about: For general usage (bug, feat, etc)
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
 # What type of PR is this?

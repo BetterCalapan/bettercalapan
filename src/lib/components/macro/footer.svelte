@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
+	import { resolveRoute } from "$lib/utils/paths";
 	import { resources } from "$lib/data/data";
 	import { government } from "$lib/data/government.data";
 	import { services } from "$lib/data/services.data";
@@ -65,7 +66,7 @@
 				<ul class="footer-section-list">
 					{#each services.data as service (service.name)}
 						<li class="service">
-							<a href={resolve(service.url)} class="link">{service.name}</a>
+							<a href={resolveRoute(service.url)} class="link">{service.name}</a>
 						</li>
 					{/each}
 				</ul>
@@ -75,7 +76,7 @@
 				<ul class="footer-section-list">
 					{#each government.data as gov (gov.name)}
 						<li class="government">
-							<a href={resolve(gov.url)} class="link">{gov.name}</a>
+							<a href={resolveRoute(gov.url)} class="link">{gov.name}</a>
 						</li>
 					{/each}
 				</ul>
@@ -97,7 +98,7 @@
 				<ul class="footer-section-list">
 					{#each others as other (other.name)}
 						<li class="other">
-							<a class="link" href={resolve(other.url)}>{other.name}</a>
+							<a class="link" href={resolveRoute(other.url)}>{other.name}</a>
 						</li>
 					{/each}
 				</ul>

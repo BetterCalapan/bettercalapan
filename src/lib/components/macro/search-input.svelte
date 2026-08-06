@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
+	import { resolve } from "$app/paths";
 	import SearchResults from "$lib/components/macro/search-results.svelte";
 	import Search from "@lucide/svelte/icons/search";
 
@@ -24,10 +25,8 @@
 	}
 	function handlerSubmit(e: SubmitEvent) {
 		e.preventDefault();
-		// showSearchInput = !showSearchInput;
-		goto(`/search?term=${searchTerm.split(" ").join("+")}`);
+		goto(resolve(`/search?term=${searchTerm.split(" ").join("+")}`));
 		showResults = false;
-		// inputValue = '';
 	}
 </script>
 
