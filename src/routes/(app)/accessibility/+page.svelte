@@ -6,7 +6,7 @@
 	const relatedContent = [
 		{
 			name: "Terms of Use",
-			url: "/(app)/terms-of-use"
+			url: "/(app)/(content)/terms-of-use"
 		},
 		{
 			name: "Privacy Policy",

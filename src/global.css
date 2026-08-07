@@ -80,7 +80,7 @@ html {
 	font-family: "figtree";
 	font-style: normal;
 	font-weight: 300 900;
-	font-display: block;
+	font-display: swap;
 	src: url("/figtree-variable.woff2") format("woff2");
 }
 

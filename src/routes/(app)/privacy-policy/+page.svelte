@@ -7,7 +7,7 @@
 	const relatedContent = [
 		{
 			name: "Terms of Use",
-			url: "/(app)/terms-of-use"
+			url: "/(app)/(content)/terms-of-use"
 		},
 		{
 			name: "Accessibility",
@@ -261,8 +261,8 @@
 					described here before or when the new processing begins.
 				</p>
 				<p>
-					Read our <a href={resolve("/(app)/terms-of-use")}>Terms of Use</a> for the rules that apply
-					when using BetterCalapan.
+					Read our <a href={resolve("/(app)/(content)/terms-of-use")}>Terms of Use</a> for the rules that
+					apply when using BetterCalapan.
 				</p>
 			</section>
 		</div>

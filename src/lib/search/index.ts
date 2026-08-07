@@ -291,7 +291,7 @@ export const index: { title: string; url: RouteId; keywords: string[] }[] = [
 	},
 	{
 		title: "Terms of Use",
-		url: "/(app)/terms-of-use",
+		url: "/(app)/(content)/terms-of-use",
 		keywords: ["terms of use, conditions"]
 	},
 	{

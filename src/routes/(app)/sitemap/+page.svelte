@@ -75,7 +75,7 @@
 	const others: Link[] = [
 		{
 			name: "Terms of Use",
-			url: `${prefix}/terms-of-use`
+			url: "/(app)/(content)/terms-of-use"
 		},
 		{
 			name: "Privacy Policy",
