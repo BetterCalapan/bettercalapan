@@ -2,6 +2,8 @@
 layout: content
 title: Terms of Use
 onThisPage:
+  - name: Terms of Use 
+    id: terms-of-use 
   - name: Who we are
     id: who-we-are
   - name: Using BetterCalapan
@@ -34,7 +36,7 @@ relatedContent:
 ---
 
 <script>
-    import Info from '$lib/components/macro/info.svelte'
+    import Info from "$lib/components/macro/info.svelte";
 </script>
 
 # {title}

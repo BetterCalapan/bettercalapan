@@ -30,28 +30,31 @@
 
 <Breadcrumb {breadcrumbs} currentPage={title} />
 
-<div class="content-layout">
+<div class="content-layout" class:has-sidebar={onThisPage.length > 0 || relatedContent.length > 0}>
 	<article class="article-content">
 		{@render children()}
 	</article>
 
-	<aside class="content-sidebar">
-		{#if onThisPage.length > 0}
-			<OnThisPage {onThisPage} />
-		{/if}
-		{#if relatedContent.length > 0}
-			<RelatedContent {relatedContent} />
-		{/if}
-	</aside>
+	{#if onThisPage.length > 0 || relatedContent.length > 0}
+		<aside class="content-sidebar">
+			{#if onThisPage.length > 0}
+				<OnThisPage {onThisPage} />
+			{/if}
+			{#if relatedContent.length > 0}
+				<RelatedContent {relatedContent} />
+			{/if}
+		</aside>
+	{/if}
 </div>
 
 <style>
 	.content-sidebar {
 		display: none;
+		min-width: 0;
 	}
 
 	@media (min-width: 900px) {
-		.content-layout {
+		.content-layout.has-sidebar {
 			display: grid;
 			grid-template-columns: 1fr 20rem;
 			gap: 8rem;

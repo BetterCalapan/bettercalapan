@@ -23,6 +23,17 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		min-width: 0;
+	}
+
+	.related-content :global(.item) {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.related-content :global(.link) {
+		min-width: 0;
+		overflow-wrap: anywhere;
 	}
 
 	ul {

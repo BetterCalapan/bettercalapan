@@ -42,7 +42,8 @@
 			display: grid;
 			grid-template-columns: 18px 1fr;
 			align-items: start;
-			gap: 0.5rem;
+			gap: 0.75rem;
+			text-decoration: none;
 
 			:global(.icon) {
 				margin-top: 0.125rem;

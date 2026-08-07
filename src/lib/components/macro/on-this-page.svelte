@@ -19,20 +19,46 @@
 		const hash = window.location.hash.slice(1);
 		activeId = headings.some(({ id }) => id === hash) ? hash : headings[0].id;
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				const visibleHeading = entries
-					.filter(({ isIntersecting }) => isIntersecting)
-					.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+		const updateActiveHeading = () => {
+			const isAtBottom =
+				window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
+			if (isAtBottom) {
+				activeId = headings.at(-1)?.id ?? headings[0].id;
+				return;
+			}
 
-				if (visibleHeading) activeId = visibleHeading.target.id;
-			},
-			{ rootMargin: "0px 0px -70% 0px" }
-		);
+			const threshold = window.innerHeight * 0.3;
+			const visibleHeading = headings.find((heading) => {
+				const top = heading.getBoundingClientRect().top;
+				return top >= 0 && top <= threshold;
+			});
+			const previousHeading = headings
+				.filter((heading) => heading.getBoundingClientRect().top < 0)
+				.at(-1);
+
+			activeId = (visibleHeading ?? previousHeading ?? headings[0]).id;
+		};
+
+		const observer = new IntersectionObserver(updateActiveHeading, {
+			rootMargin: "0px 0px -70% 0px"
+		});
+		let scrollFrame = 0;
+		const handleScroll = () => {
+			if (scrollFrame) return;
+			scrollFrame = requestAnimationFrame(() => {
+				scrollFrame = 0;
+				updateActiveHeading();
+			});
+		};
 
 		for (const heading of headings) observer.observe(heading);
+		window.addEventListener("scroll", handleScroll, { passive: true });
 
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+			window.removeEventListener("scroll", handleScroll);
+			if (scrollFrame) cancelAnimationFrame(scrollFrame);
+		};
 	});
 </script>
 

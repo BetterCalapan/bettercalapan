@@ -13,6 +13,9 @@
 		margin-top: 2rem;
 		scroll-margin-top: 1rem;
 	}
+	:global(.article-content h3) {
+		margin-bottom: 0.5rem;
+	}
 
 	:global(.article-content p),
 	:global(.article-content li) {
@@ -26,7 +29,13 @@
 
 	:global(.article-content ul) {
 		padding-left: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
 		list-style-type: disc;
+	}
+	:global(.article-content ol) {
+		padding-left: 1.25rem;
 	}
 
 	:global(.article-content a) {
