@@ -33,6 +33,9 @@
 <div class="content-layout" class:has-sidebar={onThisPage.length > 0 || relatedContent.length > 0}>
 	<article class="article-content">
 		{@render children()}
+		{#if onThisPage.length > 0}
+			<span class="article-end" data-content-end aria-hidden="true"></span>
+		{/if}
 	</article>
 
 	{#if onThisPage.length > 0 || relatedContent.length > 0}
@@ -51,6 +54,12 @@
 	.content-sidebar {
 		display: none;
 		min-width: 0;
+	}
+
+	.article-end {
+		display: block;
+		width: 1px;
+		height: 1px;
 	}
 
 	@media (min-width: 900px) {
