@@ -3,9 +3,9 @@ layout: content
 title: Occupational Permit
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Business
-    url: /(app)/services/business
+    url: /(app)/(content)/services/business
 onThisPage:
   - name: Occupational Permit
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Business Permit
-    url: /(app)/services/business/business-permit
+    url: /(app)/(content)/services/business/business-permit
   - name: Special Permit
-    url: /(app)/services/business/special-permit
+    url: /(app)/(content)/services/business/special-permit
   - name: Business Status Certificate
-    url: /(app)/services/business/business-status-certificate
+    url: /(app)/(content)/services/business/business-status-certificate
 ---
 
 <script>

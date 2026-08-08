@@ -3,9 +3,9 @@ layout: content
 title: Certified True Copy of Business License and Mayor's Permit
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Business
-    url: /(app)/services/business
+    url: /(app)/(content)/services/business
 onThisPage:
   - name: Certified True Copy of Business License and Mayor's Permit
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Business Permit
-    url: /(app)/services/business/business-permit
+    url: /(app)/(content)/services/business/business-permit
   - name: Occupational Permit
-    url: /(app)/services/business/occupational-permit
+    url: /(app)/(content)/services/business/occupational-permit
   - name: Special Permit
-    url: /(app)/services/business/special-permit
+    url: /(app)/(content)/services/business/special-permit
 ---
 
 <script>

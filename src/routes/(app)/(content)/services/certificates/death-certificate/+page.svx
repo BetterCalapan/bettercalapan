@@ -3,9 +3,9 @@ layout: content
 title: Death Certificate
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Certificates
-    url: /(app)/services/certificates
+    url: /(app)/(content)/services/certificates
 onThisPage:
   - name: Death Certificate
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Birth Certificate
-    url: /(app)/services/certificates/birth-certificate
+    url: /(app)/(content)/services/certificates/birth-certificate
   - name: Marriage Certificate
-    url: /(app)/services/certificates/marriage-certificate
+    url: /(app)/(content)/services/certificates/marriage-certificate
   - name: Barangay Clearance
-    url: /(app)/services/certificates/barangay-clearance
+    url: /(app)/(content)/services/certificates/barangay-clearance
 ---
 
 <script>

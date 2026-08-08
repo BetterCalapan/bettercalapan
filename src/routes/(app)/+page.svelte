@@ -31,37 +31,46 @@
 		<section class="popular">
 			<h1 class="heading">Most searched</h1>
 			<div class="most-searched-resources">
-				<a class="resource" href={resolve("/(app)/services/certificates/birth-certificate")}>
+				<a
+					class="resource"
+					href={resolve("/(app)/(content)/services/certificates/birth-certificate")}
+				>
 					<div class="icon">
 						<ArrowRight />
 					</div>
 					<p>Birth certificate</p>
 				</a>
-				<a class="resource" href={resolve("/(app)/services/business/business-permit")}>
+				<a class="resource" href={resolve("/(app)/(content)/services/business/business-permit")}>
 					<div class="icon">
 						<ArrowRight />
 					</div>
 					<p>Business permit</p>
 				</a>
-				<a class="resource" href={resolve("/(app)/statistics")}>
+				<a class="resource" href={resolve("/(app)/(content)/statistics")}>
 					<div class="icon">
 						<ArrowRight />
 					</div>
 					<p>Statistics</p>
 				</a>
-				<a class="resource" href={resolve("/(app)/services/certificates/barangay-clearance")}>
+				<a
+					class="resource"
+					href={resolve("/(app)/(content)/services/certificates/barangay-clearance")}
+				>
 					<div class="icon">
 						<ArrowRight />
 					</div>
 					<p>Barangay clearance</p>
 				</a>
-				<a class="resource" href={resolve("/(app)/services/certificates/barangay-id")}>
+				<a class="resource" href={resolve("/(app)/(content)/services/certificates/barangay-id")}>
 					<div class="icon">
 						<ArrowRight />
 					</div>
 					<p>Barangay ID</p>
 				</a>
-				<a class="resource" href={resolve("/(app)/services/certificates/drivers-license")}>
+				<a
+					class="resource"
+					href={resolve("/(app)/(content)/services/certificates/drivers-license")}
+				>
 					<div class="icon">
 						<ArrowRight />
 					</div>

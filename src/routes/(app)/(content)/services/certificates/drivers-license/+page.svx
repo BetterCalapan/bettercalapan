@@ -3,9 +3,9 @@ layout: content
 title: Driver's License
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Certificates
-    url: /(app)/services/certificates
+    url: /(app)/(content)/services/certificates
 onThisPage:
   - name: Driver's License
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Police Clearance
-    url: /(app)/services/certificates/police-clearance
+    url: /(app)/(content)/services/certificates/police-clearance
   - name: Barangay ID
-    url: /(app)/services/certificates/barangay-id
+    url: /(app)/(content)/services/certificates/barangay-id
   - name: Barangay Clearance
-    url: /(app)/services/certificates/barangay-clearance
+    url: /(app)/(content)/services/certificates/barangay-clearance
 ---
 
 <script>

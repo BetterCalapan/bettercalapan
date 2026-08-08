@@ -3,7 +3,7 @@ layout: content
 title: Business
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
 ---
 
 <script>
@@ -24,7 +24,7 @@ breadcrumbs:
 
 <p class="office">
 	If you need any of these, head to the
-	<a class="link" href={resolveRoute("/(app)/contact")}>Calapan City Hall</a>
+	<a class="link" href={resolveRoute("/(app)/(content)/contact")}>Calapan City Hall</a>
 	and ask for what you need.
 </p>
 

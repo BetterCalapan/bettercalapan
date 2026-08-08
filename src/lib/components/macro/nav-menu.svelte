@@ -10,7 +10,7 @@
 <NavigationMenu.Root class="page-section-root">
 	<NavigationMenu.List class="page-section-list">
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/services")}>
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/(content)/services")}>
 				Services
 			</NavigationMenu.Link>
 			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Services menu">
@@ -29,7 +29,7 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/government")}>
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/(content)/government")}>
 				Government
 			</NavigationMenu.Link>
 			<NavigationMenu.Trigger class="page-section-trigger" aria-label="Open Government menu">
@@ -48,13 +48,15 @@
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href="/statistics"
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/(content)/statistics")}
 				>Statistics</NavigationMenu.Link
 			>
 		</NavigationMenu.Item>
 
 		<NavigationMenu.Item class="page-section-item">
-			<NavigationMenu.Link class="page-section-link" href="/contact">Contact</NavigationMenu.Link>
+			<NavigationMenu.Link class="page-section-link" href={resolve("/(app)/(content)/contact")}
+				>Contact</NavigationMenu.Link
+			>
 		</NavigationMenu.Item>
 	</NavigationMenu.List>
 </NavigationMenu.Root>

@@ -3,9 +3,9 @@ layout: content
 title: Business Status Certificate
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Business
-    url: /(app)/services/business
+    url: /(app)/(content)/services/business
 onThisPage:
   - name: Business Status Certificate
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Business Permit
-    url: /(app)/services/business/business-permit
+    url: /(app)/(content)/services/business/business-permit
   - name: Special Permit
-    url: /(app)/services/business/special-permit
+    url: /(app)/(content)/services/business/special-permit
   - name: Certified True Copy of Business License & Mayor's Permit
-    url: /(app)/services/business/ctc-business-license
+    url: /(app)/(content)/services/business/ctc-business-license
 ---
 
 <script>

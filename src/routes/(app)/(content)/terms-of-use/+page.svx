@@ -3,7 +3,7 @@ layout: content
 title: Terms of Use
 onThisPage:
   - name: Terms of Use 
-    id: terms-of-use 
+    id: title
   - name: Who we are
     id: who-we-are
   - name: Using BetterCalapan
@@ -28,11 +28,11 @@ onThisPage:
     id: governing-law
 relatedContent:
   - name: Privacy Policy
-    url: /(app)/privacy-policy
+    url: /(app)/(content)/privacy-policy
   - name: Accessibility
-    url: /(app)/accessibility
+    url: /(app)/(content)/accessibility
   - name: Sitemap 
-    url: /(app)/sitemap
+    url: /(app)/(content)/sitemap
 ---
 
 <script>

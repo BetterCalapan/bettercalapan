@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { resolve } from "$app/paths";
 	import { resolveRoute } from "$lib/utils/paths";
 	import { resources } from "$lib/data/data";
 	import { government } from "$lib/data/government.data";
@@ -7,7 +6,7 @@
 	import Facebook from "$lib/icons/facebook.svelte";
 	import GitHub from "$lib/icons/github.svelte";
 
-	const prefix = "/(app)";
+	const prefix = "/(app)/(content)";
 	const others = [
 		{
 			name: "Terms of Use",
@@ -20,6 +19,10 @@
 		{
 			name: "Accessibility",
 			url: `${prefix}/accessibility`
+		},
+		{
+			name: "Sitemap",
+			url: `${prefix}/sitemap`
 		}
 	];
 </script>
@@ -35,10 +38,6 @@
 				An open-source initiative providing transparent access to municipal services, local
 				legislation, and public data for the people of Calapan.
 			</p>
-			<div class="costs">
-				<p>Cost to host this site = <span class="cost build">₱ 700</span></p>
-				<p>Cost to the people of Calapan = <span class="cost people">₱ 0</span></p>
-			</div>
 			<div class="socials">
 				<a
 					class="social"
@@ -126,9 +125,8 @@
 					target="_blank"
 					rel="external noopener noreferrer"
 				>
-					GitHub
+					Contribute on GitHub
 				</a>
-				<a class="link" href={resolve("/sitemap")}> Sitemap </a>
 			</div>
 		</div>
 	</div>
@@ -160,17 +158,6 @@
 				.description {
 					max-width: 635px;
 				}
-				.costs {
-					.cost {
-						font-weight: 600;
-					}
-					.cost.build {
-						color: var(--accent-alt);
-					}
-					.cost.people {
-						color: var(--green);
-					}
-				}
 				.socials {
 					display: flex;
 					flex: 1;
@@ -184,7 +171,7 @@
 			.footer-sections {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-				gap: 2rem;
+				gap: 4rem;
 
 				.footer-section {
 					display: flex;

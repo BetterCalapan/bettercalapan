@@ -5,7 +5,7 @@ type PageSection = {
 	url: RouteId;
 };
 
-const prefix = "/(app)";
+const prefix = "/(app)/(content)";
 export const pageSections: PageSection[] = [
 	{
 		name: "services",

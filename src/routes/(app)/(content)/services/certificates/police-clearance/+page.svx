@@ -3,9 +3,9 @@ layout: content
 title: Police Clearance
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Certificates
-    url: /(app)/services/certificates
+    url: /(app)/(content)/services/certificates
 onThisPage:
   - name: Police Clearance
     id: title
@@ -19,11 +19,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Barangay Clearance
-    url: /(app)/services/certificates/barangay-clearance
+    url: /(app)/(content)/services/certificates/barangay-clearance
   - name: Barangay ID
-    url: /(app)/services/certificates/barangay-id
+    url: /(app)/(content)/services/certificates/barangay-id
   - name: Driver's License
-    url: /(app)/services/certificates/drivers-license
+    url: /(app)/(content)/services/certificates/drivers-license
 ---
 
 <script>

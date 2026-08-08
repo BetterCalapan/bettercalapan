@@ -1,5 +1,9 @@
+---
+layout: content
+title: Statistics
+---
+
 <script lang="ts">
-	import { info } from "$lib/snippets/info.snippet.svelte";
 	import { source } from "$lib/snippets/source.snippet.svelte";
 	import DeferredChart from "./deferred-chart.svelte";
 
@@ -8,8 +12,11 @@
 	const loadCompetitivenessChart = () => import("./competitiveness-chart.svelte");
 </script>
 
+# {title}
+
+Data and statistics about Calapan City.
+
 <div class="primary-wrapper">
-	{@render info("Statistics", "Data and statistics about Calapan City.")}
 	<div class="section general">
 		<h2>General</h2>
 		<div class="content">
@@ -91,6 +98,10 @@
 			flex-direction: column;
 			gap: 0.5rem;
 
+			h2 {
+				margin: 0;
+			}
+
 			.content {
 				margin-bottom: 1rem;
 				display: grid;
@@ -101,6 +112,10 @@
 					background-color: var(--neutral-1);
 					padding: 1.5rem;
 					border-radius: 2rem;
+
+					p {
+						margin: 0;
+					}
 
 					.count {
 						font-size: 2rem;

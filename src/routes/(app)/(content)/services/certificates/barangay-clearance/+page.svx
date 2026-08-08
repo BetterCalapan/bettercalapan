@@ -3,9 +3,9 @@ layout: content
 title: Barangay Clearance
 breadcrumbs:
   - name: Services
-    url: /(app)/services
+    url: /(app)/(content)/services
   - name: Certificates
-    url: /(app)/services/certificates
+    url: /(app)/(content)/services/certificates
 onThisPage:
   - name: Barangay Clearance
     id: title
@@ -17,11 +17,11 @@ onThisPage:
     id: frequently-asked-questions
 relatedContent:
   - name: Barangay ID
-    url: /(app)/services/certificates/barangay-id
+    url: /(app)/(content)/services/certificates/barangay-id
   - name: Police Clearance
-    url: /(app)/services/certificates/police-clearance
+    url: /(app)/(content)/services/certificates/police-clearance
   - name: Birth Certificate
-    url: /(app)/services/certificates/birth-certificate
+    url: /(app)/(content)/services/certificates/birth-certificate
 ---
 
 <script>
