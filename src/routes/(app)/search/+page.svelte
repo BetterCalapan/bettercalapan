@@ -12,7 +12,9 @@
 <div class="primary-wrapper">
 	<div class="search">
 		<label for="search">Search BetterCalapan.org</label>
-		<SearchInput {term} showResults={false} />
+		<div class="search-input">
+			<SearchInput {term} showResults={false} />
+		</div>
 		{#if term}
 			<p class="result-count">{results.length} {results.length === 1 ? "result" : "results"}</p>
 		{/if}
@@ -42,6 +44,9 @@
 				font-weight: 700;
 				font-size: 2rem;
 				line-height: 1.25;
+			}
+			.search-input {
+				position: relative;
 			}
 			.result-count {
 				margin-left: 0.25rem;
