@@ -73,6 +73,7 @@ html {
 	--neutral-1: oklch(0.91 0.02 75);
 	--neutral-2: oklch(0.87 0.01 54.5);
 	--neutral-3: oklch(0.94 0.003 48.7);
+	--neutral-4: oklch(0.65 0.0105 93.6);
 }
 
 /* Fonts */
@@ -87,6 +88,7 @@ html {
 /* General */
 ::selection {
 	background-color: var(--neutral-2);
+	color: var(--fg);
 }
 html {
 	scrollbar-color: var(--neutral-2) var(--bg);

@@ -8,19 +8,19 @@ type PageSection = {
 const prefix = "/(app)/(content)";
 export const pageSections: PageSection[] = [
 	{
-		name: "services",
+		name: "Services",
 		url: `${prefix}/services`
 	},
 	{
-		name: "government",
+		name: "Government",
 		url: `${prefix}/government`
 	},
 	{
-		name: "statistics",
+		name: "Statistics",
 		url: `${prefix}/statistics`
 	},
 	{
-		name: "contact",
+		name: "Contact",
 		url: `${prefix}/contact`
 	}
 ];

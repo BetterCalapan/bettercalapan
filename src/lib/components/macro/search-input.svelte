@@ -62,6 +62,7 @@
 		id="search"
 		autocomplete="off"
 		spellcheck="false"
+		placeholder="Occupational permit"
 		required
 		bind:value={searchTerm}
 		oninput={handlerSearch}
@@ -87,6 +88,10 @@
 			border: none;
 			border-radius: 2rem 0 0 2rem;
 			font-size: 1.125rem;
+		}
+		input::placeholder {
+			color: var(--fg);
+			opacity: 0.25;
 		}
 		.search-button {
 			display: grid;

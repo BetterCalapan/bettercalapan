@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { resolveRoute } from "$lib/utils/paths";
-	import { resources } from "$lib/data/data";
 	import { government } from "$lib/data/government.data";
 	import { services } from "$lib/data/services.data";
 	import Facebook from "$lib/icons/facebook.svelte";
@@ -28,9 +27,6 @@
 </script>
 
 <footer>
-	<div class="wrapper-top">
-		<hr class="separator" />
-	</div>
 	<div class="wrapper">
 		<div class="info">
 			<h1>BetterCalapan</h1>
@@ -81,18 +77,6 @@
 				</ul>
 			</div>
 			<div class="footer-section">
-				<h1>Resources</h1>
-				<ul class="footer-section-list">
-					{#each resources as resource (resource.name)}
-						<li class="resource">
-							<a class="link" href={resource.url} target="_blank" rel="external noopener noreferrer"
-								>{resource.name}</a
-							>
-						</li>
-					{/each}
-				</ul>
-			</div>
-			<div class="footer-section">
 				<h1>Others</h1>
 				<ul class="footer-section-list">
 					{#each others as other (other.name)}
@@ -104,45 +88,25 @@
 			</div>
 		</div>
 	</div>
-	<div class="wrapper-bottom">
-		<hr class="separator" />
-		<div class="info">
-			<p>
-				Licensed under
-				<a
-					class="link"
-					href="https://www.gnu.org/licenses/gpl-3.0.en.html"
-					target="_blank"
-					rel="external noopener noreferrer"
-				>
-					GNU GPL v3.0
-				</a>
-			</p>
-			<div class="links">
-				<a
-					class="link"
-					href="https://github.com/BetterCalapan/bettercalapan"
-					target="_blank"
-					rel="external noopener noreferrer"
-				>
-					Contribute on GitHub
-				</a>
-			</div>
-		</div>
-	</div>
 </footer>
 
 <style>
+	h1 {
+		font-size: 1.125rem;
+		color: var(--bg);
+		font-weight: 500;
+	}
 	footer {
-		padding: 1rem;
+		padding: 4rem 1rem;
 		display: grid;
 		place-items: center;
 		gap: 3rem;
+		background: var(--fg);
+		color: var(--neutral-4);
 
 		.wrapper {
 			width: 100%;
 			max-width: 80rem;
-
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
@@ -152,26 +116,27 @@
 				flex-direction: column;
 				gap: 1rem;
 
-				h1 {
-					font-size: 1.125rem;
-				}
 				.description {
 					max-width: 635px;
 				}
 				.socials {
+					margin-top: 1rem;
 					display: flex;
 					flex: 1;
 					gap: 1rem;
 
 					.social {
+						width: 20px;
+						height: 20px;
 						align-self: end;
+						color: var(--neutral-4);
 					}
 				}
 			}
 			.footer-sections {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-				gap: 4rem;
+				gap: 2rem;
 
 				.footer-section {
 					display: flex;
@@ -179,9 +144,6 @@
 					gap: 1rem;
 					color: var(--fg);
 
-					h1 {
-						font-size: 1.125rem;
-					}
 					.footer-section-list {
 						display: flex;
 						flex-direction: column;
@@ -189,7 +151,7 @@
 
 						li {
 							.link {
-								color: var(--fg-alt);
+								color: var(--neutral-4);
 
 								&:hover {
 									text-decoration: underline;
@@ -200,52 +162,6 @@
 				}
 			}
 		}
-
-		.wrapper-top,
-		.wrapper-bottom {
-			margin-bottom: 1rem;
-			width: 100%;
-			max-width: 80rem;
-			display: flex;
-			flex-direction: column;
-			gap: 2rem 0.5rem;
-
-			.info {
-				display: flex;
-				flex-direction: column;
-				align-items: start;
-				gap: 0.25rem;
-
-				.links {
-					display: flex;
-					align-items: center;
-					gap: 2rem;
-				}
-				.link {
-					font-size: 1.125rem;
-					text-decoration: underline;
-
-					&:hover {
-						text-decoration: none;
-					}
-				}
-			}
-		}
-		.wrapper-top {
-			margin-bottom: 0;
-		}
-	}
-
-	@media (min-width: 800px) {
-		footer {
-			.wrapper-bottom {
-				.info {
-					flex-direction: row;
-					justify-content: space-between;
-					align-items: start;
-				}
-			}
-		}
 	}
 
 	@media (min-width: 1300px) {
@@ -253,7 +169,7 @@
 			.wrapper {
 				display: grid;
 				grid-template-columns: 24rem 1fr;
-				gap: 6rem;
+				gap: 16rem;
 			}
 		}
 	}

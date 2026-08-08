@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import { resolveRoute } from "$lib/utils/paths";
 	import SearchInput from "$lib/components/macro/search-input.svelte";
 	import { government } from "$lib/data/government.data";
 	import { services } from "$lib/data/services.data";
 	import { pageSections } from "$lib/data/header.data";
+	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 </script>
 
@@ -22,7 +22,6 @@
 					services and information
 				</h1>
 				<div class="search">
-					<label for="search">Search</label>
 					<SearchInput term="" showResults={false} />
 				</div>
 			</div>
@@ -85,11 +84,7 @@
 				<h1 class="heading">Services</h1>
 				<ul class="services-list">
 					{#each services.data as service (service.name)}
-						<li class="service">
-							<a class="link" href={resolveRoute(service.url)}>
-								{service.name}
-							</a>
-						</li>
+						{@render listItem(service.name, service.url)}
 					{/each}
 				</ul>
 			</div>
@@ -98,11 +93,7 @@
 					<h1 class="heading">Government</h1>
 					<ul class="government-list">
 						{#each government.data as gov (gov.name)}
-							<li class="government">
-								<a class="link" href={resolveRoute(gov.url)}>
-									{gov.name}
-								</a>
-							</li>
+							{@render listItem(gov.name, gov.url)}
 						{/each}
 					</ul>
 				</div>
@@ -111,11 +102,7 @@
 				<h1 class="heading">Others</h1>
 				<ul class="others-list">
 					{#each pageSections.slice(2) as other (other.name)}
-						<li class="other">
-							<a class="link" href={resolveRoute(other.url)}>
-								{other.name[0].toUpperCase() + other.name.slice(1)}
-							</a>
-						</li>
+						{@render listItem(other.name, other.url)}
 					{/each}
 				</ul>
 			</div>
@@ -170,19 +157,14 @@
 				color: var(--fg);
 				font-weight: 700;
 				font-size: 2.5rem;
-				line-height: 1.25;
+				line-height: 1.125;
 			}
 			.search {
+				position: relative;
 				display: flex;
 				flex-direction: column;
 				gap: 0.75rem;
 				max-width: 40rem;
-
-				label {
-					color: var(--fg);
-					font-size: 1.125rem;
-					font-weight: 600;
-				}
 			}
 		}
 	}
@@ -190,7 +172,7 @@
 	.popular {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.75rem;
 
 		.most-searched-resources {
 			display: flex;
@@ -234,28 +216,13 @@
 		div {
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
+			gap: 0.5rem;
 		}
 
 		ul {
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
-		}
-
-		li {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			border-bottom: 1px dotted var(--fg);
-
-			&:hover {
-				border-bottom: 1px solid;
-			}
-
-			a {
-				width: 100%;
-			}
+			gap: 0.5rem;
 		}
 	}
 
@@ -270,6 +237,9 @@
 	}
 
 	@media (min-width: 1000px) {
+		.right {
+			margin-top: 0;
+		}
 		.primary-wrapper {
 			display: grid;
 			grid-template-columns: 1fr 20rem;

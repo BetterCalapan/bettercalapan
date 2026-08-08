@@ -30,14 +30,19 @@
 
 <style>
 	.wrapper {
+		position: absolute;
+		top: calc(100% + 0.75rem);
+		left: 0;
+		right: 0;
+
 		.results {
-			width: 100%;
 			padding: 1rem 1.25rem;
 			background-color: var(--neutral-3);
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
 			border-radius: 2rem;
+			box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
 
 			.result {
 				width: max-content;

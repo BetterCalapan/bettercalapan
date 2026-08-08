@@ -8,7 +8,6 @@
 </script>
 
 <svelte:head>
-	<!-- FIX: replace with custom favicon eventually -->
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
@@ -22,7 +21,7 @@
 
 <style>
 	main {
-		padding: 1rem 1rem 2.5rem;
+		padding: 1rem 1rem 3rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
