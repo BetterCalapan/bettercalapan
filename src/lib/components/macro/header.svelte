@@ -3,6 +3,7 @@
 	import logo from "$lib/assets/logo.svg";
 	import NavigationMenu from "./nav-menu.svelte";
 	import NavigationMenuMobile from "./nav-menu-mobile.svelte";
+	import { createSearchQuery, normalizeSearchTerm } from "$lib/search/search-query";
 	import Search from "@lucide/svelte/icons/search";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import { goto } from "$app/navigation";
@@ -16,8 +17,13 @@
 	let inputValue = $state("");
 	function handlerSearchInput(e: SubmitEvent) {
 		e.preventDefault();
-		showSearchInput = !showSearchInput;
-		goto(resolve(`/search?term=${inputValue.split(" ").join("+")}`));
+		const term = normalizeSearchTerm(inputValue);
+		if (!term) return;
+
+		showSearchInput = false;
+		// The route is resolved before the encoded query string is appended.
+		// eslint-disable-next-line svelte/no-navigation-without-resolve
+		goto(`${resolve("/search")}?${createSearchQuery(term)}`);
 		inputValue = "";
 	}
 </script>
@@ -40,9 +46,18 @@
 				class="search-input-wrapper"
 				class:open={showSearchInput}
 				inert={!showSearchInput}
+				action={resolve("/search")}
+				method="GET"
 				onsubmit={handlerSearchInput}
 			>
-				<input class="search-input" type="text" bind:value={inputValue} />
+				<input
+					class="search-input"
+					type="text"
+					name="term"
+					aria-label="Search BetterCalapan.org"
+					bind:value={inputValue}
+					required
+				/>
 				<button type="submit" class="search-input-button" aria-label="Search button">
 					<ArrowRight />
 				</button>

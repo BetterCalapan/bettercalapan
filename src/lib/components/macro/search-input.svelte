@@ -2,41 +2,67 @@
 	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
 	import SearchResults from "$lib/components/macro/search-results.svelte";
+	import { createSearchQuery, normalizeSearchTerm } from "$lib/search/search-query";
 	import Search from "@lucide/svelte/icons/search";
+	import { onDestroy } from "svelte";
 
-	let { term, showResults } = $props();
+	type Props = {
+		term: string;
+		showResults: boolean;
+	};
+
+	let { term, showResults }: Props = $props();
 
 	let searchTerm = $derived(term);
 	let submittedSearchTerm: string | null = $state(null);
 	let timer: ReturnType<typeof setTimeout> | undefined;
 	const DURATION = 500;
 
+	function clearTimer() {
+		if (!timer) return;
+
+		clearTimeout(timer);
+		timer = undefined;
+	}
+
 	function handlerSearch() {
-		if (timer) clearTimeout(timer);
+		clearTimer();
 
 		timer = setTimeout(() => {
-			if (searchTerm == "") {
+			timer = undefined;
+			const normalizedTerm = normalizeSearchTerm(searchTerm);
+			if (!normalizedTerm) {
 				submittedSearchTerm = null;
 				return;
 			}
-			submittedSearchTerm = searchTerm.trim();
+			submittedSearchTerm = normalizedTerm;
 			showResults = true;
 		}, DURATION);
 	}
 	function handlerSubmit(e: SubmitEvent) {
 		e.preventDefault();
-		goto(resolve(`/search?term=${searchTerm.split(" ").join("+")}`));
+		clearTimer();
+		const normalizedTerm = normalizeSearchTerm(searchTerm);
+		if (!normalizedTerm) return;
+
+		submittedSearchTerm = null;
 		showResults = false;
+		// The route is resolved before the encoded query string is appended.
+		// eslint-disable-next-line svelte/no-navigation-without-resolve
+		goto(`${resolve("/search")}?${createSearchQuery(normalizedTerm)}`);
 	}
+
+	onDestroy(clearTimer);
 </script>
 
-<form class="search-input" onsubmit={handlerSubmit}>
+<form class="search-input" action={resolve("/search")} method="GET" onsubmit={handlerSubmit}>
 	<input
 		type="text"
-		name="search"
+		name="term"
 		id="search"
 		autocomplete="off"
 		spellcheck="false"
+		required
 		bind:value={searchTerm}
 		oninput={handlerSearch}
 	/>

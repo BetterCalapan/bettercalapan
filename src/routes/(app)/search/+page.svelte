@@ -1,21 +1,26 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import SearchInput from "$lib/components/macro/search-input.svelte";
+	import { normalizeSearchTerm } from "$lib/search/search-query";
 	import { getResults } from "$lib/search/search";
 	import { listItem } from "$lib/snippets/list-item.snippet.svelte";
 
-	const term = $derived(page.url.searchParams.get("term")!.split("+").join(" "));
-	let results = $derived(getResults(term));
+	const term = $derived(normalizeSearchTerm(page.url.searchParams.get("term")));
+	let results = $derived(term ? getResults(term) : []);
 </script>
 
 <div class="primary-wrapper">
 	<div class="search">
 		<label for="search">Search BetterCalapan.org</label>
 		<SearchInput {term} showResults={false} />
-		<p class="result-count">{results.length} results</p>
+		{#if term}
+			<p class="result-count">{results.length} {results.length === 1 ? "result" : "results"}</p>
+		{/if}
 	</div>
 	<ul class="results">
-		{#if results.length == 0}
+		{#if !term}
+			<li>Enter a search term to find information on BetterCalapan.org.</li>
+		{:else if results.length == 0}
 			<li>No result found. Check spelling or try different keywords.</li>
 		{:else}
 			{#each results as result (result.item.url)}
