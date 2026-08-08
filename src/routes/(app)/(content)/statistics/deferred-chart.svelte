@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Loader from "@lucide/svelte/icons/loader";
 	import { onMount, type Component } from "svelte";
 
 	type ChartComponent = Component<{ interactive?: boolean }>;
@@ -55,24 +56,17 @@
 					observer = undefined;
 					void loadChart();
 				},
-				{ rootMargin: "400px 0px" }
+				{ rootMargin: "100px 0px" }
 			);
 			observer.observe(container);
 		}
 
 		function updateViewportMode() {
 			interactive = !mobileViewport.matches;
-
-			if (mobileViewport.matches) {
-				observeChart();
-			} else {
-				observer?.disconnect();
-				observer = undefined;
-				void loadChart();
-			}
 		}
 
 		updateViewportMode();
+		observeChart();
 		mobileViewport.addEventListener("change", updateViewportMode);
 
 		return () => {
@@ -98,6 +92,8 @@
 		>
 			{#if loadFailed}
 				<p>Unable to load this chart.</p>
+			{:else}
+				<span class="loader" aria-hidden="true"><Loader size={32} /></span>
 			{/if}
 		</div>
 	{/if}
@@ -120,6 +116,23 @@
 
 	.placeholder p {
 		font-size: 0.875rem;
+	}
+
+	.loader {
+		display: inline-flex;
+		animation: rotate 1s linear infinite;
+	}
+
+	@keyframes rotate {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.loader {
+			animation: none;
+		}
 	}
 
 	@media (min-width: 520px) {
